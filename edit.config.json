@@ -1,0 +1,6 @@
+{
+	"clientToken" : "client token here",
+	"homeServer": "home server ID",
+	"ownerID": "owner ID",
+	"prefix": "!",
+}
