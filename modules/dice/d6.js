@@ -1,4 +1,4 @@
 module.exports = (client) => {
-	const num = Math.floor(Math.random() * 5) + 1;
+	const num = Math.floor(Math.random() * 6 + 1);
 	return num;
 };
