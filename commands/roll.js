@@ -39,7 +39,7 @@ exports.run = (client, message, args, level) => {
 
 	if(die === "d12"){
 		for(i=0; amount>i;  i++){
-			const d20 = require("../modules/dice/d12.js");
+			const d12 = require("../modules/dice/d12.js");
 			embed.addField(`Dice #${i + 1} 🎲`, `${d12()}`, true)
 		}
 	}
