@@ -2,7 +2,7 @@
 const Discord = require('discord.js');
 exports.run = (client, message, args, level) => {
 
-	const dice = ["d4", "d6", "d8", "d10", "d20"];
+	const dice = ["d4", "d6", "d8", "d10", "d12", "d20"];
 	if(!dice.includes(args[0])) return;
 
 	const die = args[0];
@@ -34,6 +34,13 @@ exports.run = (client, message, args, level) => {
 		for(i=0; amount>i;  i++){
 			const d8 = require("../modules/dice/d8.js");
 			embed.addField(`Dice #${i + 1} 🎲`, `${d8()}`, true)
+		}
+	}
+
+	if(die === "d12"){
+		for(i=0; amount>i;  i++){
+			const d20 = require("../modules/dice/d12.js");
+			embed.addField(`Dice #${i + 1} 🎲`, `${d12()}`, true)
 		}
 	}
 
