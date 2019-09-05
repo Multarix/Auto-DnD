@@ -8,7 +8,7 @@ exports.run = (client, message, args, level) => {
 	const die = args[0];
 	let amount = 1;
 	if(parseInt(args[1])) amount = parseInt(args[1]);
-	if(amount >= 20) amount = 20;
+	if(amount >= 21) amount = 21;
 
 	const embed = new Discord.RichEmbed()
 		.setAuthor(message.member.displayName, message.author.displayAvatarURL)
