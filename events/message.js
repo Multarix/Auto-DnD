@@ -6,13 +6,10 @@ module.exports = async (client, message) => {
 	if(message.channel.type === "dm") return;
 	if(!message.channel.memberPermissions(message.guild.me).has("SEND_MESSAGES")) return;
 
-	const guildData = await sql.get(`SELECT * FROM settings WHERE guild = "${message.guild.id}"`);
-	const level = client.permlevel(message, guildData);
-
 	const mention = new RegExp(`^<@!?${client.user.id}>`);
 	const mentionCheck = message.content.match(mention) ? message.content.match(mention)[0] : '!';
 
-	const prefixes = [`${mentionCheck} `, guildData.prefix];
+	const prefixes = [`${mentionCheck} `, client.config.prefix];
 	let prefix = false;
 	for(const thisPrefix of prefixes){
 		if(message.content.startsWith(thisPrefix)) prefix = thisPrefix;
@@ -30,20 +27,8 @@ module.exports = async (client, message) => {
 	}
 	const cmd = client.commands.get(command) || client.commands.get(client.aliases.get(command));
 
-	if (cmd && level >= cmd.conf.permLevel) {
-		if(cmd.conf.enabled === true){
-			cmd.run(client, message, args, level);
-		} else {
-			client.log(`"${message.author.tag}" tried to use the disabled command "${cmd.help.name}"`, "Log");
-		}
-	} else if (cmd && level < cmd.conf.permLevel){
-		client.log(`"${message.author.tag}" tried to use command: "${cmd.help.name}"`, "Log");
-	}
-	if(!cmd){
-		const cc = await sql.all(`SELECT * FROM commands WHERE guild = "${message.guild.id}"`);
-		const cmdList = {};
-		cc.forEach(data => cmdList[data.name] = data.output);
-		if(cmdList[command]) return message.channel.send(cmdList[command]);
+	if (cmd && cmd.conf.enabled === true) {
+			cmd.run(client, message, args);
 	}
 };
 
