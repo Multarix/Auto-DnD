@@ -25,7 +25,7 @@ module.exports = async (client) => {
 	//	Client log, semi-useful for keeping track of what is what in the console
 	client.log = (msg, title) => {
 		if(!title) title = "Log";
-		const thime = require("../modules/time.js");
+		const thime = require("../modules/misc/time.js");
 		const time = thime();
 		fs.appendFileSync("./logs.txt", `\n[${time.exactDate}] (${time.time}) ${msg.replace(/\[3[7&9]m/g, "")}`);		// eslint-disable-line no-control-regex
 		if(title.toLowerCase() === "error") return console.log(`[${colors.red(time.time)}](${colors.red(title)}) ${colors.red(msg)}`);
