@@ -1,12 +1,9 @@
 config.json
-bot.bat
-Bot.bat - Shortcut.lnk
 node_modules
 ecosystem.config.js
 shards.js
 .eslintrc.json
 commands/test.js
-objects/test.js
 objects/settings.sqlite
 objects/settings.sqlite-journal
 logs.txt
