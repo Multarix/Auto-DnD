@@ -1,4 +1,4 @@
 # Dragon-Bot
 A bot for Dungeons and Dragons.
 
-Current Features: None :P
+Current Features: Basic Loot Command
