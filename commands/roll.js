@@ -1,9 +1,8 @@
-
 const Discord = require('discord.js');
 exports.run = (client, message, args, level) => {
 
-	const dice = ["d4", "d6", "d8", "d10", "d12", "d20"];
-	if(!dice.includes(args[0])) return;
+	const dice = ["d4", "d6", "d8", "d10", "d12", "d20", "percentile", "percent", "p"];
+	if(!dice.includes(args[0])) return message.channel.send("Usage: [roll](<..dice>)", { code: "markdown" });
 
 	const die = args[0];
 	let amount = 1;
@@ -12,49 +11,52 @@ exports.run = (client, message, args, level) => {
 
 	const embed = new Discord.RichEmbed()
 		.setAuthor(message.member.displayName, message.author.displayAvatarURL)
-		.setTitle("The dice has been cast...")
+		.setDescription("The dice has been cast...")
 		.setFooter(client.user.username, client.user.displayAvatarURL)
-		.setTimestamp()
+		.setTimestamp();
 
+	// D4 Dice (1 - 4)
 	if(die === "d4"){
-		for(i=0; amount>i;  i++){
-			const d4 = require("../modules/dice/d4.js");
+		for(let i = 0; amount > i; i++){
 			embed.addField(`Dice #${i + 1} 🎲`, `${d4()}`, true);
 		}
 	}
-
+	// D6 Dice (1 - 6)
 	if(die === "d6"){
-		for(i=0; amount>i;  i++){
-			const d6 = require("../modules/dice/d6.js");
+		for(let i = 0; amount > i; i++){
 			embed.addField(`Dice #${i + 1} 🎲`, `${d6()}`, true);
 		}
 	}
-
+	// D8 Dice (1 - 8)
 	if(die === "d8"){
-		for(i=0; amount>i;  i++){
-			const d8 = require("../modules/dice/d8.js");
-			embed.addField(`Dice #${i + 1} 🎲`, `${d8()}`, true)
+		for(let i = 0; amount > i; i++){
+			embed.addField(`Dice #${i + 1} 🎲`, `${d8()}`, true);
 		}
 	}
-
-	if(die === "d12"){
-		for(i=0; amount>i;  i++){
-			const d12 = require("../modules/dice/d12.js");
-			embed.addField(`Dice #${i + 1} 🎲`, `${d12()}`, true)
-		}
-	}
-
+	// D10 Dice (1 - 10)
 	if(die === "d10"){
-		for(i=0; amount>i;  i++){
-			const d10 = require("../modules/dice/d10.js");
-			embed.addField(`Dice #${i + 1} 🎲`, `${d10()}`, true)
+		for(let i = 0; amount > i; i++){
+			embed.addField(`Dice #${i + 1} 🎲`, `${d10()}`, true);
 		}
 	}
-
+	// D12 Dice (1 - 12)
+	if(die === "d12"){
+		for(let i = 0; amount > i; i++){
+			embed.addField(`Dice #${i + 1} 🎲`, `${d12()}`, true);
+		}
+	}
+	// D20 Dice (1 - 20)
 	if(die === "d20"){
-		for(i=0; amount>i;  i++){
-			const d20 = require("../modules/dice/d20.js");
-			embed.addField(`Dice #${i + 1} 🎲`, `${d20()}`, true)
+		for(let i = 0; amount > i; i++){
+			embed.addField(`Dice #${i + 1} 🎲`, `${d20()}`, true);
+		}
+	}
+	// Percentile Dice (00 - 90) [00 technically means 100]
+	if(die === "percentile" || die === "percent" || "p"){
+		for(let i = 0; amount > i; i++){
+			let num = percentile();
+			if(num === 0) num = "00";
+			embed.addField(`Dice #${i + 1} 🎲`, `${percentile()}`, true);
 		}
 	}
 	message.channel.send({ embed });
@@ -64,7 +66,7 @@ exports.conf = {
 	enabled: true,
 	guildOnly: false,
 	aliases: ["dice"],
-	permLevel: 10,
+	permLevel: 0,
 };
 
 exports.help = {
