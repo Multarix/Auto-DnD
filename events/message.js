@@ -6,6 +6,7 @@ module.exports = async (client, message) => {
 	if(message.channel.type === "dm") return;
 	if(!message.channel.memberPermissions(message.guild.me).has("SEND_MESSAGES")) return;
 
+	const level = client.permlevel(message);
 	const mention = new RegExp(`^<@!?${client.user.id}>`);
 	const mentionCheck = message.content.match(mention) ? message.content.match(mention)[0] : '!';
 
@@ -27,8 +28,14 @@ module.exports = async (client, message) => {
 	}
 	const cmd = client.commands.get(command) || client.commands.get(client.aliases.get(command));
 
-	if (cmd && cmd.conf.enabled === true) {
-			cmd.run(client, message, args);
+	if (cmd && level >= cmd.conf.permLevel) {
+		if(cmd.conf.enabled === true){
+			cmd.run(client, message, args, level);
+		} else {
+			client.log(`"${message.author.tag}" tried to use the disabled command "${cmd.help.name}"`, "Log");
+		}
+	} else if (cmd && level < cmd.conf.permLevel){
+		client.log(`"${message.author.tag}" tried to use command: "${cmd.help.name}"`, "Log");
 	}
 };
 

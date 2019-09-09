@@ -3,21 +3,12 @@ const fs = require('fs');
 module.exports = async (client) => {
 
 	//	Permission level for commands.
-	client.permlevel = (message, data) => {
+	client.permlevel = (message) => {
 		let permlvl = 0;
 
-		if(!message.guild || !message.member) permlvl = 0;
+		if(!message.guild || !message.member) return permlvl = 0;
 		if(message.author.id === client.config.ownerID) return permlvl = 10;
-		if(message.author.id === message.guild.owner.id) return permlvl = 5;
-
-		const adminRole = message.guild.roles.get(data.admin);
-		if (adminRole && message.member.roles.has(adminRole.id)) return permlvl = 4;
-
-		const modRole = message.guild.roles.get(data.moderator);
-		if (modRole && message.member.roles.has(modRole.id)) return permlvl = 3;
-
-		const memRole = message.guild.roles.get(data.member);
-		if (memRole && message.member.roles.has(memRole.id)) return permlvl = 1;
+		if(message.author.id === message.guild.owner.id) return permlvl = 1;
 
 		return permlvl;
 	};
@@ -119,10 +110,18 @@ module.exports = async (client) => {
 		return guild.roles.get(roleID);
 	};
 
+	global.d4 = require("../modules/dice/d4.js");
+	global.d6 = require("../modules/dice/d6.js");
+	global.d8 = require("../modules/dice/d8.js");
+	global.d10 = require("../modules/dice/d10.js");
+	global.d12 = require("../modules/dice/d12.js");
+	global.d20 = require("../modules/dice/d20.js");
+	global.percentile = require("../modules/dice/percentile.js");
+
 	// I see your unhandled things, and present to you, handled things!
 
 	process.on("uncaughtException", (err) => {
-		const thime = require("../modules/time.js");
+		const thime = require("../modules/misc/time.js");
 		const time = thime();
 		const errorMsg = err.stack.replace(new RegExp(`${__dirname}/`, "g"), "./");
 		fs.appendFileSync("./logs.txt", `\n[${time.exactDate}] (${time.time}) ${"Uncaught Exception:" + errorMsg.toString().replace(/\[3[7&9]m/g, "")}`);	// eslint-disable-line no-control-regex
@@ -130,7 +129,7 @@ module.exports = async (client) => {
 	});
 
 	process.on("unhandledRejection", err => {
-		const thime = require("../modules/time.js");
+		const thime = require("../modules/misc/time.js");
 		const time = thime();
 		fs.appendFileSync("./logs.txt", `\n[${time.exactDate}] (${time.time}) ${err.toString().replace(/\[3[7&9]m/g, "")}`);	// eslint-disable-line no-control-regex
 		console.error("Uncaught Promise Error: ", err);
