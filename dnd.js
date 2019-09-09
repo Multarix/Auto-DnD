@@ -1,5 +1,4 @@
 const Discord = require("discord.js");
-const sql = require("sqlite");
 
 const { promisify } = require("util");
 const readdir = promisify(require("fs").readdir);
@@ -46,7 +45,6 @@ const init = async () => {
 			client.log(`Unable to load event ${file}: ${e}`, "Error");
 		}
 	});
-	sql.open("./objects/settings.sqlite");
 	client.login(client.config.clientTokenBeta);
 };
 
