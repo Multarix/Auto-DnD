@@ -1,5 +1,4 @@
 const colors = require("colors");
-const sql = require("sqlite");
 module.exports = async client => {
 
 	await wait(1000);

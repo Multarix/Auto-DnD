@@ -1,5 +1,4 @@
 const Discord = require('discord.js');
-const sql = require("sqlite");
 module.exports = async (client, message) => {
 
 	if(message.author.bot) return;
