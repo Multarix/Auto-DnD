@@ -16,10 +16,10 @@ exports.run = (client, message, args, level) => {
 };
 
 exports.conf = {
-	enabled: false,
+	enabled: true,
 	guildOnly: false,
 	aliases: ["massdelete"],
-	permLevel: 3,
+	permLevel: 1,
 };
 
 exports.help = {

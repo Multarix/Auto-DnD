@@ -50,7 +50,7 @@ exports.run = async (client, message, args, level) => {
 };
 
 exports.conf = {
-	enabled: false,
+	enabled: true,
 	guildOnly: false,
 	aliases: ["e", "js"],
 	permLevel: 10,

@@ -1,15 +1,12 @@
-const sql = require("sqlite");
 const Discord = require("discord.js");
 exports.run = async (client, message, args, level) => {
-
-	const settings = await sql.get(`SELECT * FROM settings WHERE guild = "${message.guild.id}"`);
 
 	let ecolor = false;
 	if(message.member.highestRole.color) ecolor = message.member.highestRole.color;
 
 	const embed = new Discord.RichEmbed()
 		.setAuthor(`Commands for:  ${message.author.tag}`, message.author.displayAvatarURL)
-		.setDescription(`Use ${settings.prefix}help <commandname> for more details`)
+		.setDescription(`Use ${client.config.prefix}help <commandname> for more details`)
 		.setThumbnail(message.guild.iconURL)
 		.setFooter(client.user.tag, client.user.displayAvatarURL)
 		.setTimestamp();
@@ -43,13 +40,13 @@ exports.run = async (client, message, args, level) => {
 	} else {
 		const command = client.commands.get(args[0]) || client.commands.get(client.aliases.get(args[0]));
 		if(command) {
-			message.channel.send(`< ${command.help.name.toProperCase()} > \n${command.help.description}\nUsage: [${settings.prefix}${command.help.name}](<${command.help.usage.split(" ").join("> <")}>)`, { code:"markdown" });
+			message.channel.send(`< ${command.help.name.toProperCase()} > \n${command.help.description}\nUsage: [${client.config.prefix}${command.help.name}](<${command.help.usage.split(" ").join("> <")}>)`, { code:"markdown" });
 		}
 	}
 };
 
 exports.conf = {
-	enabled: false,
+	enabled: true,
 	guildOnly: false,
 	aliases: ["commands", "h"],
 	permLevel: 0,
