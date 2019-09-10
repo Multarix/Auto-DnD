@@ -2,7 +2,6 @@ const Discord = require('discord.js');
 module.exports = async (client, message) => {
 
 	if(message.author.bot) return;
-	if(message.channel.type === "dm") return;
 	if(!message.channel.memberPermissions(message.guild.me).has("SEND_MESSAGES")) return;
 
 	const level = client.permlevel(message);
