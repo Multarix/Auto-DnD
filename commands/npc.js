@@ -1,9 +1,11 @@
+/*
 Strength
 Dexterity
 Constitution
 Intelligence
 Wisdom
 Charisma
+*/
 
 exports.run = async (client, message, args) => {
 	/*
