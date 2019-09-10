@@ -1,7 +1,5 @@
 const Discord = require('discord.js');
-const percentile = require("../modules/dice/percentile.js");
-const individual = require("./loot/individual.js");
-const hoard = require("./loot/hoard.js");
+
 exports.run = (client, message, args) => {
 
 	const tens = percentile();
@@ -29,19 +27,20 @@ exports.run = (client, message, args) => {
 	// Individual Treasure
 	typeArray = ["individual", "indi", "ind", "i", "it", "personal", "p", "self", "s"];
 	if(typeArray.includes(type)){
+		const individual = require("./loot/individual.js");
 		return individual(challenge, roll, message, embed);
 	}
-	/*
+	// Treasure Hoard
 	typeArray = ["treasure", "hoard", "tres", "tr", "th", "t", "h"];
-	if(typeArray.includes(type){
-		return;
+	if(typeArray.includes(type)){
+		const hoard = require("./loot/hoard.js");
+		return hoard(challenge, roll, message, embed);
 	}
-	*/
 };
 
 exports.conf = {
 	enabled: true,
-	guildOnly: true,
+	guildOnly: false,
 	aliases: [],
 	permLevel: 0,
 };
