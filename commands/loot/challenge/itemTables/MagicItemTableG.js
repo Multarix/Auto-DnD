@@ -46,10 +46,10 @@ module.exports = (roll) => {
 	if(roll === 48)	return "1 **Horn of Valhalla (Silver or Brass)**\n";
 	if(roll === 49)	return "1 **Instrument of the bards (Canaithmandolin)**\n";
 	if(roll === 50)	return "1 **Instrument of the bards (Cii Lyre)**\n";
-	if(roll === 51)	return "1 **Loun Stone (Awareness)**\n";
-	if(roll === 52)	return "1 **Loun Stone (Protection)**\n";
-	if(roll === 53)	return "1 **Loun Stone (Reserve)**\n";
-	if(roll === 54)	return "1 **Loun Stone (Sustenance)**\n";
+	if(roll === 51)	return "1 **Ioun Stone (Awareness)**\n";
+	if(roll === 52)	return "1 **Ioun Stone (Protection)**\n";
+	if(roll === 53)	return "1 **Ioun Stone (Reserve)**\n";
+	if(roll === 54)	return "1 **Ioun Stone (Sustenance)**\n";
 	if(roll === 55)	return "1 **Iron Bands of Bilarro**\n";
 	if(roll === 56)	return "1 **Armor, +1 Leather**\n";
 	if(roll === 57)	return "1 **Armor of Resistance (Leather)**\n";
@@ -96,5 +96,4 @@ module.exports = (roll) => {
 	if(roll === 98) return "1 **+2 Wand of the War Mage**\n";
 	if(roll === 99) return "1 **Wand of Wonder**\n";
 	if(roll === 100) return "1 **Wings of Flying**\n";
-
 };
