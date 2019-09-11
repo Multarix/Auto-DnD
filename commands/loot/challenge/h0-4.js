@@ -436,12 +436,12 @@ ${rollItems}`, false);
 	// Magic Item Table F
 	// 86-92
 	if(roll <= 92){
-		const gemRolls = [];
-		let gems = 0;
+		const artRolls = [];
+		let art = 0;
 		for(let i = 0; i < 2; i++){
 			const num = d4();
-			gemRolls.push(num);
-			gems += num;
+			artRolls.push(num);
+			art += num;
 		}
 		let rollItems = '';
 		const rollAmount = d6();
@@ -460,13 +460,13 @@ ${rollItems}`, false);
 			.addField("Item Rolls:", `${cp.join(", ")} (${cpAmount})
 ${sp.join(", ")} (${spAmount})
 ${gp.join(", ")} (${gpAmount})
-${gemRolls.join(", ")} (${gems})
+${artRolls.join(", ")} (${art})
 ${rollAmount} (${rollNumbers.join(", ")})`, true)
 			.addBlankField(true)
 			.addField("Final Loot:", `${cpAmount * 100} **Copper Pieces**
 ${spAmount * 100} **Silver Pieces**
 ${gpAmount * 10} **Gold Pieces**
-${gems} **25 GP Gems**
+${art} **25 GP Gems**
 ${rollItems}`, false);
 		return message.channel.send({ embed });
 	}
@@ -548,7 +548,7 @@ ${rollItems}`, false);
 	if(roll === 100){
 		const gemRolls = [];
 		let gems = 0;
-		for(let i = 0; i < 1; i++){
+		for(let i = 0; i < 2; i++){
 			const num = d6();
 			gemRolls.push(num);
 			gems += num;
