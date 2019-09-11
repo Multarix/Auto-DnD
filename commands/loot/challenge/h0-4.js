@@ -116,22 +116,31 @@ ${gems} **50 GP Gems**`, false);
 			gemRolls.push(num);
 			gems += num;
 		}
+		let rollItems = '';
+		const rollAmount = d6();
+		const rollNumbers = [];
+		for(let i = 0; i < rollAmount; i++){
+			const tableA = require("./itemTables/MagicItemTableA.js");
+			const num = Math.floor(Math.random() * 100 + 1);
+			rollNumbers.push(num);
+			rollItems += tableA(num);
+		}
 		embed.addField("Loot Class:", `6 D6 x100 - **Copper Pieces**
 3 D6 x100 - **Silver Pieces**
 2 D6 x10 - **Gold Pieces**
 2 D6 - **10 GP Gems**
-1 D6? - **Magic Item Table A**`, true)
+1 D6 - **Magic Item Table A**`, true)
 			.addField("Item Rolls:", `${cp.join(", ")} (${cpAmount})
 ${sp.join(", ")} (${spAmount})
 ${gp.join(", ")} (${gpAmount})
 ${gemRolls.join(", ")} (${gems})
-[Magic Table Roll]`, true)
+${rollAmount} (${rollNumbers.join(", ")})`, true)
 			.addBlankField(true)
 			.addField("Final Loot:", `${cpAmount * 100} **Copper Pieces**
 ${spAmount * 100} **Silver Pieces**
 ${gpAmount * 10} **Gold Pieces**
 ${gems} **10 GP Gems**
-[Table A Item]`, false);
+${rollItems}`, false);
 		return message.channel.send({ embed });
 	}
 	// 45-52
@@ -143,22 +152,31 @@ ${gems} **10 GP Gems**
 			artRolls.push(num);
 			art += num;
 		}
+		let rollItems = '';
+		const rollAmount = d6();
+		const rollNumbers = [];
+		for(let i = 0; i < rollAmount; i++){
+			const tableA = require("./itemTables/MagicItemTableA.js");
+			const num = Math.floor(Math.random() * 100 + 1);
+			rollNumbers.push(num);
+			rollItems += tableA(num);
+		}
 		embed.addField("Loot Class:", `6 D6 x100 - **Copper Pieces**
 3 D6 x100 - **Silver Pieces**
 2 D6 x10 - **Gold Pieces**
 2 D4 - **25 GP Art Objects**
-1 D6? - **Magic Item Table A**`, true)
+1 D6 - **Magic Item Table A**`, true)
 			.addField("Item Rolls:", `${cp.join(", ")} (${cpAmount})
 ${sp.join(", ")} (${spAmount})
 ${gp.join(", ")} (${gpAmount})
 ${artRolls.join(", ")} (${art})
-[Magic Table Roll]`, true)
+${rollAmount} (${rollNumbers.join(", ")})`, true)
 			.addBlankField(true)
 			.addField("Final Loot:", `${cpAmount * 100} **Copper Pieces**
 ${spAmount * 100} **Silver Pieces**
 ${gpAmount * 10} **Gold Pieces**
 ${art} **25 GP Art Objects**
-[Table A Item]`, false);
+${rollItems}`, false);
 		return message.channel.send({ embed });
 	}
 	// 53-60
@@ -170,22 +188,31 @@ ${art} **25 GP Art Objects**
 			gemRolls.push(num);
 			gems += num;
 		}
+		let rollItems = '';
+		const rollAmount = d6();
+		const rollNumbers = [];
+		for(let i = 0; i < rollAmount; i++){
+			const tableA = require("./itemTables/MagicItemTableA.js");
+			const num = Math.floor(Math.random() * 100 + 1);
+			rollNumbers.push(num);
+			rollItems += tableA(num);
+		}
 		embed.addField("Loot Class:", `6 D6 x100 - **Copper Pieces**
 3 D6 x100 - **Silver Pieces**
 2 D6 x10 - **Gold Pieces**
 2 D6 - **50 GP Gems**
-1 D6? - **Magic Item Table A**`, true)
+1 D6 - **Magic Item Table A**`, true)
 			.addField("Item Rolls:", `${cp.join(", ")} (${cpAmount})
 ${sp.join(", ")} (${spAmount})
 ${gp.join(", ")} (${gpAmount})
 ${gemRolls.join(", ")} (${gems})
-[Magic Table Roll]`, true)
+${rollAmount} (${rollNumbers.join(", ")})`, true)
 			.addBlankField(true)
 			.addField("Final Loot:", `${cpAmount * 100} **Copper Pieces**
 ${spAmount * 100} **Silver Pieces**
 ${gpAmount * 10} **Gold Pieces**
 ${gems} **50 GP Gems**
-[Table A Item]`, false);
+${rollItems}`, false);
 		return message.channel.send({ embed });
 	}
 	// Magic Item Table B
@@ -198,22 +225,31 @@ ${gems} **50 GP Gems**
 			gemRolls.push(num);
 			gems += num;
 		}
+		let rollItems = '';
+		const rollAmount = d6();
+		const rollNumbers = [];
+		for(let i = 0; i < rollAmount; i++){
+			const tableA = require("./itemTables/MagicItemTableB.js");
+			const num = Math.floor(Math.random() * 100 + 1);
+			rollNumbers.push(num);
+			rollItems += tableA(num);
+		}
 		embed.addField("Loot Class:", `6 D6 x100 - **Copper Pieces**
 3 D6 x100 - **Silver Pieces**
 2 D6 x10 - **Gold Pieces**
 2 D6 - **10 GP Gems**
-1 D6? - **Magic Item Table B**`, true)
+1 D6 - **Magic Item Table B**`, true)
 			.addField("Item Rolls:", `${cp.join(", ")} (${cpAmount})
 ${sp.join(", ")} (${spAmount})
 ${gp.join(", ")} (${gpAmount})
 ${gemRolls.join(", ")} (${gems})
-[Magic Table Roll]`, true)
+${rollAmount} (${rollNumbers.join(", ")})`, true)
 			.addBlankField(true)
 			.addField("Final Loot:", `${cpAmount * 100} **Copper Pieces**
 ${spAmount * 100} **Silver Pieces**
 ${gpAmount * 10} **Gold Pieces**
 ${gems} **10 GP Gems**
-[Table B Item]`, false);
+${rollItems}`, false);
 		return message.channel.send({ embed });
 	}
 	// 66-70
@@ -225,22 +261,31 @@ ${gems} **10 GP Gems**
 			artRolls.push(num);
 			art += num;
 		}
+		let rollItems = '';
+		const rollAmount = d6();
+		const rollNumbers = [];
+		for(let i = 0; i < rollAmount; i++){
+			const tableA = require("./itemTables/MagicItemTableB.js");
+			const num = Math.floor(Math.random() * 100 + 1);
+			rollNumbers.push(num);
+			rollItems += tableA(num);
+		}
 		embed.addField("Loot Class:", `6 D6 x100 - **Copper Pieces**
 3 D6 x100 - **Silver Pieces**
 2 D6 x10 - **Gold Pieces**
 2 D4 - **25 GP Art Objects**
-1 D6? - **Magic Item Table B**`, true)
+1 D6 - **Magic Item Table B**`, true)
 			.addField("Item Rolls:", `${cp.join(", ")} (${cpAmount})
 ${sp.join(", ")} (${spAmount})
 ${gp.join(", ")} (${gpAmount})
 ${artRolls.join(", ")} (${art})
-[Magic Table Roll]`, true)
+${rollAmount} (${rollNumbers.join(", ")})`, true)
 			.addBlankField(true)
 			.addField("Final Loot:", `${cpAmount * 100} **Copper Pieces**
 ${spAmount * 100} **Silver Pieces**
 ${gpAmount * 10} **Gold Pieces**
 ${art} **25 GP Art Objects**
-[Table B Item]`, false);
+${rollItems}`, false);
 		return message.channel.send({ embed });
 	}
 	// 71-75
@@ -252,22 +297,31 @@ ${art} **25 GP Art Objects**
 			gemRolls.push(num);
 			gems += num;
 		}
+		let rollItems = '';
+		const rollAmount = d6();
+		const rollNumbers = [];
+		for(let i = 0; i < rollAmount; i++){
+			const tableA = require("./itemTables/MagicItemTableB.js");
+			const num = Math.floor(Math.random() * 100 + 1);
+			rollNumbers.push(num);
+			rollItems += tableA(num);
+		}
 		embed.addField("Loot Class:", `6 D6 x100 - **Copper Pieces**
 3 D6 x100 - **Silver Pieces**
 2 D6 x10 - **Gold Pieces**
 2 D6 - **50 GP Gems**
-1 D6? - **Magic Item Table B**`, true)
+1 D6 - **Magic Item Table B**`, true)
 			.addField("Item Rolls:", `${cp.join(", ")} (${cpAmount})
 ${sp.join(", ")} (${spAmount})
 ${gp.join(", ")} (${gpAmount})
 ${gemRolls.join(", ")} (${gems})
-[Magic Table Roll]`, true)
+${rollAmount} (${rollNumbers.join(", ")})`, true)
 			.addBlankField(true)
 			.addField("Final Loot:", `${cpAmount * 100} **Copper Pieces**
 ${spAmount * 100} **Silver Pieces**
 ${gpAmount * 10} **Gold Pieces**
 ${gems} **50 GP Gems**
-[Table B Item]`, false);
+${rollItems}`, false);
 		return message.channel.send({ embed });
 	}
 	// Magic Item Table C
@@ -280,22 +334,31 @@ ${gems} **50 GP Gems**
 			gemRolls.push(num);
 			gems += num;
 		}
+		let rollItems = '';
+		const rollAmount = d6();
+		const rollNumbers = [];
+		for(let i = 0; i < rollAmount; i++){
+			const tableA = require("./itemTables/MagicItemTableC.js");
+			const num = Math.floor(Math.random() * 100 + 1);
+			rollNumbers.push(num);
+			rollItems += tableA(num);
+		}
 		embed.addField("Loot Class:", `6 D6 x100 - **Copper Pieces**
 3 D6 x100 - **Silver Pieces**
 2 D6 x10 - **Gold Pieces**
 2 D6 - **10 GP Gems**
-1 D6? - **Magic Item Table C**`, true)
+1 D6 - **Magic Item Table C**`, true)
 			.addField("Item Rolls:", `${cp.join(", ")} (${cpAmount})
 ${sp.join(", ")} (${spAmount})
 ${gp.join(", ")} (${gpAmount})
 ${gemRolls.join(", ")} (${gems})
-[Magic Table Roll]`, true)
+${rollAmount} (${rollNumbers.join(", ")})`, true)
 			.addBlankField(true)
 			.addField("Final Loot:", `${cpAmount * 100} **Copper Pieces**
 ${spAmount * 100} **Silver Pieces**
 ${gpAmount * 10} **Gold Pieces**
 ${gems} **10 GP Gems**
-[Table C Item]`, false);
+${rollItems}`, false);
 		return message.channel.send({ embed });
 	}
 	// 79-80
@@ -307,22 +370,31 @@ ${gems} **10 GP Gems**
 			artRolls.push(num);
 			art += num;
 		}
+		let rollItems = '';
+		const rollAmount = d6();
+		const rollNumbers = [];
+		for(let i = 0; i < rollAmount; i++){
+			const tableA = require("./itemTables/MagicItemTableC.js");
+			const num = Math.floor(Math.random() * 100 + 1);
+			rollNumbers.push(num);
+			rollItems += tableA(num);
+		}
 		embed.addField("Loot Class:", `6 D6 x100 - **Copper Pieces**
 3 D6 x100 - **Silver Pieces**
 2 D6 x10 - **Gold Pieces**
 2 D4 - **25 GP Art Objects**
-1 D6? - **Magic Item Table C**`, true)
+1 D6 - **Magic Item Table C**`, true)
 			.addField("Item Rolls:", `${cp.join(", ")} (${cpAmount})
 ${sp.join(", ")} (${spAmount})
 ${gp.join(", ")} (${gpAmount})
 ${artRolls.join(", ")} (${art})
-[Magic Table Roll]`, true)
+${rollAmount} (${rollNumbers.join(", ")})`, true)
 			.addBlankField(true)
 			.addField("Final Loot:", `${cpAmount * 100} **Copper Pieces**
 ${spAmount * 100} **Silver Pieces**
 ${gpAmount * 10} **Gold Pieces**
 ${art} **25 GP Art Objects**
-[Table C Item]`, false);
+${rollItems}`, false);
 		return message.channel.send({ embed });
 	}
 	// 81-85
@@ -334,22 +406,31 @@ ${art} **25 GP Art Objects**
 			gemRolls.push(num);
 			gems += num;
 		}
+		let rollItems = '';
+		const rollAmount = d6();
+		const rollNumbers = [];
+		for(let i = 0; i < rollAmount; i++){
+			const tableA = require("./itemTables/MagicItemTableC.js");
+			const num = Math.floor(Math.random() * 100 + 1);
+			rollNumbers.push(num);
+			rollItems += tableA(num);
+		}
 		embed.addField("Loot Class:", `6 D6 x100 - **Copper Pieces**
 3 D6 x100 - **Silver Pieces**
 2 D6 x10 - **Gold Pieces**
 2 D6 - **50 GP Gems**
-1 D6? - **Magic Item Table C**`, true)
+1 D6 - **Magic Item Table C**`, true)
 			.addField("Item Rolls:", `${cp.join(", ")} (${cpAmount})
 ${sp.join(", ")} (${spAmount})
 ${gp.join(", ")} (${gpAmount})
 ${gemRolls.join(", ")} (${gems})
-[Magic Table Roll]`, true)
+${rollAmount} (${rollNumbers.join(", ")})`, true)
 			.addBlankField(true)
 			.addField("Final Loot:", `${cpAmount * 100} **Copper Pieces**
 ${spAmount * 100} **Silver Pieces**
 ${gpAmount * 10} **Gold Pieces**
 ${gems} **50 GP Gems**
-[Table C Item]`, false);
+${rollItems}`, false);
 		return message.channel.send({ embed });
 	}
 	// Magic Item Table F
@@ -362,22 +443,31 @@ ${gems} **50 GP Gems**
 			gemRolls.push(num);
 			gems += num;
 		}
+		let rollItems = '';
+		const rollAmount = d6();
+		const rollNumbers = [];
+		for(let i = 0; i < rollAmount; i++){
+			const tableA = require("./itemTables/MagicItemTableF.js");
+			const num = Math.floor(Math.random() * 100 + 1);
+			rollNumbers.push(num);
+			rollItems += tableA(num);
+		}
 		embed.addField("Loot Class:", `6 D6 x100 - **Copper Pieces**
 3 D6 x100 - **Silver Pieces**
 2 D6 x10 - **Gold Pieces**
 2 D4 - **25 GP Gems**
-1 D6? - **Magic Item Table F**`, true)
+1 D6 - **Magic Item Table F**`, true)
 			.addField("Item Rolls:", `${cp.join(", ")} (${cpAmount})
 ${sp.join(", ")} (${spAmount})
 ${gp.join(", ")} (${gpAmount})
 ${gemRolls.join(", ")} (${gems})
-[Magic Table Roll]`, true)
+${rollAmount} (${rollNumbers.join(", ")})`, true)
 			.addBlankField(true)
 			.addField("Final Loot:", `${cpAmount * 100} **Copper Pieces**
 ${spAmount * 100} **Silver Pieces**
 ${gpAmount * 10} **Gold Pieces**
 ${gems} **25 GP Gems**
-[Table F Item]`, false);
+${rollItems}`, false);
 		return message.channel.send({ embed });
 	}
 	// 93-97
@@ -389,22 +479,31 @@ ${gems} **25 GP Gems**
 			gemRolls.push(num);
 			gems += num;
 		}
+		let rollItems = '';
+		const rollAmount = d6();
+		const rollNumbers = [];
+		for(let i = 0; i < rollAmount; i++){
+			const tableA = require("./itemTables/MagicItemTableF.js");
+			const num = Math.floor(Math.random() * 100 + 1);
+			rollNumbers.push(num);
+			rollItems += tableA(num);
+		}
 		embed.addField("Loot Class:", `6 D6 x100 - **Copper Pieces**
 3 D6 x100 - **Silver Pieces**
 2 D6 x10 - **Gold Pieces**
 2 D6 - **50 GP Gems**
-1 D6? - **Magic Item Table F**`, true)
+1 D6 - **Magic Item Table F**`, true)
 			.addField("Item Rolls:", `${cp.join(", ")} (${cpAmount})
 ${sp.join(", ")} (${spAmount})
 ${gp.join(", ")} (${gpAmount})
 ${gemRolls.join(", ")} (${gems})
-[Magic Table Roll]`, true)
+${rollAmount} (${rollNumbers.join(", ")})`, true)
 			.addBlankField(true)
 			.addField("Final Loot:", `${cpAmount * 100} **Copper Pieces**
 ${spAmount * 100} **Silver Pieces**
 ${gpAmount * 10} **Gold Pieces**
 ${gems} **50 GP Gems**
-[Table F Item]`, false);
+${rollItems}`, false);
 		return message.channel.send({ embed });
 	}
 	// Magic Item Table G
@@ -417,22 +516,31 @@ ${gems} **50 GP Gems**
 			artRolls.push(num);
 			art += num;
 		}
+		let rollItems = '';
+		const rollAmount = d6();
+		const rollNumbers = [];
+		for(let i = 0; i < rollAmount; i++){
+			const tableA = require("./itemTables/MagicItemTableG.js");
+			const num = Math.floor(Math.random() * 100 + 1);
+			rollNumbers.push(num);
+			rollItems += tableA(num);
+		}
 		embed.addField("Loot Class:", `6 D6 x100 - **Copper Pieces**
 3 D6 x100 - **Silver Pieces**
 2 D6 x10 - **Gold Pieces**
 2 D4 - **25 GP Art Objects**
-1 D6? - **Magic Item Table G**`, true)
+1 D6 - **Magic Item Table G**`, true)
 			.addField("Item Rolls:", `${cp.join(", ")} (${cpAmount})
 ${sp.join(", ")} (${spAmount})
 ${gp.join(", ")} (${gpAmount})
 ${artRolls.join(", ")} (${art})
-[Magic Table Roll]`, true)
+${rollAmount} (${rollNumbers.join(", ")})`, true)
 			.addBlankField(true)
 			.addField("Final Loot:", `${cpAmount * 100} **Copper Pieces**
 ${spAmount * 100} **Silver Pieces**
 ${gpAmount * 10} **Gold Pieces**
 ${art} **25 GP Art Objects**
-[Table G Item]`, false);
+${rollItems}`, false);
 		return message.channel.send({ embed });
 	}
 	// Magic Item Table G
@@ -445,22 +553,31 @@ ${art} **25 GP Art Objects**
 			gemRolls.push(num);
 			gems += num;
 		}
+		let rollItems = '';
+		const rollAmount = d6();
+		const rollNumbers = [];
+		for(let i = 0; i < rollAmount; i++){
+			const tableA = require("./itemTables/MagicItemTableG.js");
+			const num = Math.floor(Math.random() * 100 + 1);
+			rollNumbers.push(num);
+			rollItems += tableA(num);
+		}
 		embed.addField("Loot Class:", `6 D6 x100 - **Copper Pieces**
 3 D6 x100 - **Silver Pieces**
 2 D6 x10 - **Gold Pieces**
 2 D6 - **50 GP Gems**
-1 D6? - **Magic Item Table G**`, true)
+1 D6 - **Magic Item Table G**`, true)
 			.addField("Item Rolls:", `${cp.join(", ")} (${cpAmount})
 ${sp.join(", ")} (${spAmount})
 ${gp.join(", ")} (${gpAmount})
 ${gemRolls.join(", ")} (${gems})
-[Magic Table Roll]`, true)
+${rollAmount} (${rollNumbers.join(", ")})`, true)
 			.addBlankField(true)
 			.addField("Final Loot:", `${cpAmount * 100} **Copper Pieces**
 ${spAmount * 100} **Silver Pieces**
 ${gpAmount * 10} **Gold Pieces**
 ${gems} **50 GP Gems**
-[Table G Item]`, false);
+${rollItems}`, false);
 		return message.channel.send({ embed });
 	}
 
