@@ -13,7 +13,7 @@ module.exports = (roll) => {
 	if(roll <= 72) return "1 **Spell Scroll (5th level)**\n";
 	if(roll <= 75) return "1 **Elixir of Health**\n";
 	if(roll <= 78) return "1 **Oil of Etherealness**\n";
-	if(roll <= 81) return "1 **Potion of Fire Gaitn Strength**\n";
+	if(roll <= 81) return "1 **Potion of Fire Giant Strength**\n";
 	if(roll <= 84) return "1 **Quaal's Feather Token**\n";
 	if(roll <= 87) return "1 **Scroll of Protection**\n";
 	if(roll <= 89) return "1 **Bag of Beans**\n";
@@ -21,7 +21,7 @@ module.exports = (roll) => {
 	if(roll === 92)	return "1 **Chime of Opening**\n";
 	if(roll === 93)	return "1 **Decanter of Endless Water**\n";
 	if(roll === 94)	return "1 **Eyes of Minute Seeing**\n";
-	if(roll === 95) return "1 **Foldiong Boat**\n";
+	if(roll === 95) return "1 **Folding Boat**\n";
 	if(roll === 96) return "1 **Hewards Handy Haversack**\n";
 	if(roll === 97) return "1 **Horseshoes of speed**\n";
 	if(roll === 98) return "1 **Necklace of Fireballs**\n";

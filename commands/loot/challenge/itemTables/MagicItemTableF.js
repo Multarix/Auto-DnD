@@ -5,7 +5,7 @@ module.exports = (roll) => {
 	if(roll <= 23) return "1 **Amulet of Proof against Detection and Location**\n";
 	if(roll <= 25) return "1 **Boots of Elvenkind**\n";
 	if(roll <= 27) return "1 **Boots of Striding and Springing**\n";
-	if(roll <= 29) return "1 **Bracer of Archery**\n";
+	if(roll <= 29) return "1 **Bracers of Archery**\n";
 	if(roll <= 31) return "1 **Brooch of Shielding**\n";
 	if(roll <= 33) return "1 **Broom of Flying**\n";
 	if(roll <= 35) return "1 **Cloak of Elvenkind**\n";
@@ -18,7 +18,7 @@ module.exports = (roll) => {
 	if(roll <= 49) return "1 **Slippers of Spider Climbing**\n";
 	if(roll <= 51) return "1 **Staff of the Adder**\n";
 	if(roll <= 53) return "1 **Staff of the Python**\n";
-	if(roll <= 55) return "1 **Sword of Vengence**\n";
+	if(roll <= 55) return "1 **Sword of Vengeance**\n";
 	if(roll <= 57) return "1 **Trident of Fish Command**\n";
 	if(roll <= 59) return "1 **Wand of Magic Missiles**\n";
 	if(roll <= 61) return "1 **+1 Wand of the War Mage**\n";
@@ -44,7 +44,7 @@ module.exports = (roll) => {
 	if(roll === 83) return "1 **Headband of Intellect**\n";
 	if(roll === 84) return "1 **Helm of Telepathy**\n";
 	if(roll === 85) return "1 **Instrument of the Bards (Doss Lute)**\n";
-	if(roll === 86) return "1 **Instrument of the Bards (Gochlucan Bandore)**\n";
+	if(roll === 86) return "1 **Instrument of the Bards (Fochlucan Bandore)**\n";
 	if(roll === 87) return "1 **Instrument of the Bards (Mac-Fuimidh Cittern)**\n";
 	if(roll === 88) return "1 **Medallion of Thoughts**\n";
 	if(roll === 89) return "1 **Necklace of Adaptation**\n";

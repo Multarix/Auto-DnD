@@ -45,7 +45,7 @@ module.exports = (roll) => {
 	if(roll === 47)	return "1 **Horn of Blasting**\n";
 	if(roll === 48)	return "1 **Horn of Valhalla (Silver or Brass)**\n";
 	if(roll === 49)	return "1 **Instrument of the bards (Canaithmandolin)**\n";
-	if(roll === 50)	return "1 **Instrument of the bards (Cii lyre)**\n";
+	if(roll === 50)	return "1 **Instrument of the bards (Cii Lyre)**\n";
 	if(roll === 51)	return "1 **Loun Stone (Awareness)**\n";
 	if(roll === 52)	return "1 **Loun Stone (Protection)**\n";
 	if(roll === 53)	return "1 **Loun Stone (Reserve)**\n";
@@ -53,7 +53,7 @@ module.exports = (roll) => {
 	if(roll === 55)	return "1 **Iron Bands of Bilarro**\n";
 	if(roll === 56)	return "1 **Armor, +1 Leather**\n";
 	if(roll === 57)	return "1 **Armor of Resistance (Leather)**\n";
-	if(roll === 58)	return "1 **Mace of Distruption**\n";
+	if(roll === 58)	return "1 **Mace of Disruption**\n";
 	if(roll === 59)	return "1 **Mace of Smiting**\n";
 	if(roll === 60)	return "1 **Mace of Terror**\n";
 	if(roll === 61)	return "1 **Mantle of Spell Resistance**\n";
@@ -69,11 +69,11 @@ module.exports = (roll) => {
 	if(roll === 71)	return "1 **Ring of the Ram**\n";
 	if(roll === 72)	return "1 **Ring of X-Ray Vision**\n";
 	if(roll === 73)	return "1 **Robe of Eyes**\n";
-	if(roll === 74)	return "1 **Rod Rulership**\n";
+	if(roll === 74)	return "1 **Rod of Rulership**\n";
 	if(roll === 75)	return "1 **+2 Rod of the Pact Keeper**\n";
 	if(roll === 76)	return "1 **Rope of Entanglement**\n";
 	if(roll === 77)	return "1 **Armor, +1 Scale Mail**\n";
-	if(roll === 78)	return "1 **Armor of Resitance (Scale Mail)**\n";
+	if(roll === 78)	return "1 **Armor of Resistance (Scale Mail)**\n";
 	if(roll === 79)	return "1 **+2 Shield**\n";
 	if(roll === 80)	return "1 **Shield of Missile Attraction**\n";
 	if(roll === 81)	return "1 **Staff of Charming**\n";
@@ -92,7 +92,7 @@ module.exports = (roll) => {
 	if(roll === 94)	return "1 **Wand of Fear**\n";
 	if(roll === 95)	return "1 **Wand of Fireballs**\n";
 	if(roll === 96)	return "1 **Wand of Lightning Bolts**\n";
-	if(roll === 97)	return "1 **Wand Paralysis**\n";
+	if(roll === 97)	return "1 **Wand of Paralysis**\n";
 	if(roll === 98) return "1 **+2 Wand of the War Mage**\n";
 	if(roll === 99) return "1 **Wand of Wonder**\n";
 	if(roll === 100) return "1 **Wings of Flying**\n";
