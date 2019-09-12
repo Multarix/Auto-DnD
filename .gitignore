@@ -7,3 +7,4 @@ commands/test.js
 objects/settings.sqlite
 objects/settings.sqlite-journal
 logs.txt
+dnd.bat
