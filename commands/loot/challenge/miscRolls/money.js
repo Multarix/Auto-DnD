@@ -11,5 +11,5 @@ module.exports = (n, d) => {
 		rolls.push(num);
 		total += num;
 	}
-	return { "rolls":rolls, "total":total };
+	return { "rolls":rolls.join(", "), "total":total };
 };

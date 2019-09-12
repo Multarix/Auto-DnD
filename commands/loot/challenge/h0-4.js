@@ -13,7 +13,7 @@ module.exports = (roll, message, embed) => {
 	const gpFinal = gold.total * 10;
 	// Money
 	const moneyStatement = `6 D6 x100 - **Copper Pieces**\n3 D6 x100 - **Silver Pieces**\n2 D6 x10 - **Gold Pieces**`;
-	const moneyRolls = `${copper.rolls.join(", ")} (${copper.total})\n${silver.rolls.join(", ")} (${silver.total})\n${gold.rolls.join(", ")} (${gold.total})`;
+	const moneyRolls = `${copper.rolls} (${copper.total})\n${silver.rolls} (${silver.total})\n${gold.rolls} (${gold.total})`;
 	const moneyFinal = `${cpFinal} **Copper Pieces**\n${spFinal} **Silver Pieces**\n${gpFinal} **Gold Pieces**`;
 
 	// 0-6
@@ -30,7 +30,7 @@ module.exports = (roll, message, embed) => {
 		const miscItems = vTrash("gems", "10", "d6", 2);
 
 		embed.addField("Loot Class:", `${moneyStatement}\n${miscItems.statement}`, true)
-			.addField("Item Rolls:", `${moneyRolls}\n${miscItems.rolls.join(", ")} (${miscItems.total})`, true)
+			.addField("Item Rolls:", `${moneyRolls}\n${miscItems.rolls} (${miscItems.total})`, true)
 			.addBlankField(true)
 			.addField("Final Loot:", `${moneyFinal}\n${miscItems.loot}`, false);
 		return message.channel.send({ embed });
@@ -41,7 +41,7 @@ module.exports = (roll, message, embed) => {
 		const miscItems = vTrash("art", "25", "d4", 2);
 
 		embed.addField("Loot Class:", `${moneyStatement}\n${miscItems.statement}`, true)
-			.addField("Item Rolls:", `${moneyRolls}\n${miscItems.rolls.join(", ")} (${miscItems.total})`, true)
+			.addField("Item Rolls:", `${moneyRolls}\n${miscItems.rolls} (${miscItems.total})`, true)
 			.addBlankField(true)
 			.addField("Final Loot:", `${moneyFinal}\n${miscItems.loot}`, false);
 		return message.channel.send({ embed });
@@ -52,7 +52,7 @@ module.exports = (roll, message, embed) => {
 		const miscItems = vTrash("gems", "50", "d6", 2);
 
 		embed.addField("Loot Class:", `${moneyStatement}\n${miscItems.statement}`, true)
-			.addField("Item Rolls:", `${moneyRolls}\n${miscItems.rolls.join(", ")} (${miscItems.total})`, true)
+			.addField("Item Rolls:", `${moneyRolls}\n${miscItems.rolls} (${miscItems.total})`, true)
 			.addBlankField(true)
 			.addField("Final Loot:", `${moneyFinal}\n${miscItems.loot}`, false);
 		return message.channel.send({ embed });
@@ -65,7 +65,7 @@ module.exports = (roll, message, embed) => {
 		const tableLoot = table("a", "d6");
 
 		embed.addField("Loot Class:", `${moneyStatement}\n${miscItems.statement}\n1 D6 Rolls - **Item Table A**`, true)
-			.addField("Item Rolls:", `${moneyRolls}\n${miscItems.rolls.join(", ")} (${miscItems.total})\n${tableLoot.rollAmount} (${tableLoot.rolls})`, true)
+			.addField("Item Rolls:", `${moneyRolls}\n${miscItems.rolls} (${miscItems.total})\n${tableLoot.rollAmount} (${tableLoot.rolls})`, true)
 			.addBlankField(true)
 			.addField("Final Loot:", `${moneyFinal}\n${miscItems.loot}\n${tableLoot.items}`, false);
 		return message.channel.send({ embed });
@@ -77,7 +77,7 @@ module.exports = (roll, message, embed) => {
 		const tableLoot = table("a", "d6");
 
 		embed.addField("Loot Class:", `${moneyStatement}\n${miscItems.statement}\n1 D6 Rolls - **Item Table A**`, true)
-			.addField("Item Rolls:", `${moneyRolls}\n${miscItems.rolls.join(", ")} (${miscItems.total})\n${tableLoot.rollAmount} (${tableLoot.rolls})`, true)
+			.addField("Item Rolls:", `${moneyRolls}\n${miscItems.rolls} (${miscItems.total})\n${tableLoot.rollAmount} (${tableLoot.rolls})`, true)
 			.addBlankField(true)
 			.addField("Final Loot:", `${moneyFinal}\n${miscItems.loot}\n${tableLoot.items}`, false);
 		return message.channel.send({ embed });
@@ -89,7 +89,7 @@ module.exports = (roll, message, embed) => {
 		const tableLoot = table("a", "d6");
 
 		embed.addField("Loot Class:", `${moneyStatement}\n${miscItems.statement}\n1 D6 Rolls - **Item Table A**`, true)
-			.addField("Item Rolls:", `${moneyRolls}\n${miscItems.rolls.join(", ")} (${miscItems.total})\n${tableLoot.rollAmount} (${tableLoot.rolls})`, true)
+			.addField("Item Rolls:", `${moneyRolls}\n${miscItems.rolls} (${miscItems.total})\n${tableLoot.rollAmount} (${tableLoot.rolls})`, true)
 			.addBlankField(true)
 			.addField("Final Loot:", `${moneyFinal}\n${miscItems.loot}\n${tableLoot.items}`, false);
 		return message.channel.send({ embed });
@@ -102,7 +102,7 @@ module.exports = (roll, message, embed) => {
 		const tableLoot = table("b", "d6");
 
 		embed.addField("Loot Class:", `${moneyStatement}\n${miscItems.statement}\n1 D6 Rolls - **Item Table B**`, true)
-			.addField("Item Rolls:", `${moneyRolls}\n${miscItems.rolls.join(", ")} (${miscItems.total})\n${tableLoot.rollAmount} (${tableLoot.rolls})`, true)
+			.addField("Item Rolls:", `${moneyRolls}\n${miscItems.rolls} (${miscItems.total})\n${tableLoot.rollAmount} (${tableLoot.rolls})`, true)
 			.addBlankField(true)
 			.addField("Final Loot:", `${moneyFinal}\n${miscItems.loot}\n${tableLoot.items}`, false);
 		return message.channel.send({ embed });
@@ -114,7 +114,7 @@ module.exports = (roll, message, embed) => {
 		const tableLoot = table("b", "d6");
 
 		embed.addField("Loot Class:", `${moneyStatement}\n${miscItems.statement}\n1 D6 Rolls - **Item Table B**`, true)
-			.addField("Item Rolls:", `${moneyRolls}\n${miscItems.rolls.join(", ")} (${miscItems.total})\n${tableLoot.rollAmount} (${tableLoot.rolls})`, true)
+			.addField("Item Rolls:", `${moneyRolls}\n${miscItems.rolls} (${miscItems.total})\n${tableLoot.rollAmount} (${tableLoot.rolls})`, true)
 			.addBlankField(true)
 			.addField("Final Loot:", `${moneyFinal}\n${miscItems.loot}\n${tableLoot.items}`, false);
 		return message.channel.send({ embed });
@@ -126,7 +126,7 @@ module.exports = (roll, message, embed) => {
 		const tableLoot = table("b", "d6");
 
 		embed.addField("Loot Class:", `${moneyStatement}\n${miscItems.statement}\n1 D6 Rolls - **Item Table B**`, true)
-			.addField("Item Rolls:", `${moneyRolls}\n${miscItems.rolls.join(", ")} (${miscItems.total})\n${tableLoot.rollAmount} (${tableLoot.rolls})`, true)
+			.addField("Item Rolls:", `${moneyRolls}\n${miscItems.rolls} (${miscItems.total})\n${tableLoot.rollAmount} (${tableLoot.rolls})`, true)
 			.addBlankField(true)
 			.addField("Final Loot:", `${moneyFinal}\n${miscItems.loot}\n${tableLoot.items}`, false);
 		return message.channel.send({ embed });
@@ -139,7 +139,7 @@ module.exports = (roll, message, embed) => {
 		const tableLoot = table("c", "d6");
 
 		embed.addField("Loot Class:", `${moneyStatement}\n${miscItems.statement}\n1 D6 Rolls - **Item Table C**`, true)
-			.addField("Item Rolls:", `${moneyRolls}\n${miscItems.rolls.join(", ")} (${miscItems.total})\n${tableLoot.rollAmount} (${tableLoot.rolls})`, true)
+			.addField("Item Rolls:", `${moneyRolls}\n${miscItems.rolls} (${miscItems.total})\n${tableLoot.rollAmount} (${tableLoot.rolls})`, true)
 			.addBlankField(true)
 			.addField("Final Loot:", `${moneyFinal}\n${miscItems.loot}\n${tableLoot.items}`, false);
 		return message.channel.send({ embed });
@@ -151,7 +151,7 @@ module.exports = (roll, message, embed) => {
 		const tableLoot = table("c", "d6");
 
 		embed.addField("Loot Class:", `${moneyStatement}\n${miscItems.statement}\n1 D6 Rolls - **Item Table C**`, true)
-			.addField("Item Rolls:", `${moneyRolls}\n${miscItems.rolls.join(", ")} (${miscItems.total})\n${tableLoot.rollAmount} (${tableLoot.rolls})`, true)
+			.addField("Item Rolls:", `${moneyRolls}\n${miscItems.rolls} (${miscItems.total})\n${tableLoot.rollAmount} (${tableLoot.rolls})`, true)
 			.addBlankField(true)
 			.addField("Final Loot:", `${moneyFinal}\n${miscItems.loot}\n${tableLoot.items}`, false);
 		return message.channel.send({ embed });
@@ -163,7 +163,7 @@ module.exports = (roll, message, embed) => {
 		const tableLoot = table("c", "d6");
 
 		embed.addField("Loot Class:", `${moneyStatement}\n${miscItems.statement}\n1 D6 Rolls - **Item Table C**`, true)
-			.addField("Item Rolls:", `${moneyRolls}\n${miscItems.rolls.join(", ")} (${miscItems.total})\n${tableLoot.rollAmount} (${tableLoot.rolls})`, true)
+			.addField("Item Rolls:", `${moneyRolls}\n${miscItems.rolls} (${miscItems.total})\n${tableLoot.rollAmount} (${tableLoot.rolls})`, true)
 			.addBlankField(true)
 			.addField("Final Loot:", `${moneyFinal}\n${miscItems.loot}\n${tableLoot.items}`, false);
 		return message.channel.send({ embed });
@@ -176,7 +176,7 @@ module.exports = (roll, message, embed) => {
 		const tableLoot = table("f", "d6");
 
 		embed.addField("Loot Class:", `${moneyStatement}\n${miscItems.statement}\n1 D6 Rolls - **Item Table F**`, true)
-			.addField("Item Rolls:", `${moneyRolls}\n${miscItems.rolls.join(", ")} (${miscItems.total})\n${tableLoot.rollAmount} (${tableLoot.rolls})`, true)
+			.addField("Item Rolls:", `${moneyRolls}\n${miscItems.rolls} (${miscItems.total})\n${tableLoot.rollAmount} (${tableLoot.rolls})`, true)
 			.addBlankField(true)
 			.addField("Final Loot:", `${moneyFinal}\n${miscItems.loot}\n${tableLoot.items}`, false);
 		return message.channel.send({ embed });
@@ -188,7 +188,7 @@ module.exports = (roll, message, embed) => {
 		const tableLoot = table("f", "d6");
 
 		embed.addField("Loot Class:", `${moneyStatement}\n${miscItems.statement}\n1 D6 Rolls - **Item Table F**`, true)
-			.addField("Item Rolls:", `${moneyRolls}\n${miscItems.rolls.join(", ")} (${miscItems.total})\n${tableLoot.rollAmount} (${tableLoot.rolls})`, true)
+			.addField("Item Rolls:", `${moneyRolls}\n${miscItems.rolls} (${miscItems.total})\n${tableLoot.rollAmount} (${tableLoot.rolls})`, true)
 			.addBlankField(true)
 			.addField("Final Loot:", `${moneyFinal}\n${miscItems.loot}\n${tableLoot.items}`, false);
 		return message.channel.send({ embed });
@@ -201,7 +201,7 @@ module.exports = (roll, message, embed) => {
 		const tableLoot = table("g", "d6");
 
 		embed.addField("Loot Class:", `${moneyStatement}\n${miscItems.statement}\n1 D6 Rolls - **Item Table G**`, true)
-			.addField("Item Rolls:", `${moneyRolls}\n${miscItems.rolls.join(", ")} (${miscItems.total})\n${tableLoot.rollAmount} (${tableLoot.rolls})`, true)
+			.addField("Item Rolls:", `${moneyRolls}\n${miscItems.rolls} (${miscItems.total})\n${tableLoot.rollAmount} (${tableLoot.rolls})`, true)
 			.addBlankField(true)
 			.addField("Final Loot:", `${moneyFinal}\n${miscItems.loot}\n${tableLoot.items}`, false);
 		return message.channel.send({ embed });
@@ -213,7 +213,7 @@ module.exports = (roll, message, embed) => {
 		const tableLoot = table("g", "d6");
 
 		embed.addField("Loot Class:", `${moneyStatement}\n${miscItems.statement}\n1 D6 Rolls - **Item Table G**`, true)
-			.addField("Item Rolls:", `${moneyRolls}\n${miscItems.rolls.join(", ")} (${miscItems.total})\n${tableLoot.rollAmount} (${tableLoot.rolls})`, true)
+			.addField("Item Rolls:", `${moneyRolls}\n${miscItems.rolls} (${miscItems.total})\n${tableLoot.rollAmount} (${tableLoot.rolls})`, true)
 			.addBlankField(true)
 			.addField("Final Loot:", `${moneyFinal}\n${miscItems.loot}\n${tableLoot.items}`, false);
 		return message.channel.send({ embed });
