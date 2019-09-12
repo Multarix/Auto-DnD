@@ -1,77 +1,53 @@
+const money = require("./miscRolls/money.js");
 module.exports = (roll, message, embed) => {
 	// 1 - 30
 	if(roll <= 30){
-		const cp = [];
-		let cpAmount = 0;
-		for(let i = 0; i < 5; i++){
-			const num = d6();
-			cp.push(num);
-			cpAmount += num;
-		}
+		const copper = money(5, "d6");
+
 		embed.addField("Loot Class:", `5 D6 - **Copper Pieces**`, true)
-			.addField("Item Rolls:", `${cp.join(", ")} (${cpAmount})`, true)
+			.addField("Item Rolls:", `${copper.rolls} (${copper.total})`, true)
 			.addBlankField(true)
-			.addField("Final Loot:", `${cpAmount} **Copper Pieces**`, false);
+			.addField("Final Loot:", `${copper.total} **Copper Pieces**`, false);
 		return message.channel.send({ embed });
 	}
 	// 31 - 60
 	if(roll <= 60){
-		const sp = [];
-		let spAmount = 0;
-		for(let i = 0; i < 4; i++){
-			const num = d6();
-			sp.push(num);
-			spAmount += num;
-		}
+		const silver = money(4, "d6");
+
 		embed.addField("Loot Class:", `4 D6 - **Silver Pieces**`, true)
-			.addField("Item Rolls:", `${sp.join(", ")} (${spAmount})`, true)
+			.addField("Item Rolls:", `${silver.rolls} (${silver.total})`, true)
 			.addBlankField(true)
-			.addField("Final Loot:", `${spAmount} **Silver Pieces**`, false);
+			.addField("Final Loot:", `${silver.total} **Silver Pieces**`, false);
 		return message.channel.send({ embed });
 	}
 	// 61 - 70
 	if(roll <= 70){
-		const ep = [];
-		let epAmount = 0;
-		for(let i = 0; i < 3; i++){
-			const num = d6();
-			ep.push(num);
-			epAmount += num;
-		}
+		const electrum = money(3, "d6");
+
 		embed.addField("Loot Class:", `3 D6 - **Electrum Pieces**`, true)
-			.addField("Item Rolls:", `${ep.join(", ")} (${epAmount})`, true)
+			.addField("Item Rolls:", `${electrum.rolls} (${electrum.total})`, true)
 			.addBlankField(true)
-			.addField("Final Loot:", `${epAmount} **Electrum Pieces**`, false);
+			.addField("Final Loot:", `${electrum.total} **Electrum Pieces**`, false);
 		return message.channel.send({ embed });
 	}
 	// 71 - 95
 	if(roll <= 95){
-		const gp = [];
-		let gpAmount = 0;
-		for(let i = 0; i < 3; i++){
-			const num = d6();
-			gp.push(num);
-			gpAmount += num;
-		}
+		const gold = money(3, "d6");
+
 		embed.addField("Loot Class:", `3 D6 - **Gold Pieces**`, true)
-			.addField("Item Rolls:", `${gp.join(", ")} (${gpAmount})`, true)
+			.addField("Item Rolls:", `${gold.rolls} (${gold.total})`, true)
 			.addBlankField(true)
-			.addField("Final Loot:", `${gpAmount} **Gold Pieces**`, false);
+			.addField("Final Loot:", `${gold.total} **Gold Pieces**`, false);
 		return message.channel.send({ embed });
 	}
 	// 96 - 100
 	if(roll <= 100){
-		const pp = [];
-		let ppAmount = 0;
-		for(let i = 0; i < 1; i++){
-			const num = d6();
-			pp.push(num);
-			ppAmount += num;
-		}
+		const platinum = money(1, "d6");
+
 		embed.addField("Loot Class:", `1 D6 - **Platinum Pieces**`, true)
-			.addField("Item Rolls:", `${pp.join(", ")} (${ppAmount})`, true)
+			.addField("Item Rolls:", `${platinum.rolls} (${platinum.total})`, true)
 			.addBlankField(true)
-			.addField("Final Loot:", `${ppAmount} **Platinum Pieces**`, false);
+			.addField("Final Loot:", `${platinum.total} **Platinum Pieces**`, false);
 		return message.channel.send({ embed });
 	}
 };
