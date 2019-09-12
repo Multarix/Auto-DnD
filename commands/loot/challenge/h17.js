@@ -1,25 +1,20 @@
+const money = require("./miscRolls/money.js");
+const table = require("./miscRolls/lootPicker.js");
+const vTrash = require("./miscRolls/miscItems.js");
 module.exports = (roll, message, embed) => {
-	const cp = [];
-	let cpAmount = 0;
-	for(let i = 0; i < 5; i++){
-		const num = d6();
-		cp.push(num);
-		cpAmount += num;
-	}
-	const sp = [];
-	let spAmount = 0;
-	for(let i = 0; i < 4; i++){
-		const num = d6();
-		sp.push(num);
-		spAmount += num;
-	}
-	const gp = [];
-	let gpAmount = 0;
-	for(let i = 0; i < 3; i++){
-		const num = d6();
-		gp.push(num);
-		gpAmount += num;
-	}
+
+	// Copper Coins
+	const copper = money(6, "d6");
+	const cpFinal = copper.total * 100;
+	// Silver Coins
+	const silver = money(3, "d6");
+	const spFinal = silver.total * 1000;
+	// Gold Coins
+	const gold = money(2, "d6");
+	const gpFinal = gold.total * 100;
+	// Platinum Coins
+	const platinum = money(3, "d6");
+	const ppFinal = platinum.total * 10;
 
 	if(roll <= 6){
 		return;
