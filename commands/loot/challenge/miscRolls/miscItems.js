@@ -5,7 +5,6 @@ module.exports = (i, c, d, r) => {
 	if(i === "gem" || i === "gems") item = "Gems";
 	if(i === "art") item = "Art Objects";
 
-
 	let dName = false;
 	if(d.toLowerCase() === "d4") dName = "D4";
 	if(d.toLowerCase() === "d6") dName = "D6";
