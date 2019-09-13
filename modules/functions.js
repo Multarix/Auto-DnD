@@ -6,8 +6,8 @@ module.exports = async (client) => {
 	client.permlevel = (message) => {
 		let permlvl = 0;
 
-		if(!message.guild || !message.member) return permlvl = 0;
 		if(message.author.id === client.config.ownerID) return permlvl = 10;
+		if(!message.guild || !message.member) return permlvl = 0;
 		if(message.author.id === message.guild.owner.id) return permlvl = 1;
 
 		return permlvl;

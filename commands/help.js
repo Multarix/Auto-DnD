@@ -1,15 +1,18 @@
 const Discord = require("discord.js");
 exports.run = async (client, message, args, level) => {
 
-	let ecolor = false;
-	if(message.member.highestRole.color) ecolor = message.member.highestRole.color;
-
 	const embed = new Discord.RichEmbed()
 		.setAuthor(`Commands for:  ${message.author.tag}`, message.author.displayAvatarURL)
 		.setDescription(`Use ${client.config.prefix}help <commandname> for more details`)
-		.setThumbnail(message.guild.iconURL)
 		.setFooter(client.user.tag, client.user.displayAvatarURL)
 		.setTimestamp();
+
+	let ecolor = false;
+
+	if(message.channel.type !== "dm"){
+		embed.setThumbnail(message.guild.iconURL);
+		if(message.member.highestRole.color) ecolor = message.member.highestRole.color;
+	}
 
 	if(ecolor) embed.setColor(ecolor);
 

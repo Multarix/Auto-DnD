@@ -2,7 +2,9 @@ const Discord = require('discord.js');
 module.exports = async (client, message) => {
 
 	if(message.author.bot) return;
-	if(!message.channel.memberPermissions(message.guild.me).has("SEND_MESSAGES")) return;
+	if(message.channel.type !== "dm"){
+		if(!message.channel.memberPermissions(message.guild.me).has("SEND_MESSAGES")) return;
+	}
 
 	const level = client.permlevel(message);
 	const mention = new RegExp(`^<@!?${client.user.id}>`);
@@ -25,9 +27,16 @@ module.exports = async (client, message) => {
 		command = args.shift().slice(prefix.length).toLowerCase();
 	}
 	const cmd = client.commands.get(command) || client.commands.get(client.aliases.get(command));
+	// Guild only check for certain commands (finally)
+	let noGuild = false;
+	let guildOnly = false;
+	if(message.channel.type === "dm") noGuild = true;
+	if(cmd.conf.guildOnly) guildOnly = true;
+	let guildOnlyCheck = true;
+	if(noGuild && guildOnly) guildOnlyCheck = false;
 
 	if (cmd && level >= cmd.conf.permLevel) {
-		if(cmd.conf.enabled === true){
+		if(cmd.conf.enabled === true && guildOnlyCheck){
 			cmd.run(client, message, args, level);
 		} else {
 			client.log(`"${message.author.tag}" tried to use the disabled command "${cmd.help.name}"`, "Log");
