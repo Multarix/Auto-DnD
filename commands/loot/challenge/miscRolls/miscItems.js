@@ -9,6 +9,7 @@ module.exports = (i, c, d, r) => {
 	if(d.toLowerCase() === "d4") dName = "D4";
 	if(d.toLowerCase() === "d6") dName = "D6";
 	if(d.toLowerCase() === "d8") dName = "D8";
+	if(d.toLowerCase() === "d10") dName = "D10";
 
 	if(!item || !dName) return null;
 
@@ -19,6 +20,7 @@ module.exports = (i, c, d, r) => {
 		if(dName === "D4") dice = d4();
 		if(dName === "D6") dice = d6();
 		if(dName === "D8") dice = d8();
+		if(dName === "D10") dice = d10();
 		if(!dice) return;
 
 		const num = dice;
