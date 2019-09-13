@@ -6,7 +6,6 @@ module.exports = (roll, message, embed) => {
 
 		embed.addField("Loot Class:", `5 D6 - **Copper Pieces**`, true)
 			.addField("Item Rolls:", `${copper.rolls} (${copper.total})`, true)
-			.addBlankField(true)
 			.addField("Final Loot:", `${copper.total} **Copper Pieces**`, false);
 		return message.channel.send({ embed });
 	}
@@ -16,7 +15,6 @@ module.exports = (roll, message, embed) => {
 
 		embed.addField("Loot Class:", `4 D6 - **Silver Pieces**`, true)
 			.addField("Item Rolls:", `${silver.rolls} (${silver.total})`, true)
-			.addBlankField(true)
 			.addField("Final Loot:", `${silver.total} **Silver Pieces**`, false);
 		return message.channel.send({ embed });
 	}
@@ -26,7 +24,6 @@ module.exports = (roll, message, embed) => {
 
 		embed.addField("Loot Class:", `3 D6 - **Electrum Pieces**`, true)
 			.addField("Item Rolls:", `${electrum.rolls} (${electrum.total})`, true)
-			.addBlankField(true)
 			.addField("Final Loot:", `${electrum.total} **Electrum Pieces**`, false);
 		return message.channel.send({ embed });
 	}
@@ -36,7 +33,6 @@ module.exports = (roll, message, embed) => {
 
 		embed.addField("Loot Class:", `3 D6 - **Gold Pieces**`, true)
 			.addField("Item Rolls:", `${gold.rolls} (${gold.total})`, true)
-			.addBlankField(true)
 			.addField("Final Loot:", `${gold.total} **Gold Pieces**`, false);
 		return message.channel.send({ embed });
 	}
@@ -46,7 +42,6 @@ module.exports = (roll, message, embed) => {
 
 		embed.addField("Loot Class:", `1 D6 - **Platinum Pieces**`, true)
 			.addField("Item Rolls:", `${platinum.rolls} (${platinum.total})`, true)
-			.addBlankField(true)
 			.addField("Final Loot:", `${platinum.total} **Platinum Pieces**`, false);
 		return message.channel.send({ embed });
 	}
