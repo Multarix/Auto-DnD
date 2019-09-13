@@ -52,7 +52,7 @@ exports.run = (client, message, args, level) => {
 		}
 	}
 	// Percentile Dice (00 - 90) [00 technically means 100]
-	if(die === "percentile" || die === "percent" || "p"){
+	if(die === "percentile" || die === "percent" || die === "p"){
 		for(let i = 0; amount > i; i++){
 			let num = percentile();
 			if(num === 0) num = "00";
