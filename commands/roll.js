@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-exports.run = (client, message, args, level) => {
+exports.run = (client, message, args) => {
 
 	const dice = ["d4", "d6", "d8", "d10", "d12", "d20", "percentile", "percent", "p"];
 	if(!dice.includes(args[0])) return message.channel.send("Usage: [roll](<..dice>)", { code: "markdown" });

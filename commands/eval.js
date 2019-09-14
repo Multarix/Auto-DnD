@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const colors = require('colors');
 const moment = require("moment");
 require("moment-duration-format");
-exports.run = async (client, message, args, level) => {
+exports.run = async (client, message, args) => {
 
 	let good = client.emojis.get("340357918996299778");
 	if(!good) good = "👍";
