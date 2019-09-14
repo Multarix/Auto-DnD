@@ -58,6 +58,17 @@ module.exports = async (client) => {
 		return mNum;
 	};
 
+	// Guild only check for certain commands (finally)
+	client.guildOnly = (m, c) => {
+		let noGuild = false;
+		let guildOnly = false;
+		if(m.channel.type === "dm") noGuild = true;
+		if(c.conf.guildOnly) guildOnly = true;
+		let guildOnlyCheck = true;
+		if(noGuild && guildOnly) guildOnlyCheck = false;
+		return guildOnlyCheck;
+	};
+
 	/* Non-Critical Misc Functions */
 
 	String.prototype.toProperCase = function() {

@@ -27,22 +27,17 @@ module.exports = async (client, message) => {
 		command = args.shift().slice(prefix.length).toLowerCase();
 	}
 	const cmd = client.commands.get(command) || client.commands.get(client.aliases.get(command));
-	// Guild only check for certain commands (finally)
-	let noGuild = false;
-	let guildOnly = false;
-	if(message.channel.type === "dm") noGuild = true;
-	if(cmd.conf.guildOnly) guildOnly = true;
-	let guildOnlyCheck = true;
-	if(noGuild && guildOnly) guildOnlyCheck = false;
+	const guildOnlyCheck = client.guildOnly(message, cmd);
 
 	if (cmd && level >= cmd.conf.permLevel) {
 		if(cmd.conf.enabled === true && guildOnlyCheck){
 			cmd.run(client, message, args, level);
 		} else {
-			client.log(`"${message.author.tag}" tried to use the disabled command "${cmd.help.name}"`, "Log");
+			if(!guildOnlyCheck) return message.channel.send("That command is disabled in DM's.");
+			return client.log(`"${message.author.tag}" tried to use the disabled command "${cmd.help.name}"`, "Log");
 		}
 	} else if (cmd && level < cmd.conf.permLevel){
-		client.log(`"${message.author.tag}" tried to use command: "${cmd.help.name}"`, "Log");
+		return client.log(`"${message.author.tag}" tried to use command: "${cmd.help.name}"`, "Log");
 	}
 };
 
