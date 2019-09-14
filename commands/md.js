@@ -17,7 +17,7 @@ exports.run = (client, message, args) => {
 
 exports.conf = {
 	enabled: true,
-	guildOnly: true,
+	allowDM: false,
 	aliases: ["massdelete"],
 	permLevel: 1,
 };
