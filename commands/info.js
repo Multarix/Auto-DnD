@@ -6,7 +6,7 @@ exports.run = (client, message, args, level) => {
 
 	const duration = moment.duration(client.uptime).format(" D [days], H [hrs], m [mins], s [secs]");
 
-	if(message.channel.memberPermissions(message.guild.me).has("EMBED_LINKS")){
+	if(message.channel.memberPermissions(message.guild.me).has("EMBED_LINKS") || message.channel.type === "dm"){
 		const embed = new Discord.RichEmbed()
 			.setAuthor(`Bot Stats`)
 			.setColor(13238272)
@@ -20,7 +20,6 @@ exports.run = (client, message, args, level) => {
 			.addField("Uptime", `${duration}`, true)
 			.setFooter(client.user.tag, client.user.displayAvatarURL)
 			.setTimestamp();
-
 		return message.channel.send({ embed });
 	}
 
