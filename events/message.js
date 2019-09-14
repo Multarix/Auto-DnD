@@ -27,13 +27,12 @@ module.exports = async (client, message) => {
 		command = args.shift().slice(prefix.length).toLowerCase();
 	}
 	const cmd = client.commands.get(command) || client.commands.get(client.aliases.get(command));
-	const guildOnlyCheck = client.guildOnly(message, cmd);
-
 	if (cmd && level >= cmd.conf.permLevel) {
-		if(cmd.conf.enabled === true && guildOnlyCheck){
+		const allowDM = client.allowDM(message, cmd);
+		if(cmd.conf.enabled === true && allowDM){
 			cmd.run(client, message, args, level);
 		} else {
-			if(!guildOnlyCheck) return message.channel.send("That command is disabled in DM's.");
+			if(!allowDM) return message.channel.send("That command is disabled in DM's.");
 			return client.log(`"${message.author.tag}" tried to use the disabled command "${cmd.help.name}"`, "Log");
 		}
 	} else if (cmd && level < cmd.conf.permLevel){
