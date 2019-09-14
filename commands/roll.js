@@ -20,5 +20,5 @@ exports.help = {
 	name: "roll",
 	category: "Misc",
 	description: "Rolls some dice.",
-	usage: "d4/d6/d8/d10/d20 amount modifier",
+	usage: "amount d4/d6/d8/d10/d20 modifier",
 };
