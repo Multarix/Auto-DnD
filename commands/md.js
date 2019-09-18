@@ -14,7 +14,6 @@ exports.run = (client, message, args) => {
 			return message.channel.send(`\`Error:\` ${e.message}`);
 		});
 	}
-
 };
 
 exports.conf = {
