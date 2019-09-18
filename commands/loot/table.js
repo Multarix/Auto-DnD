@@ -2,6 +2,7 @@ const Discord = require('discord.js');
 module.exports = (client, message, args) => {
 	let rollTimes = parseInt(args[2]);
 	if(isNaN(rollTimes) || rollTimes < 1) rollTimes = 1;
+	if(rollTimes > 10) rollTimes = 10;
 
 	const table = require("./challenge/miscRolls/lootPicker.js");
 	const loot = table(args[1], false, rollTimes);
@@ -12,8 +13,7 @@ module.exports = (client, message, args) => {
 		.setAuthor(message.member.displayName, message.author.displayAvatarURL)
 		.setFooter(client.user.username, client.user.displayAvatarURL)
 		.setTimestamp()
-		.addField("Item", loot.items, true)
-		.addBlankField(true)
-		.addField("Roll", loot.rolls.split(", ").join("\n"), true);
+		.addField("Roll", loot.rolls.split(", ").join("\n"), true)
+		.addField("Item", loot.items, true);
 	return message.channel.send(e);
 };
