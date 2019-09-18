@@ -27,5 +27,5 @@ module.exports = (i, c, d, r) => {
 		rolls.push(num);
 		total += num;
 	}
-	return { "rolls":rolls.join(", "), "total":total, "statement":`${r} ${dName} - **${c} GP ${item}**`, "loot":`${total} **${c} GP ${item}**` };
+	return { "rolls":rolls.join(", "), "total":total, "statement":`${r} ${dName} × **${c} GP ${item}**`, "loot":`${total} × **${c} GP ${item}**` };
 };

@@ -12,10 +12,10 @@ module.exports = (x, d, b) => {
 	let tableItems = '';
 	const tableRolls = [];
 	for(let i = 0; i < rollAmount; i++){
-		const table = require(`../itemTables/MagicItemTable${t}.js`);
 		const num = Math.floor(Math.random() * 100 + 1);
+		const table = require(`../itemTables/MagicItemTable${t}.js`)(num);
 		tableRolls.push(num);
-		tableItems += table(num);
+		tableItems += `1 × [${table.name}](${table.link})\n`;
 	}
 	return { "rollAmount":rollAmount, "rolls":tableRolls.join(", "), "items":tableItems };
 };
