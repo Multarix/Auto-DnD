@@ -12,9 +12,9 @@ module.exports = (roll, message, embed) => {
 	const gold = money(2, "d6");
 	const gpFinal = gold.total * 10;
 	// Money
-	const moneyStatement = `6 D6 x100 - **Copper Pieces**\n3 D6 x100 - **Silver Pieces**\n2 D6 x10 - **Gold Pieces**`;
+	const moneyStatement = `6 D6 ×100 - **Copper Pieces**\n3 D6 ×100 - **Silver Pieces**\n2 D6 ×10 - **Gold Pieces**`;
 	const moneyRolls = `${copper.rolls} (${copper.total})\n${silver.rolls} (${silver.total})\n${gold.rolls} (${gold.total})`;
-	const moneyFinal = `${cpFinal} **Copper Pieces**\n${spFinal} **Silver Pieces**\n${gpFinal} **Gold Pieces**`;
+	const moneyFinal = `${cpFinal} × **Copper Pieces**\n${spFinal} × **Silver Pieces**\n${gpFinal} × **Gold Pieces**`;
 
 	// 0-6
 	if(roll <= 6){

@@ -9,9 +9,9 @@ module.exports = (roll, message, embed) => {
 	const platinum = money(5, "d6");
 	const ppFinal = platinum.total * 100;
 	// Money
-	const moneyStatement = `4 D6 x100 - **Gold Pieces**\n5 D6 x100 - **Platinum Pieces**`;
+	const moneyStatement = `4×D6 ×100 - **Gold Pieces**\n5×D6 ×100 - **Platinum Pieces**`;
 	const moneyRolls = `${gold.rolls} (${gold.total})\n${platinum.rolls} (${platinum.total})`;
-	const moneyFinal = `${gpFinal} **Gold Pieces**\n${ppFinal} **Platinum Pieces**`;
+	const moneyFinal = `${gpFinal} × **Gold Pieces**\n${ppFinal} × **Platinum Pieces**`;
 
 	// 01-03
 	if(roll <= 3){

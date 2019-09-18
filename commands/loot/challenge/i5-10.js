@@ -10,7 +10,7 @@ module.exports = (roll, message, embed) => {
 
 		embed.addField("Loot Class:", `4 D6 x100 - **Copper Pieces**\n1 D6 x10 - **Electrum Pieces**`, true)
 			.addField("Item Rolls:", `${copper.rolls} (${copper.total})\n${electrum.rolls} (${electrum.total})`, true)
-			.addField("Final Loot:", `${cpFinal} **Copper Pieces**\n${epFinal} **Electrum Pieces**`, false);
+			.addField("Final Loot:", `${cpFinal} × **Copper Pieces**\n${epFinal} × **Electrum Pieces**`, false);
 		return message.channel.send({ embed });
 	}
 
@@ -24,7 +24,7 @@ module.exports = (roll, message, embed) => {
 
 		embed.addField("Loot Class:", `6 D6 x10 - **Silver Pieces**\n2 D6 x10 - **Gold Pieces**`, true)
 			.addField("Item Rolls:", `${silver.rolls} (${silver.total})\n${gold.rolls} (${gold.total})`, true)
-			.addField("Final Loot:", `${spFinal} **Silver Pieces**\n${gpFinal} **Gold Pieces**`, false);
+			.addField("Final Loot:", `${spFinal} × **Silver Pieces**\n${gpFinal} × **Gold Pieces**`, false);
 		return message.channel.send({ embed });
 	}
 
@@ -38,7 +38,7 @@ module.exports = (roll, message, embed) => {
 
 		embed.addField("Loot Class:", `1 D6 x100 - **Electrum Pieces**\n2 D6 x10 - **Gold Pieces**`, true)
 			.addField("Item Rolls:", `${electrum.rolls} (${electrum.total})\n${gold.rolls} (${gold.total})`, true)
-			.addField("Final Loot:", `${epFinal} **Electrum Pieces**\n${gpFinal} **Gold Pieces**`, false);
+			.addField("Final Loot:", `${epFinal} × **Electrum Pieces**\n${gpFinal} × **Gold Pieces**`, false);
 		return message.channel.send({ embed });
 	}
 
@@ -49,7 +49,7 @@ module.exports = (roll, message, embed) => {
 
 		embed.addField("Loot Class:", `4 D6 x10 - **Gold Pieces**`, true)
 			.addField("Item Rolls:", `${gold.rolls} (${gold.total})`, true)
-			.addField("Final Loot:", `${gpFinal} **Gold Pieces**`, false);
+			.addField("Final Loot:", `${gpFinal} × **Gold Pieces**`, false);
 		return message.channel.send({ embed });
 	}
 
@@ -62,7 +62,7 @@ module.exports = (roll, message, embed) => {
 
 		embed.addField("Loot Class:", `2 D6 x10 - **Gold Pieces**\n3 D6 - **Platinum Pieces**`, true)
 			.addField("Item Rolls:", `${gold.rolls} (${gold.total})\n${platinum.rolls} (${platinum.total})`, true)
-			.addField("Final Loot:", `${gpFinal} **Gold Pieces**\n${platinum.total} **Platinum Pieces**`, false);
+			.addField("Final Loot:", `${gpFinal} × **Gold Pieces**\n${platinum.total} × **Platinum Pieces**`, false);
 		return message.channel.send({ embed });
 	}
 };
