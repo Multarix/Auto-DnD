@@ -1,14 +1,18 @@
 {
 	"name": "Auto-DnD",
 	"description": "Auto DnD is a bot for D&D",
-	"repository": "https://github.com/Multarix/Dragon-Bot.git",
+	"repository": "https://github.com/Multarix/Auto-DnD.git",
 	"license": "MIT",
 	"dependencies": {
 		"colors": "^1.3.3",
 		"discord.js": "^11.5.1",
-		"eslint": "^6.3.0",
 		"moment": "^2.23.0",
 		"moment-duration-format": "^2.2.2"
 	},
-	"private": true
+	"private": true,
+	"optionalDependencies": {
+		"bufferutil": "^4.0.1",
+		"eslint": "^6.3.0",
+		"erlpack": "github:hammerandchisel/erlpack"
+	}
 }
