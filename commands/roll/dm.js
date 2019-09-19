@@ -5,7 +5,7 @@ module.exports = (client, message, args) => {
 	const die = args[0].toLowerCase();
 	const modifier = args[1];
 
-	const diceType = ["d4", "d6", "d8", "d10", "d12", "d20", "percentile", "percent", "p"];
+	const diceType = ["d4", "d6", "d8", "d10", "d12", "d100", "d20", "percentile", "percent", "p"];
 
 	if(!diceType.includes(die)) return message.channel.send("Usage: [roll](<..dice> <..modifier>)", { code: "markdown" });
 
@@ -35,6 +35,9 @@ module.exports = (client, message, args) => {
 	if(die === "d12"){
 		embed.addField(`Result 🎲`, `${d12()}`, true);
 
+	}
+	if(die === "d100"){
+		embed.addField(`Result 🎲`, `${d100()}`, true);
 	}
 	// D20 Dice (1 - 20)
 	if(die === "d20"){
