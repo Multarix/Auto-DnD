@@ -3,7 +3,7 @@ exports.run = (client, message, args) => {
 	let good = client.emojis.get("340357918996299778");
 	if(!good) good = "👍";
 
-	message.react(good).then(m =>{
+	message.react(good).then(m => {
 		restartBot("Manual Restart");
 	});
 

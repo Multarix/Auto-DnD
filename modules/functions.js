@@ -70,7 +70,7 @@ module.exports = async (client) => {
 	/* Non-Critical Misc Functions */
 
 	String.prototype.toProperCase = function() {
-		return this.replace(/([^\W_]+[^\s-]*) */g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+		return this.replace(/([^\W_]+[^\s-]*) */g, function(txt) { return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase(); });
 	};
 
 	global.wait = require("util").promisify(setTimeout);
@@ -125,6 +125,7 @@ module.exports = async (client) => {
 	global.d10 = require("../modules/dice/d10.js");
 	global.d12 = require("../modules/dice/d12.js");
 	global.d20 = require("../modules/dice/d20.js");
+	global.d100 = require("../modules/dice/d100.js");
 	global.percentile = require("../modules/dice/percentile.js");
 
 	// I see your unhandled things, and present to you, handled things!
