@@ -7,7 +7,7 @@ exports.run = (client, message, args, level) => {
 
 exports.conf = {
 	enabled: true,
-	guildOnly: false,
+	allowDM: true,
 	aliases: [],
 	permLevel: 10,
 };

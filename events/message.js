@@ -29,7 +29,11 @@ module.exports = async (client, message) => {
 	const cmd = client.commands.get(command) || client.commands.get(client.aliases.get(command));
 	if(cmd && level >= cmd.conf.permLevel){
 		const allowDM = client.allowDM(message, cmd);
-		if(cmd.conf.enabled === true && allowDM){
+		if(cmd.conf.enabled && allowDM){
+			const string = "Due to the nature of this bot, it requires embed permissions to run certain commands.\nPlease grant the bot embed permissions and try the command again.";
+			if(!message.channel.type === "dm"){
+				if(!message.channel.memberPermissions(message.guild.me).has("EMBED_LINKS")) return message.channel.send(string);
+			}
 			cmd.run(client, message, args, level);
 		} else {
 			if(!allowDM) return message.channel.send("That command is disabled in DM's.");

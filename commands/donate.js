@@ -8,7 +8,7 @@ Don't get me wrong, I'd love your money, but I'm not a "Please donate to me" bot
 
 exports.conf = {
 	enabled: true,
-	guildOnly: false,
+	allowDM: true,
 	aliases: [],
 	permLevel: 0,
 };
