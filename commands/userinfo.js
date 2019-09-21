@@ -37,6 +37,7 @@ exports.run = async (client, message, args) => {
 
 	let ecolor1 = 14487568;
 	if(member){
+		embed.addField("Joined Server:", moment.duration(Date.now() - member.joinedTimestamp).format("Y [years], M [months], D [days], H [hours]"), false);
 		if(member.highestRole.color) ecolor1 = member.highestRole.color;
 		if(member.roles){
 			const s = function(a, b) { return a.calculatedPosition - b.calculatedPosition; };
