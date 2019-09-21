@@ -1,30 +1,32 @@
-module.exports = (roll) => {
-	if(roll <= 15) return { name:"**Potion of Superior Healing**", link:"https://www.dndbeyond.com/magic-items/potion-of-healing" };
-	if(roll <= 22) return { name:"**Spell Scroll (4th level)**", link:"https://www.dndbeyond.com/magic-items/spell-scroll" };
-	if(roll <= 27) return { name:"**+2 Ammunition**", link:"https://www.dndbeyond.com/magic-items/ammunition-2" };
-	if(roll <= 32) return { name:"**Potion of Clairvoyance**", link:"https://www.dndbeyond.com/magic-items/potion-of-clairvoyance" };
-	if(roll <= 37) return { name:"**Potion of Diminution**", link:"https://www.dndbeyond.com/magic-items/potion-of-diminution" };
-	if(roll <= 42) return { name:"**Potion of Gaseous Form**", link:"https://www.dndbeyond.com/magic-items/potion-of-gaseous-form" };
-	if(roll <= 47) return { name:"**Potion of Frost Giant Strength**", link:"https://www.dndbeyond.com/magic-items/potion-of-giant-strength" };
-	if(roll <= 52) return { name:"**Potion of Stone Giant Strength**", link:"https://www.dndbeyond.com/magic-items/potion-of-giant-strength" };
-	if(roll <= 57) return { name:"**Potion of Heroism**", link:"https://www.dndbeyond.com/magic-items/potion-of-heroism" };
-	if(roll <= 62) return { name:"**Potion of Invulnerability**", link:"https://aversten.obsidianportal.com/wiki_pages/potion-of-invulnerability" };
-	if(roll <= 67) return { name:"**Potion of Mind Reading**", link:"https://www.dndbeyond.com/magic-items/potion-of-mind-reading" };
-	if(roll <= 72) return { name:"**Spell Scroll (5th level)**", link:"https://www.dndbeyond.com/magic-items/spell-scroll" };
-	if(roll <= 75) return { name:"**Elixir of Health**", link:"https://aversten.obsidianportal.com/wiki_pages/elixir-of-health" };
-	if(roll <= 78) return { name:"**Oil of Etherealness**", link:"https://www.dndbeyond.com/magic-items/oil-of-etherealness" };
-	if(roll <= 81) return { name:"**Potion of Fire Giant Strength**", link:"https://www.dndbeyond.com/magic-items/potion-of-giant-strength" };
-	if(roll <= 84) return { name:"**Quaal's Feather Token**", link:"https://aversten.obsidianportal.com/wiki_pages/quaals-feather-token" };
-	if(roll <= 87) return { name:"**Scroll of Protection**", link:"https://aversten.obsidianportal.com/wiki_pages/scroll-of-protection" };
-	if(roll <= 89) return { name:"**Bag of Beans**", link:"https://www.dndbeyond.com/magic-items/bag-of-beans" };
-	if(roll <= 91) return { name:"**Bead of Force**", link:"https://www.dndbeyond.com/magic-items/bead-of-force" };
-	if(roll === 92)	return { name:"**Chime of Opening**", link:"https://www.dndbeyond.com/magic-items/chime-of-opening" };
-	if(roll === 93)	return { name:"**Decanter of Endless Water**", link:"https://www.dndbeyond.com/magic-items/decanter-of-endless-water" };
-	if(roll === 94)	return { name:"**Eyes of Minute Seeing**", link:"https://www.dndbeyond.com/magic-items/eyes-of-minute-seeing" };
-	if(roll === 95) return { name:"**Folding Boat**", link:"https://www.dndbeyond.com/magic-items/folding-boat" };
-	if(roll === 96) return { name:"**Hewards Handy Haversack**", link:"https://aversten.obsidianportal.com/wikis/hewards-handy-haversack" };
-	if(roll === 97) return { name:"**Horseshoes of speed**", link:"https://www.dndbeyond.com/magic-items/horseshoes-of-speed" };
-	if(roll === 98) return { name:"**Necklace of Fireballs**", link:"https://www.dndbeyond.com/magic-items/necklace-of-fireballs" };
-	if(roll === 99) return { name:"**Periapt of Health**", link:"https://www.dndbeyond.com/magic-items/periapt-of-health" };
-	if(roll === 100) return { name:"**Sending Stones**", link:"https://aversten.obsidianportal.com/wiki_pages/sending-stones" };
+module.exports = () => {
+	return [
+		{ "roll": 15, "name": "**Potion of Superior Healing**", "link":"https://www.dndbeyond.com/magic-items/potion-of-healing" },
+		{ "roll": 22, "name": "**Spell Scroll (4th level)**", "link":"https://www.dndbeyond.com/magic-items/spell-scroll" },
+		{ "roll": 27, "name": "**+2 Ammunition**", "link":"https://www.dndbeyond.com/magic-items/ammunition-2" },
+		{ "roll": 32, "name": "**Potion of Clairvoyance**", "link":"https://www.dndbeyond.com/magic-items/potion-of-clairvoyance" },
+		{ "roll": 37, "name": "**Potion of Diminution**", "link":"https://www.dndbeyond.com/magic-items/potion-of-diminution" },
+		{ "roll": 42, "name": "**Potion of Gaseous Form**", "link":"https://www.dndbeyond.com/magic-items/potion-of-gaseous-form" },
+		{ "roll": 47, "name": "**Potion of Frost Giant Strength**", "link":"https://www.dndbeyond.com/magic-items/potion-of-giant-strength" },
+		{ "roll": 52, "name": "**Potion of Stone Giant Strength**", "link":"https://www.dndbeyond.com/magic-items/potion-of-giant-strength" },
+		{ "roll": 57, "name": "**Potion of Heroism**", "link":"https://www.dndbeyond.com/magic-items/potion-of-heroism" },
+		{ "roll": 62, "name": "**Potion of Invulnerability**", "link":"https://aversten.obsidianportal.com/wiki_pages/potion-of-invulnerability" },
+		{ "roll": 67, "name": "**Potion of Mind Reading**", "link":"https://www.dndbeyond.com/magic-items/potion-of-mind-reading" },
+		{ "roll": 72, "name": "**Spell Scroll (5th level)**", "link":"https://www.dndbeyond.com/magic-items/spell-scroll" },
+		{ "roll": 75, "name": "**Elixir of Health**", "link":"https://aversten.obsidianportal.com/wiki_pages/elixir-of-health" },
+		{ "roll": 78, "name": "**Oil of Etherealness**", "link":"https://www.dndbeyond.com/magic-items/oil-of-etherealness" },
+		{ "roll": 81, "name": "**Potion of Fire Giant Strength**", "link":"https://www.dndbeyond.com/magic-items/potion-of-giant-strength" },
+		{ "roll": 84, "name": "**Quaal's Feather Token**", "link":"https://aversten.obsidianportal.com/wiki_pages/quaals-feather-token" },
+		{ "roll": 87, "name": "**Scroll of Protection**", "link":"https://aversten.obsidianportal.com/wiki_pages/scroll-of-protection" },
+		{ "roll": 89, "name": "**Bag of Beans**", "link":"https://www.dndbeyond.com/magic-items/bag-of-beans" },
+		{ "roll": 91, "name": "**Bead of Force**", "link":"https://www.dndbeyond.com/magic-items/bead-of-force" },
+		{ "roll": 92, "name": "**Chime of Opening**", "link":"https://www.dndbeyond.com/magic-items/chime-of-opening" },
+		{ "roll": 93, "name": "**Decanter of Endless Water**", "link":"https://www.dndbeyond.com/magic-items/decanter-of-endless-water" },
+		{ "roll": 94, "name": "**Eyes of Minute Seeing**", "link":"https://www.dndbeyond.com/magic-items/eyes-of-minute-seeing" },
+		{ "roll": 95, "name": "**Folding Boat**", "link":"https://www.dndbeyond.com/magic-items/folding-boat" },
+		{ "roll": 96, "name": "**Hewards Handy Haversack**", "link":"https://aversten.obsidianportal.com/wikis/hewards-handy-haversack" },
+		{ "roll": 97, "name": "**Horseshoes of speed**", "link":"https://www.dndbeyond.com/magic-items/horseshoes-of-speed" },
+		{ "roll": 98, "name": "**Necklace of Fireballs**", "link":"https://www.dndbeyond.com/magic-items/necklace-of-fireballs" },
+		{ "roll": 99, "name": "**Periapt of Health**", "link":"https://www.dndbeyond.com/magic-items/periapt-of-health" },
+		{ "roll": 100, "name": "**Sending Stones**", "link":"https://aversten.obsidianportal.com/wiki_pages/sending-stones" },
+	];
 };

@@ -1,62 +1,64 @@
-module.exports = (roll) => {
-	if(roll <= 15) return { name:"**+1 Weapon**", link:"https://www.dndbeyond.com/magic-items/weapon-1" };
-	if(roll <= 18) return { name:"**+1 Shield**", link:"https://www.dndbeyond.com/magic-items/shield-1" };
-	if(roll <= 21) return { name:"**Sentinel Shield**", link:"https://aversten.obsidianportal.com/wiki_pages/sentinel-shield" };
-	if(roll <= 23) return { name:"**Amulet of Proof against Detection and Location**", link:"https://www.dndbeyond.com/magic-items/amulet-of-proof-against-detection-and-location" };
-	if(roll <= 25) return { name:"**Boots of Elvenkind**", link:"https://www.dndbeyond.com/magic-items/boots-of-elvenkind" };
-	if(roll <= 27) return { name:"**Boots of Striding and Springing**", link:"https://www.dndbeyond.com/magic-items/boots-of-striding-and-springing" };
-	if(roll <= 29) return { name:"**Bracers of Archery**", link:"https://www.dndbeyond.com/magic-items/bracers-of-archery" };
-	if(roll <= 31) return { name:"**Brooch of Shielding**", link:"https://www.dndbeyond.com/magic-items/brooch-of-shielding" };
-	if(roll <= 33) return { name:"**Broom of Flying**", link:"https://www.dndbeyond.com/magic-items/broom-of-flying" };
-	if(roll <= 35) return { name:"**Cloak of Elvenkind**", link:"https://www.dndbeyond.com/magic-items/cloak-of-elvenkind" };
-	if(roll <= 37) return { name:"**Cloak of Protection**", link:"https://www.dndbeyond.com/magic-items/cloak-of-protection" };
-	if(roll <= 39) return { name:"**Gauntlets of Ogre Power**", link:"https://www.dndbeyond.com/magic-items/gauntlets-of-ogre-power" };
-	if(roll <= 41) return { name:"**Hat of Disguise**", link:"https://www.dndbeyond.com/magic-items/hat-of-disguise" };
-	if(roll <= 43) return { name:"**Javelin of Lightning**", link:"https://www.dndbeyond.com/magic-items/javelin-of-lightning" };
-	if(roll <= 45) return { name:"**Pearl of Power**", link:"https://www.dndbeyond.com/magic-items/pearl-of-power" };
-	if(roll <= 47) return { name:"**+1 Rod of the Pact Keeper**", link:"https://aversten.obsidianportal.com/wiki_pages/rod-of-the-pact-keeper" };
-	if(roll <= 49) return { name:"**Slippers of Spider Climbing**", link:"https://www.dndbeyond.com/magic-items/slippers-of-spider-climbing" };
-	if(roll <= 51) return { name:"**Staff of the Adder**", link:"https://aversten.obsidianportal.com/wiki_pages/staff-of-the-adder" };
-	if(roll <= 53) return { name:"**Staff of the Python**", link:"https://www.dndbeyond.com/magic-items/staff-of-the-python" };
-	if(roll <= 55) return { name:"**Sword of Vengeance**", link:"https://aversten.obsidianportal.com/wiki_pages/sword-of-vengeance" };
-	if(roll <= 57) return { name:"**Trident of Fish Command**", link:"https://www.dndbeyond.com/magic-items/trident-of-fish-command" };
-	if(roll <= 59) return { name:"**Wand of Magic Missiles**", link:"https://www.dndbeyond.com/magic-items/wand-of-magic-missiles" };
-	if(roll <= 61) return { name:"**+1 Wand of the War Mage**", link:"https://www.dndbeyond.com/magic-items/wand-of-the-war-mage" };
-	if(roll <= 63) return { name:"**Wand of Web**", link:"https://www.dndbeyond.com/magic-items/wand-of-web" };
-	if(roll <= 65) return { name:"**Weapon of Warning**", link:"https://aversten.obsidianportal.com/wiki_pages/weapon-of-warning" };
-	if(roll === 66) return { name:"**Adamantine Armor (Chain Mail)**", link:"https://www.dndbeyond.com/magic-items/adamantine-armor" };
-	if(roll === 67) return { name:"**Adamantine Armor (Chain Shirt)**", link:"https://www.dndbeyond.com/magic-items/adamantine-armor" };
-	if(roll === 68) return { name:"**Adamantine Armor (Scale Mail)**", link:"https://www.dndbeyond.com/magic-items/adamantine-armor" };
-	if(roll === 69) return { name:"**Bag of Tricks (Gray)**", link:"https://www.dndbeyond.com/magic-items/bag-of-tricks" };
-	if(roll === 70) return { name:"**Bag of Tricks (Rust)**", link:"https://www.dndbeyond.com/magic-items/bag-of-tricks" };
-	if(roll === 71) return { name:"**Bag of Tricks (Tan)**", link:"https://www.dndbeyond.com/magic-items/bag-of-tricks" };
-	if(roll === 72) return { name:"**Boots of the Winterlands**", link:"https://www.dndbeyond.com/magic-items/boots-of-the-winterlands" };
-	if(roll === 73) return { name:"**Circlet of Blasting**", link:"https://www.dndbeyond.com/magic-items/circlet-of-blasting" };
-	if(roll === 74) return { name:"**Deck of Illusions**", link:"https://www.dndbeyond.com/magic-items/deck-of-illusions" };
-	if(roll === 75) return { name:"**Eversmoking Bottle**", link:"https://www.dndbeyond.com/magic-items/eversmoking-bottle" };
-	if(roll === 76) return { name:"**Eyes of Charming**", link:"https://www.dndbeyond.com/magic-items/eyes-of-charming" };
-	if(roll === 77) return { name:"**Eyes of the Eagle**", link:"https://www.dndbeyond.com/magic-items/eyes-of-the-eagle" };
-	if(roll === 78) return { name:"**Figurine of Wondrous Power (Silver Raven)**", link:"https://www.dndbeyond.com/magic-items/figurine-of-wondrous-power-silver-raven" };
-	if(roll === 79) return { name:"**Gem of Brightness**", link:"https://www.dndbeyond.com/magic-items/gem-of-brightness" };
-	if(roll === 80) return { name:"**Gloves of Missile Snaring**", link:"https://www.dndbeyond.com/magic-items/gloves-of-missile-snaring" };
-	if(roll === 81) return { name:"**Gloves of Swimming and Climbing**", link:"https://www.dndbeyond.com/magic-items/gloves-of-swimming-and-climbing" };
-	if(roll === 82) return { name:"**Gloves of Thievery**", link:"https://aversten.obsidianportal.com/wiki_pages/gloves-of-thievery" };
-	if(roll === 83) return { name:"**Headband of Intellect**", link:"https://www.dndbeyond.com/magic-items/headband-of-intellect" };
-	if(roll === 84) return { name:"**Helm of Telepathy**", link:"https://www.dndbeyond.com/magic-items/helm-of-telepathy" };
-	if(roll === 85) return { name:"**Instrument of the Bards (Doss Lute)**", link:"https://aversten.obsidianportal.com/wiki_pages/instrument-of-the-bards" };
-	if(roll === 86) return { name:"**Instrument of the Bards (Fochlucan Bandore)**", link:"https://aversten.obsidianportal.com/wiki_pages/instrument-of-the-bards" };
-	if(roll === 87) return { name:"**Instrument of the Bards (Mac-Fuimidh Cittern)**", link:"https://aversten.obsidianportal.com/wiki_pages/instrument-of-the-bards" };
-	if(roll === 88) return { name:"**Medallion of Thoughts**", link:"https://www.dndbeyond.com/magic-items/medallion-of-thoughts" };
-	if(roll === 89) return { name:"**Necklace of Adaptation**", link:"https://www.dndbeyond.com/magic-items/necklace-of-adaptation" };
-	if(roll === 90) return { name:"**Periapt of Wound Closure**", link:"https://www.dndbeyond.com/magic-items/periapt-of-wound-closure" };
-	if(roll === 91) return { name:"**Pipes of Haunting**", link:"https://www.dndbeyond.com/magic-items/pipes-of-haunting" };
-	if(roll === 92) return { name:"**Pipes of the Sewers**", link:"https://www.dndbeyond.com/magic-items/pipes-of-the-sewers" };
-	if(roll === 93) return { name:"**Ring of Jumping**", link:"https://www.dndbeyond.com/magic-items/ring-of-jumping" };
-	if(roll === 94) return { name:"**Ring of Mind Shielding**", link:"https://www.dndbeyond.com/magic-items/ring-of-mind-shielding" };
-	if(roll === 95) return { name:"**Ring of Warmth**", link:"https://www.dndbeyond.com/magic-items/ring-of-warmth" };
-	if(roll === 96) return { name:"**Ring of Water Walking**", link:"https://www.dndbeyond.com/magic-items/ring-of-water-walking" };
-	if(roll === 97) return { name:"**Quiver of Ehlonna**", link:"https://aversten.obsidianportal.com/wiki_pages/quiver-of-ehlonna" };
-	if(roll === 98) return { name:"**Stone of Good Luck**", link:"https://www.dndbeyond.com/magic-items/stone-of-good-luck-luckstone" };
-	if(roll === 99) return { name:"**Wind Fan**", link:"https://www.dndbeyond.com/magic-items/wind-fan" };
-	if(roll === 100) return { name:"**Winged Boots**", link:"https://www.dndbeyond.com/magic-items/winged-boots" };
+module.exports = () => {
+	return [
+		{ "roll": 15, "name": "**+1 Weapon**", "link":"https://www.dndbeyond.com/magic-items/weapon-1" },
+		{ "roll": 18, "name": "**+1 Shield**", "link":"https://www.dndbeyond.com/magic-items/shield-1" },
+		{ "roll": 21, "name": "**Sentinel Shield**", "link":"https://aversten.obsidianportal.com/wiki_pages/sentinel-shield" },
+		{ "roll": 23, "name": "**Amulet of Proof against Detection and Location**", "link":"https://www.dndbeyond.com/magic-items/amulet-of-proof-against-detection-and-location" },
+		{ "roll": 25, "name": "**Boots of Elvenkind**", "link":"https://www.dndbeyond.com/magic-items/boots-of-elvenkind" },
+		{ "roll": 27, "name": "**Boots of Striding and Springing**", "link":"https://www.dndbeyond.com/magic-items/boots-of-striding-and-springing" },
+		{ "roll": 29, "name": "**Bracers of Archery**", "link":"https://www.dndbeyond.com/magic-items/bracers-of-archery" },
+		{ "roll": 31, "name": "**Brooch of Shielding**", "link":"https://www.dndbeyond.com/magic-items/brooch-of-shielding" },
+		{ "roll": 33, "name": "**Broom of Flying**", "link":"https://www.dndbeyond.com/magic-items/broom-of-flying" },
+		{ "roll": 35, "name": "**Cloak of Elvenkind**", "link":"https://www.dndbeyond.com/magic-items/cloak-of-elvenkind" },
+		{ "roll": 37, "name": "**Cloak of Protection**", "link":"https://www.dndbeyond.com/magic-items/cloak-of-protection" },
+		{ "roll": 39, "name": "**Gauntlets of Ogre Power**", "link":"https://www.dndbeyond.com/magic-items/gauntlets-of-ogre-power" },
+		{ "roll": 41, "name": "**Hat of Disguise**", "link":"https://www.dndbeyond.com/magic-items/hat-of-disguise" },
+		{ "roll": 43, "name": "**Javelin of Lightning**", "link":"https://www.dndbeyond.com/magic-items/javelin-of-lightning" },
+		{ "roll": 45, "name": "**Pearl of Power**", "link":"https://www.dndbeyond.com/magic-items/pearl-of-power" },
+		{ "roll": 47, "name": "**+1 Rod of the Pact Keeper**", "link":"https://aversten.obsidianportal.com/wiki_pages/rod-of-the-pact-keeper" },
+		{ "roll": 49, "name": "**Slippers of Spider Climbing**", "link":"https://www.dndbeyond.com/magic-items/slippers-of-spider-climbing" },
+		{ "roll": 51, "name": "**Staff of the Adder**", "link":"https://aversten.obsidianportal.com/wiki_pages/staff-of-the-adder" },
+		{ "roll": 53, "name": "**Staff of the Python**", "link":"https://www.dndbeyond.com/magic-items/staff-of-the-python" },
+		{ "roll": 55, "name": "**Sword of Vengeance**", "link":"https://aversten.obsidianportal.com/wiki_pages/sword-of-vengeance" },
+		{ "roll": 57, "name": "**Trident of Fish Command**", "link":"https://www.dndbeyond.com/magic-items/trident-of-fish-command" },
+		{ "roll": 59, "name": "**Wand of Magic Missiles**", "link":"https://www.dndbeyond.com/magic-items/wand-of-magic-missiles" },
+		{ "roll": 61, "name": "**+1 Wand of the War Mage**", "link":"https://www.dndbeyond.com/magic-items/wand-of-the-war-mage" },
+		{ "roll": 63, "name": "**Wand of Web**", "link":"https://www.dndbeyond.com/magic-items/wand-of-web" },
+		{ "roll": 65, "name": "**Weapon of Warning**", "link":"https://aversten.obsidianportal.com/wiki_pages/weapon-of-warning" },
+		{ "roll": 66, "name": "**Adamantine Armor (Chain Mail)**", "link":"https://www.dndbeyond.com/magic-items/adamantine-armor" },
+		{ "roll": 67, "name": "**Adamantine Armor (Chain Shirt)**", "link":"https://www.dndbeyond.com/magic-items/adamantine-armor" },
+		{ "roll": 68, "name": "**Adamantine Armor (Scale Mail)**", "link":"https://www.dndbeyond.com/magic-items/adamantine-armor" },
+		{ "roll": 69, "name": "**Bag of Tricks (Gray)**", "link":"https://www.dndbeyond.com/magic-items/bag-of-tricks" },
+		{ "roll": 70, "name": "**Bag of Tricks (Rust)**", "link":"https://www.dndbeyond.com/magic-items/bag-of-tricks" },
+		{ "roll": 71, "name": "**Bag of Tricks (Tan)**", "link":"https://www.dndbeyond.com/magic-items/bag-of-tricks" },
+		{ "roll": 72, "name": "**Boots of the Winterlands**", "link":"https://www.dndbeyond.com/magic-items/boots-of-the-winterlands" },
+		{ "roll": 73, "name": "**Circlet of Blasting**", "link":"https://www.dndbeyond.com/magic-items/circlet-of-blasting" },
+		{ "roll": 74, "name": "**Deck of Illusions**", "link":"https://www.dndbeyond.com/magic-items/deck-of-illusions" },
+		{ "roll": 75, "name": "**Eversmoking Bottle**", "link":"https://www.dndbeyond.com/magic-items/eversmoking-bottle" },
+		{ "roll": 76, "name": "**Eyes of Charming**", "link":"https://www.dndbeyond.com/magic-items/eyes-of-charming" },
+		{ "roll": 77, "name": "**Eyes of the Eagle**", "link":"https://www.dndbeyond.com/magic-items/eyes-of-the-eagle" },
+		{ "roll": 78, "name": "**Figurine of Wondrous Power (Silver Raven)**", "link":"https://www.dndbeyond.com/magic-items/figurine-of-wondrous-power-silver-raven" },
+		{ "roll": 79, "name": "**Gem of Brightness**", "link":"https://www.dndbeyond.com/magic-items/gem-of-brightness" },
+		{ "roll": 80, "name": "**Gloves of Missile Snaring**", "link":"https://www.dndbeyond.com/magic-items/gloves-of-missile-snaring" },
+		{ "roll": 81, "name": "**Gloves of Swimming and Climbing**", "link":"https://www.dndbeyond.com/magic-items/gloves-of-swimming-and-climbing" },
+		{ "roll": 82, "name": "**Gloves of Thievery**", "link":"https://aversten.obsidianportal.com/wiki_pages/gloves-of-thievery" },
+		{ "roll": 83, "name": "**Headband of Intellect**", "link":"https://www.dndbeyond.com/magic-items/headband-of-intellect" },
+		{ "roll": 84, "name": "**Helm of Telepathy**", "link":"https://www.dndbeyond.com/magic-items/helm-of-telepathy" },
+		{ "roll": 85, "name": "**Instrument of the Bards (Doss Lute)**", "link":"https://aversten.obsidianportal.com/wiki_pages/instrument-of-the-bards" },
+		{ "roll": 86, "name": "**Instrument of the Bards (Fochlucan Bandore)**", "link":"https://aversten.obsidianportal.com/wiki_pages/instrument-of-the-bards" },
+		{ "roll": 87, "name": "**Instrument of the Bards (Mac-Fuimidh Cittern)**", "link":"https://aversten.obsidianportal.com/wiki_pages/instrument-of-the-bards" },
+		{ "roll": 88, "name": "**Medallion of Thoughts**", "link":"https://www.dndbeyond.com/magic-items/medallion-of-thoughts" },
+		{ "roll": 89, "name": "**Necklace of Adaptation**", "link":"https://www.dndbeyond.com/magic-items/necklace-of-adaptation" },
+		{ "roll": 90, "name": "**Periapt of Wound Closure**", "link":"https://www.dndbeyond.com/magic-items/periapt-of-wound-closure" },
+		{ "roll": 91, "name": "**Pipes of Haunting**", "link":"https://www.dndbeyond.com/magic-items/pipes-of-haunting" },
+		{ "roll": 92, "name": "**Pipes of the Sewers**", "link":"https://www.dndbeyond.com/magic-items/pipes-of-the-sewers" },
+		{ "roll": 93, "name": "**Ring of Jumping**", "link":"https://www.dndbeyond.com/magic-items/ring-of-jumping" },
+		{ "roll": 94, "name": "**Ring of Mind Shielding**", "link":"https://www.dndbeyond.com/magic-items/ring-of-mind-shielding" },
+		{ "roll": 95, "name": "**Ring of Warmth**", "link":"https://www.dndbeyond.com/magic-items/ring-of-warmth" },
+		{ "roll": 96, "name": "**Ring of Water Walking**", "link":"https://www.dndbeyond.com/magic-items/ring-of-water-walking" },
+		{ "roll": 97, "name": "**Quiver of Ehlonna**", "link":"https://aversten.obsidianportal.com/wiki_pages/quiver-of-ehlonna" },
+		{ "roll": 98, "name": "**Stone of Good Luck**", "link":"https://www.dndbeyond.com/magic-items/stone-of-good-luck-luckstone" },
+		{ "roll": 99, "name": "**Wind Fan**", "link":"https://www.dndbeyond.com/magic-items/wind-fan" },
+		{ "roll": 100, "name": "**Winged Boots**", "link":"https://www.dndbeyond.com/magic-items/winged-boots" },
+	];
 };

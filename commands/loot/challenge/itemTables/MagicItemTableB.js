@@ -1,37 +1,39 @@
-module.exports = (roll) => {
-	if(roll <= 15) return { name:"**Potion of Greater Healing**", link:"https://www.dndbeyond.com/magic-items/potion-of-healing" };
-	if(roll <= 22) return { name:"**Potion of Fire Breath**", link:"https://aversten.obsidianportal.com/wiki_pages/potion-of-fire-breath" };
-	if(roll <= 29) return { name:"**Potion of Resistance**", link:"https://www.dndbeyond.com/magic-items/potion-of-resistance" };
-	if(roll <= 34) return { name:"**+1 Ammunition**", link:"https://www.dndbeyond.com/magic-items/ammunition-1" };
-	if(roll <= 39) return { name:"**Potion of Animal Friendship**", link:"https://www.dndbeyond.com/magic-items/potion-of-animal-friendship" };
-	if(roll <= 44) return { name:"**Potion of Hill Giant Strength**", link:"https://www.dndbeyond.com/magic-items/potion-of-giant-strength" };
-	if(roll <= 49) return { name:"**Potion of Growth**", link:"https://www.dndbeyond.com/magic-items/potion-of-growth" };
-	if(roll <= 54) return { name:"**Potion of Water Breathing**", link:"https://www.dndbeyond.com/magic-items/potion-of-water-breathing" };
-	if(roll <= 59) return { name:"**Spell Scroll (2nd level)**", link:"https://www.dndbeyond.com/magic-items/spell-scroll" };
-	if(roll <= 64) return { name:"**Spell Scroll (3rd level)**", link:"https://www.dndbeyond.com/magic-items/spell-scroll" };
-	if(roll <= 67) return { name:"**Bag of Holding**", link:"https://www.dndbeyond.com/magic-items/bag-of-holding" };
-	if(roll <= 70) return { name:"**Keoghtom's Ointment**", link:"https://aversten.obsidianportal.com/wiki_pages/keoghtoms-ointment" };
-	if(roll <= 73) return { name:"**Oil of Slipperiness**", link:"https://www.dndbeyond.com/magic-items/oil-of-slipperiness" };
-	if(roll <= 75) return { name:"**Dust of Disappearance**", link:"https://www.dndbeyond.com/magic-items/dust-of-disappearance" };
-	if(roll <= 77) return { name:"**Dust of Dryness**", link:"https://www.dndbeyond.com/magic-items/dust-of-dryness" };
-	if(roll <= 79) return { name:"**Dust of Sneezing and Choking**", link:"https://www.dndbeyond.com/magic-items/dust-of-sneezing-and-choking" };
-	if(roll <= 81) return { name:"**Elemental Gem**", link:"https://www.dndbeyond.com/magic-items/elemental-gem" };
-	if(roll <= 83) return { name:"**Philter of Love**", link:"https://www.dndbeyond.com/magic-items/philter-of-love" };
-	if(roll === 84) return { name:"**Alchemy Jug**", link:"https://aversten.obsidianportal.com/wiki_pages/alchemy-jug" };
-	if(roll === 85) return { name:"**Cap of Water Breathing**", link:"https://aversten.obsidianportal.com/wiki_pages/cap-of-water-breathing" };
-	if(roll === 86) return { name:"**Cloak of the Manta Ray**", link:"https://www.dndbeyond.com/magic-items/cloak-of-the-manta-ray" };
-	if(roll === 87) return { name:"**Driftglobe**", link:"https://aversten.obsidianportal.com/wikis/driftglobe" };
-	if(roll === 88) return { name:"**Goggles of Night**", link:"https://www.dndbeyond.com/magic-items/goggles-of-night" };
-	if(roll === 89) return { name:"**Helm of Comprehending Languages**", link:"https://www.dndbeyond.com/magic-items/helm-of-comprehending-languages" };
-	if(roll === 90) return { name:"**Immovable Rod**", link:"https://www.dndbeyond.com/magic-items/immovable-rod" };
-	if(roll === 91) return { name:"**Lantern of Revealing**", link:"https://www.dndbeyond.com/magic-items/lantern-of-revealing" };
-	if(roll === 92) return { name:"**Mariner's Armor**", link:"https://aversten.obsidianportal.com/wiki_pages/mariners-armor" };
-	if(roll === 93) return { name:"**Mithral Armor**", link:"https://www.dndbeyond.com/magic-items/mithral-armor" };
-	if(roll === 94) return { name:"**Potion of Poison**", link:"https://www.dndbeyond.com/magic-items/potion-of-poison" };
-	if(roll === 95) return { name:"**Ring of Swimming**", link:"https://www.dndbeyond.com/magic-items/ring-of-swimming" };
-	if(roll === 96) return { name:"**Robe of Useful Items**", link:"https://www.dndbeyond.com/magic-items/robe-of-useful-items" };
-	if(roll === 97) return { name:"**Rope of Climbing**", link:"https://www.dndbeyond.com/magic-items/rope-of-climbing" };
-	if(roll === 98) return { name:"**Saddle of the Cavalier**", link:"https://aversten.obsidianportal.com/wikis/saddle-of-the-cavalier" };
-	if(roll === 99) return { name:"**Wand of Magic Detection**", link:"https://www.dndbeyond.com/magic-items/wand-of-magic-detection" };
-	if(roll === 100) return { name:"**Wand of Secrets**", link:"https://www.dndbeyond.com/magic-items/wand-of-secrets" };
+module.exports = () => {
+	return [
+		{ "roll": 15, "name": "**Potion of Greater Healing**", "link": "https://www.dndbeyond.com/magic-items/potion-of-healing" },
+		{ "roll": 22, "name": "**Potion of Fire Breath**", "link": "https://aversten.obsidianportal.com/wiki_pages/potion-of-fire-breath" },
+		{ "roll": 29, "name": "**Potion of Resistance**", "link": "https://www.dndbeyond.com/magic-items/potion-of-resistance" },
+		{ "roll": 34, "name": "**+1 Ammunition**", "link": "https://www.dndbeyond.com/magic-items/ammunition-1" },
+		{ "roll": 39, "name": "**Potion of Animal Friendship**", "link": "https://www.dndbeyond.com/magic-items/potion-of-animal-friendship" },
+		{ "roll": 44, "name": "**Potion of Hill Giant Strength**", "link": "https://www.dndbeyond.com/magic-items/potion-of-giant-strength" },
+		{ "roll": 49, "name": "**Potion of Growth**", "link": "https://www.dndbeyond.com/magic-items/potion-of-growth" },
+		{ "roll": 54, "name": "**Potion of Water Breathing**", "link": "https://www.dndbeyond.com/magic-items/potion-of-water-breathing" },
+		{ "roll": 59, "name": "**Spell Scroll (2nd level)**", "link": "https://www.dndbeyond.com/magic-items/spell-scroll" },
+		{ "roll": 64, "name": "**Spell Scroll (3rd level)**", "link": "https://www.dndbeyond.com/magic-items/spell-scroll" },
+		{ "roll": 67, "name": "**Bag of Holding**", "link": "https://www.dndbeyond.com/magic-items/bag-of-holding" },
+		{ "roll": 70, "name": "**Keoghtom's Ointment**", "link": "https://aversten.obsidianportal.com/wiki_pages/keoghtoms-ointment" },
+		{ "roll": 73, "name": "**Oil of Slipperiness**", "link": "https://www.dndbeyond.com/magic-items/oil-of-slipperiness" },
+		{ "roll": 75, "name": "**Dust of Disappearance**", "link": "https://www.dndbeyond.com/magic-items/dust-of-disappearance" },
+		{ "roll": 77, "name": "**Dust of Dryness**", "link": "https://www.dndbeyond.com/magic-items/dust-of-dryness" },
+		{ "roll": 79, "name": "**Dust of Sneezing and Choking**", "link": "https://www.dndbeyond.com/magic-items/dust-of-sneezing-and-choking" },
+		{ "roll": 81, "name": "**Elemental Gem**", "link": "https://www.dndbeyond.com/magic-items/elemental-gem" },
+		{ "roll": 83, "name": "**Philter of Love**", "link": "https://www.dndbeyond.com/magic-items/philter-of-love" },
+		{ "roll": 84, "name": "**Alchemy Jug**", "link": "https://aversten.obsidianportal.com/wiki_pages/alchemy-jug" },
+		{ "roll": 85, "name": "**Cap of Water Breathing**", "link": "https://aversten.obsidianportal.com/wiki_pages/cap-of-water-breathing" },
+		{ "roll": 86, "name": "**Cloak of the Manta Ray**", "link": "https://www.dndbeyond.com/magic-items/cloak-of-the-manta-ray" },
+		{ "roll": 87, "name": "**Driftglobe**", "link": "https://aversten.obsidianportal.com/wikis/driftglobe" },
+		{ "roll": 88, "name": "**Goggles of Night**", "link": "https://www.dndbeyond.com/magic-items/goggles-of-night" },
+		{ "roll": 89, "name": "**Helm of Comprehending Languages**", "link": "https://www.dndbeyond.com/magic-items/helm-of-comprehending-languages" },
+		{ "roll": 90, "name": "**Immovable Rod**", "link": "https://www.dndbeyond.com/magic-items/immovable-rod" },
+		{ "roll": 91, "name": "**Lantern of Revealing**", "link": "https://www.dndbeyond.com/magic-items/lantern-of-revealing" },
+		{ "roll": 92, "name": "**Mariner's Armor**", "link": "https://aversten.obsidianportal.com/wiki_pages/mariners-armor" },
+		{ "roll": 93, "name": "**Mithral Armor**", "link": "https://www.dndbeyond.com/magic-items/mithral-armor" },
+		{ "roll": 94, "name": "**Potion of Poison**", "link": "https://www.dndbeyond.com/magic-items/potion-of-poison" },
+		{ "roll": 95, "name": "**Ring of Swimming**", "link": "https://www.dndbeyond.com/magic-items/ring-of-swimming" },
+		{ "roll": 96, "name": "**Robe of Useful Items**", "link": "https://www.dndbeyond.com/magic-items/robe-of-useful-items" },
+		{ "roll": 97, "name": "**Rope of Climbing**", "link": "https://www.dndbeyond.com/magic-items/rope-of-climbing" },
+		{ "roll": 98, "name": "**Saddle of the Cavalier**", "link": "https://aversten.obsidianportal.com/wikis/saddle-of-the-cavalier" },
+		{ "roll": 99, "name": "**Wand of Magic Detection**", "link": "https://www.dndbeyond.com/magic-items/wand-of-magic-detection" },
+		{ "roll": 100, "name": "**Wand of Secrets**", "link": "https://www.dndbeyond.com/magic-items/wand-of-secrets" },
+	];
 };
