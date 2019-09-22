@@ -1,36 +1,41 @@
-/*
-Strength
-Dexterity
-Constitution
-Intelligence
-Wisdom
-Charisma
-*/
-
+const chosenRace = require("./npc/race/halfelf.js");
 exports.run = async (client, message, args) => {
-	/*
-		eg; "/npc" to generate an npc with a random class and race
-		eg; "/npc guard" to generate a guard with a random race & a few pre-selected classes
-		eg; "/npc guard rogue" to generate a rogue class guard & random race
-		eg; "/npc guard rogue human" to generate a rogue class, human guard (need a way to switch class & race without making a mess)
 
-		Maybe split command into several commands? eg:
-		job: "/job guard rogue human"
-		npc: "/npc human rogue"
-		etc.
-	*/
+	if(!args[0]) return message.channel.send("Usage: [npc](<..race> <..job/class>)", { code: "markdown" });
+
+	let character = {
+		"race": "\u200b",
+		"class": "\u200b",
+		"gender": "\u200b",
+		"name": "\u200b",
+		"job": "\u200b",
+		"speed": "\u200b",
+		"strength": 8,
+		"dexterity": 8,
+		"constitution": 8,
+		"intelligence": 8,
+		"wisdom": 8,
+		"charisma": 8,
+	};
+
+	character = chosenRace(character);
+	return console.log(character);
 };
 
+// /create human str-fighter ?
+// /create human dex-fighter ?
+// /create human int-fighter ?
+
 exports.conf = {
-	enabled: false,
+	enabled: true,
 	allowDM: true,
-	aliases: ["create"],
-	permLevel: 0,
+	aliases: ["n"],
+	permLevel: 10,
 };
 
 exports.help = {
 	name: "npc",
 	category: "Misc",
-	description: "Generates a semi-random npc",
-	usage: "..job-name ..class ..race",
+	description: "Creates a semi-random NPC",
+	usage: "race job/class",
 };

@@ -1,7 +1,7 @@
 module.exports = (character) => {
-	character.race = "aasimar";
-	character.speed = 30;
-	character.charisma += 2;
+	character.race = "wood elf";
+	character.speed = 35;
+	character.dexterity += 2;
 	character.wisdom += 1;
 	return character;
 };
