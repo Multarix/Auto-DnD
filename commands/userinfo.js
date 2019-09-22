@@ -14,7 +14,7 @@ exports.run = async (client, message, args) => {
 		member = message.guild.members.get(tagged.id);
 	}
 
-	const joinDate = moment.duration(Date.now() - user.createdTimestamp).format("Y [years], M [months], D [days]");
+	const joinDate = moment.duration(Date.now() - user.createdTimestamp).format("Y [years], M [months], D [days], H [hours]");
 
 	let game = "nothing";
 	if(user.presence.game) game = user.presence.game.name;
@@ -37,7 +37,8 @@ exports.run = async (client, message, args) => {
 
 	let ecolor1 = 14487568;
 	if(member){
-		embed.addField("Joined Server:", moment.duration(Date.now() - member.joinedTimestamp).format("Y [years], M [months], D [days], H [hours]"), false);
+		const serverJoin = moment.duration(Date.now() - member.joinedTimestamp).format("Y [years], M [months], D [days], H [hours]");
+		embed.addField("Joined Server:", `${serverJoin} ago`, false);
 		if(member.highestRole.color) ecolor1 = member.highestRole.color;
 		if(member.roles){
 			const s = function(a, b) { return a.calculatedPosition - b.calculatedPosition; };
