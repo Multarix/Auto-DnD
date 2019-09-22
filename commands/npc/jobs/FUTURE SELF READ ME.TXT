@@ -1,7 +1,0 @@
-Jobs are going to link back into classes & Race
-
-This means that:
-1. These jobs are just going to serve as a basis to define classes
-2. Stats do not need to be in these with a select few as exception
-(eg. Merchants, Prostitutes [They are so generic that any class and race can fit those jobs but both have high charisma most likely])
-3. This makes life a little easier, they're supposed to be generic throw away npcs/ give an idea of what stats you should be looking at.
