@@ -1,7 +1,7 @@
 module.exports = async (character) => {
-	character.race = "Aasimar";
-	character.speed = 30;
-	character.stats.charisma += 2;
+	character.race = "Hill Dwarf";
+	character.speed = 25;
+	character.stats.constitution += 2;
 	character.stats.wisdom += 1;
 	return character;
 };
