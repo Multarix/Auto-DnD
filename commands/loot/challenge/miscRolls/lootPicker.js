@@ -22,7 +22,7 @@ module.exports = (x, d, b) => {
 	let tableItems = '';
 	const tableRolls = [];
 	for(let i = 0; i < rollAmount; i++){
-		const num = Math.floor(Math.random() * 100 + 1);
+		const num = randomNumber(100, 1);
 		const table = require(`../itemTables/MagicItemTable${t}.js`)(num);
 		const loot = nextNumber(table, num);
 		tableRolls.push(num);

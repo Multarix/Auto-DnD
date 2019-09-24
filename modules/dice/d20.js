@@ -1,4 +1,3 @@
-module.exports = (client) => {
-	const num = Math.floor(Math.random() * 20 + 1);
-	return num;
+module.exports = () => {
+	return randomNumber(20, 1);
 };

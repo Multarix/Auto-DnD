@@ -1,4 +1,3 @@
-module.exports = (client) => {
-	const num = Math.floor(Math.random() * 6 + 1);
-	return num;
+module.exports = () => {
+	return randomNumber(6, 1);
 };

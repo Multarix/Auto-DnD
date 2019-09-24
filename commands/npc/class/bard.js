@@ -9,11 +9,17 @@ const aTags = {
 	"metal": true,
 	"shield": false,
 };
-const tools = "3 Instruments";
+const musical = require("../items/musicalInstruments.json");
+const artisan = require("../items/artisanTools.json");
 exports.run = async (character) => {
 
 	character.class = "Bard";
-	character.inventory.tools = tools;
+
+	const tool = randomNumber(artisan.length);
+	const instrument = randomNumber(musical.length);
+	const item = (Math.random() > 0.5) ? musical[instrument] : artisan[tool];
+
+	character.inventory.tools = item;
 
 	for(const [key] of Object.entries(character.stats)){
 		character.stats[key] += 2;

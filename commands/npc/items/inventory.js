@@ -9,7 +9,7 @@ module.exports = (character, wTags, aTags) => {
 		if(wTags.simple && weaponList[i].simple){ viableWeapons.push(weaponList[i]); continue; }
 		if(wTags.martial && weaponList[i].martial){ viableWeapons.push(weaponList[i]); continue; }
 	}
-	let num = Math.floor(Math.random() * viableWeapons.length);
+	let num = randomNumber(viableWeapons.length);
 	const weapon = viableWeapons[num];
 
 	const viableArmor = [];
@@ -18,7 +18,7 @@ module.exports = (character, wTags, aTags) => {
 		if(!armorList[i].metal && !aTags.metal){ viableArmor.push(armorList[i]); continue; }
 		if(aTags.types.includes(armorList[i].type) && armorList[i].strength < character.stats.strength){ viableArmor.push(armorList[i]); continue; }
 	}
-	num = Math.floor(Math.random() * viableArmor.length);
+	num = randomNumber(viableArmor.length);
 	const armor = viableArmor[num];
 
 	return { "weapon": weapon, "armor": armor };
