@@ -1,15 +1,25 @@
-const armor = "Light & Medium Armor, Shields";
-const weapon = "Simple";
+const inventory = require("../items/inventory.js");
+const wTags = {
+	"names": [],
+	"simple": true,
+	"martial": false,
+};
+const aTags = {
+	"types": ["light", "medium"],
+	"metal": true,
+	"shield": true,
+};
 exports.run = async (character) => {
 
 	character.class = "Cleric";
-	character.inventory.armor = armor;
-	character.inventory.weapon = weapon;
 
 	for(const [key] of Object.entries(character.stats)){
 		character.stats[key] += 2;
 	}
 
+	const gear = inventory(character, wTags, aTags);
+	character.inventory.armor = gear.armor.name;
+	character.inventory.weapon = gear.weapon.name;
 	return character;
 };
 

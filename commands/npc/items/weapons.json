@@ -72,7 +72,7 @@
 		"properties": ["thrown"]
 	},
 	{
-		"name": "Crossbow, Light",
+		"name": "Light Crossbow",
 		"simple": true,
 		"ranged": true,
 		"properties": ["anmunition", "loading", "two-handed"]
@@ -210,13 +210,13 @@
 		"properties": ["ammunition", "loading"]
 	},
 	{
-		"name": "Crossbow, Hand",
+		"name": "Hand Crossbow",
 		"simple": false,
 		"ranged": true,
 		"properties": ["ammunition", "light", "loading"]
 	},
 	{
-		"name": "Crossbow, Heavy",
+		"name": "Heavy Crossbow",
 		"simple": false,
 		"ranged": true,
 		"properties": ["ammunition", "heavy", "loading", "two-handed"]

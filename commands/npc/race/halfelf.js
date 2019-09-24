@@ -1,6 +1,10 @@
 exports.run = async (character) => {
 	character.race = "Half-Elf";
 	character.speed = 30;
+	return character;
+};
+
+exports.stats = async (character) => {
 	character.stats.charisma += 2;
 
 	const a = ["strength", "dexterity", "intelligence", "wisdom", "constitution"];
@@ -12,7 +16,6 @@ exports.run = async (character) => {
 	num = Math.floor(Math.random() * 3);
 	s = a[num];	// Grab the item in num's position from the array
 	character.stats[s] += 1;	// Apply +1 to that item from the character stats
-
 	return character;
 };
 
