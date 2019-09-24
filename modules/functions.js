@@ -121,6 +121,9 @@ module.exports = async (client) => {
 		return guild.roles.get(roleID);
 	};
 
+	// Generates a random number between 0 and the specified value
+	global.randomNumber = require("./misc/randomNumber.js");
+
 	global.d4 = require("../modules/dice/d4.js");
 	global.d6 = require("../modules/dice/d6.js");
 	global.d8 = require("../modules/dice/d8.js");
