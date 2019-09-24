@@ -7,7 +7,7 @@ module.exports = (character, wTags, aTags) => {
 	for(let i = 0; i < weaponList.length; i++){
 		if(wTags.names.includes(weaponList[i].name)){ viableWeapons.push(weaponList[i]); continue; }
 		if(wTags.simple && weaponList[i].simple){ viableWeapons.push(weaponList[i]); continue; }
-		if(wTags.martial && weaponList[i].martial){ viableWeapons.push(weaponList[i]); continue; }
+		if(wTags.martial && !weaponList[i].simple){ viableWeapons.push(weaponList[i]); continue; }
 	}
 	let num = randomNumber(viableWeapons.length);
 	const weapon = viableWeapons[num];
