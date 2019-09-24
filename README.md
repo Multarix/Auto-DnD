@@ -15,4 +15,4 @@ A bot for Dungeons and Dragons.
 - Moment-duration-format (2.2.2 or higher)
 
 ##### Disclaimers
-*May or may not contain errors, this shit is in 20+ different files due to how complex loot rolling can be.
+*May or may not contain errors
