@@ -9,7 +9,6 @@ const aTags = {
 	"metal": true,
 	"shield": false,
 };
-
 exports.run = async (character) => {
 
 	character.class = "Warlock";

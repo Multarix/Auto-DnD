@@ -53,7 +53,7 @@ exports.run = async (client, message, args) => {
 		.addField("🛡 **Armor**", `${character.inventory.armor} Armor\n\u200b`, true)
 		.addField("⚔ Weapon", character.inventory.weapon, true)
 		.addField("🛠 **Tools**", character.inventory.tools, true)
-		.addField("**Stats**", `\u200b${str}`, true)
+		.addField("**Stats**", `${str}`, true)
 		.addField("**Misc Information**", `**Race** - ${character.race}\n**Speed** - ${character.speed}\n**Class** - ${character.class}\n**Gender** - ${character.gender}\n`, true)
 		.addBlankField(true);
 
