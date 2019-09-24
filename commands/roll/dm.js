@@ -17,27 +17,27 @@ module.exports = (client, message, args) => {
 
 	// D4 Dice (1 - 4)
 	if(die === "d4"){
-		embed.addField(`Result 🎲`, `${d4()}`, true);
+		embed.addField(`Result 🎲`, d4(), true);
 	}
 	// D6 Dice (1 - 6)
 	if(die === "d6"){
-		embed.addField(`Result 🎲`, `${d6()}`, true);
+		embed.addField(`Result 🎲`, d6(), true);
 	}
 	// D8 Dice (1 - 8)
 	if(die === "d8"){
-		embed.addField(`Result 🎲`, `${d8()}`, true);
+		embed.addField(`Result 🎲`, d8(), true);
 	}
 	// D10 Dice (1 - 10)
 	if(die === "d10"){
-		embed.addField(`Result 🎲`, `${d10()}`, true);
+		embed.addField(`Result 🎲`, d10(), true);
 	}
 	// D12 Dice (1 - 12)
 	if(die === "d12"){
-		embed.addField(`Result 🎲`, `${d12()}`, true);
+		embed.addField(`Result 🎲`, d12(), true);
 
 	}
 	if(die === "d100"){
-		embed.addField(`Result 🎲`, `${d100()}`, true);
+		embed.addField(`Result 🎲`, d100(), true);
 	}
 	// D20 Dice (1 - 20)
 	if(die === "d20"){

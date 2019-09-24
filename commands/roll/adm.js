@@ -13,7 +13,7 @@ module.exports = (client, message, args) => {
 
 	let a = parseInt(amount);
 	if(isNaN(a)) a = 1;
-	if(a >= 24) a = 24;
+	if(a >= 25) a = 24;
 
 	const embed = new Discord.RichEmbed()
 		.setAuthor(message.member.displayName, message.author.displayAvatarURL)
@@ -23,37 +23,37 @@ module.exports = (client, message, args) => {
 
 	// D4 Dice (1 - 4)
 	if(die === "d4"){
-		for(let i = 0; amount > i; i++){
-			embed.addField(`Dice #${i + 1} 🎲`, `${d4()}`, true);
+		for(let i = 0; a > i; i++){
+			embed.addField(`Dice #${i + 1} 🎲`, d4(), true);
 		}
 	}
 	// D6 Dice (1 - 6)
 	if(die === "d6"){
-		for(let i = 0; amount > i; i++){
-			embed.addField(`Dice #${i + 1} 🎲`, `${d6()}`, true);
+		for(let i = 0; a > i; i++){
+			embed.addField(`Dice #${i + 1} 🎲`, d6(), true);
 		}
 	}
 	// D8 Dice (1 - 8)
 	if(die === "d8"){
-		for(let i = 0; amount > i; i++){
-			embed.addField(`Dice #${i + 1} 🎲`, `${d8()}`, true);
+		for(let i = 0; a > i; i++){
+			embed.addField(`Dice #${i + 1} 🎲`, d8(), true);
 		}
 	}
 	// D10 Dice (1 - 10)
 	if(die === "d10"){
-		for(let i = 0; amount > i; i++){
-			embed.addField(`Dice #${i + 1} 🎲`, `${d10()}`, true);
+		for(let i = 0; a > i; i++){
+			embed.addField(`Dice #${i + 1} 🎲`, d10(), true);
 		}
 	}
 	// D12 Dice (1 - 12)
 	if(die === "d12"){
-		for(let i = 0; amount > i; i++){
-			embed.addField(`Dice #${i + 1} 🎲`, `${d12()}`, true);
+		for(let i = 0; a > i; i++){
+			embed.addField(`Dice #${i + 1} 🎲`, d12(), true);
 		}
 	}
 	if(die === "d100"){
-		for(let i = 0; amount > i; i++){
-			embed.addField(`Dice #${i + 1} 🎲`, `${d100()}`, true);
+		for(let i = 0; a > i; i++){
+			embed.addField(`Dice #${i + 1} 🎲`, d100(), true);
 		}
 	}
 	// D20 Dice (1 - 20)

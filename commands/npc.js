@@ -60,10 +60,6 @@ exports.run = async (client, message, args) => {
 	return message.channel.send(embed);
 };
 
-// /create human str-fighter ?
-// /create human dex-fighter ?
-// /create human int-fighter ?
-
 exports.conf = {
 	enabled: true,
 	allowDM: true,
