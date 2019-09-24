@@ -1,0 +1,236 @@
+[
+	{
+		"name": "Club",
+		"simple": true,
+		"ranged": false,
+		"properties": ["light", "melee"]
+	},
+	{
+		"name": "Dagger",
+		"simple": true,
+		"ranged": false,
+		"properties": ["Finesse", "light", "thrown"]
+	},
+	{
+		"name": "Greatclub",
+		"simple": true,
+		"ranged": false,
+		"properties": ["two-handed"]
+	},
+	{
+		"name": "Handaxe",
+		"simple": true,
+		"ranged": false,
+		"properties": ["light", "thrown"]
+	},
+	{
+		"name": "Javelin",
+		"simple": true,
+		"ranged": false,
+		"properties": ["thrown"]
+	},
+	{
+		"name": "Light Hammer",
+		"simple": true,
+		"ranged": false,
+		"properties": ["light", "thrown"]
+	},
+	{
+		"name": "Mace",
+		"simple": true,
+		"ranged": false,
+		"properties": []
+	},
+	{
+		"name": "Quarterstaff",
+		"simple": true,
+		"ranged": false,
+		"properties": ["versatile"]
+	},
+	{
+		"name": "Sickle",
+		"simple": true,
+		"ranged": false,
+		"properties": ["light"]
+	},
+	{
+		"name": "Spear",
+		"simple": true,
+		"ranged": false,
+		"properties": ["thrown", "versatile"]
+	},
+	{
+		"name": "Yklwa",
+		"simple": true,
+		"ranged": false,
+		"properties": ["thrown"]
+	},
+	{
+		"name": "Boomerang",
+		"simple": true,
+		"ranged": true,
+		"properties": ["thrown"]
+	},
+	{
+		"name": "Crossbow, Light",
+		"simple": true,
+		"ranged": true,
+		"properties": ["anmunition", "loading", "two-handed"]
+	},
+	{
+		"name": "Dart",
+		"simple": true,
+		"ranged": true,
+		"properties": ["finesse", "thrown"]
+	},
+	{
+		"name": "Shortbow",
+		"simple": true,
+		"ranged": true,
+		"properties": ["ammunition", "two-handed"]
+	},
+	{
+		"name": "Sling",
+		"simple": true,
+		"ranged": true,
+		"properties": ["ammunition"]
+	},
+	{
+		"name": "Battleaxe",
+		"simple": false,
+		"ranged": false,
+		"properties": ["versatile"]
+	},
+	{
+		"name": "Flail",
+		"simple": false,
+		"ranged": false,
+		"properties": []
+	},
+	{
+		"name": "Glaive",
+		"simple": false,
+		"ranged": false,
+		"properties": ["heavy", "reach", "two-handed"]
+	},
+	{
+		"name": "Greataxe",
+		"simple": false,
+		"ranged": false,
+		"properties": ["heavy", "two-handed"]
+	},
+	{
+		"name": "Greatsword",
+		"simple": false,
+		"ranged": false,
+		"properties": ["heavy", "two-handed"]
+	},
+	{
+		"name": "Halberd",
+		"simple": false,
+		"ranged": false,
+		"properties": ["heavy", "reach", "two-handed"]
+	},
+	{
+		"name": "Lance",
+		"simple": false,
+		"ranged": false,
+		"properties": ["reach", "special"]
+	},
+	{
+		"name": "Longsword",
+		"simple": false,
+		"ranged": false,
+		"properties": ["versatile"]
+	},
+	{
+		"name": "Maul",
+		"simple": false,
+		"ranged": false,
+		"properties": ["heavy", "two-handed"]
+	},
+	{
+		"name": "Morningstar",
+		"simple": false,
+		"ranged": false,
+		"properties": []
+	},
+	{
+		"name": "Pike",
+		"simple": false,
+		"ranged": false,
+		"properties": ["heavy", "reach", "two-handed"]
+	},
+	{
+		"name": "Rapier",
+		"simple": false,
+		"ranged": false,
+		"properties": ["finesse"]
+	},
+	{
+		"name": "Scimitar",
+		"simple": false,
+		"ranged": false,
+		"properties": ["finesse", "light"]
+	},
+	{
+		"name": "Shortsword",
+		"simple": false,
+		"ranged": false,
+		"properties": ["finesse", "light"]
+	},
+	{
+		"name": "Trident",
+		"simple": false,
+		"ranged": false,
+		"properties": ["thrown"]
+	},
+	{
+		"name": "War Pick",
+		"simple": false,
+		"ranged": false,
+		"properties": []
+	},
+	{
+		"name": "Warhammer",
+		"simple": false,
+		"ranged": false,
+		"properties": ["versatile"]
+	},
+	{
+		"name": "Whip",
+		"simple": false,
+		"ranged": false,
+		"properties": ["finesse", "reach"]
+	},
+	{
+		"name": "Blowgun",
+		"simple": false,
+		"ranged": true,
+		"properties": ["ammunition", "loading"]
+	},
+	{
+		"name": "Crossbow, Hand",
+		"simple": false,
+		"ranged": true,
+		"properties": ["ammunition", "light", "loading"]
+	},
+	{
+		"name": "Crossbow, Heavy",
+		"simple": false,
+		"ranged": true,
+		"properties": ["ammunition", "heavy", "loading", "two-handed"]
+	},
+	{
+		"name": "Longbow",
+		"simple": false,
+		"ranged": true,
+		"properties": ["ammunition", "heavy", "two-handed"]
+	},
+	{
+		"name": "Net",
+		"simple": false,
+		"ranged": true,
+		"properties": ["special", "thrown"]
+	}
+]

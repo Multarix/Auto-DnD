@@ -1,18 +1,8 @@
-/*
-hit die: d6
-primary skill: Intelligence
-saveing throws: Intelligence & Wisdom
-
---Proficiences--
-Armor: none
-Weapons: Daggers, Darts, Slings, Quarterstaffs, Light Crossbows
-Tools: None
-*/
 const armor = "None";
 const weapon = "Daggers, Darts, Slings, QuarterStaffs, Light Crossbows";
-module.exports = async (character) => {
-	character.class = "Wizard";
+exports.run = async (character) => {
 
+	character.class = "Wizard";
 	character.inventory.armor = armor;
 	character.inventory.weapon = weapon;
 
@@ -21,4 +11,9 @@ module.exports = async (character) => {
 	}
 
 	return character;
+};
+
+exports.info = {
+	name: "wizard",
+	aliases: ["wiztard"],
 };

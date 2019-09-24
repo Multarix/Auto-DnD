@@ -1,18 +1,8 @@
-/*
-hit die: d8
-primary skill: Charisma
-saveing throws: Constitution & Charisma
-
---Proficiences--
-Armor: None
-Weapons: Daggers, Darts, Slings, Quarterstaffs, Light Crossbows
-Tools: None
-*/
 const armor = "None";
 const weapon = "Daggers, Darts, Slings, Quarterstaffs, Light Crossbows";
-module.exports = async (character) => {
-	character.class = "Sorcerer";
+exports.run = async (character) => {
 
+	character.class = "Sorcerer";
 	character.inventory.armor = armor;
 	character.inventory.weapon = weapon;
 
@@ -21,4 +11,9 @@ module.exports = async (character) => {
 	}
 
 	return character;
+};
+
+exports.info = {
+	name: "sorcerer",
+	aliases: ["sorc", "mage"],
 };

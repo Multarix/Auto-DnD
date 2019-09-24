@@ -1,4 +1,4 @@
-module.exports = async (character) => {
+exports.run = async (character) => {
 	character.race = "Half-Elf";
 	character.speed = 30;
 	character.stats.charisma += 2;
@@ -15,9 +15,8 @@ module.exports = async (character) => {
 
 	return character;
 };
-/*
+
 exports.info = {
-	"name": "halfelf",
-	"aliases": ["elfhalf"],
+	"name": "half-elf",
+	"aliases": ["halfelf"],
 };
-*/

@@ -1,0 +1,86 @@
+[
+	{
+		"name": "Padded",
+		"type": "light",
+		"strength": 0,
+		"metal": false,
+		"stealth": false
+	},
+	{
+		"name": "Leather",
+		"type": "light",
+		"strength": 0,
+		"metal": false,
+		"stealth": true
+	},
+	{
+		"name": "Studded Leather",
+		"type": "light",
+		"strength": 0,
+		"metal": false,
+		"stealth": true
+	},
+	{
+		"name": "Hide",
+		"type": "medium",
+		"strength": 0,
+		"metal": false,
+		"stealth": true
+	},
+	{
+		"name": "Chain Shirt",
+		"type": "medium",
+		"strength": 0,
+		"metal": true,
+		"stealth": true
+	},
+	{
+		"name": "Scale Mail",
+		"type": "medium",
+		"strength": 0,
+		"metal": true,
+		"stealth": false
+	},
+	{
+		"name": "Breastplace",
+		"type": "medium",
+		"strength": 0,
+		"metal": true,
+		"stealth": true
+	},
+	{
+		"name": "Half Plate",
+		"type": "medium",
+		"strength": 0,
+		"metal": true,
+		"stealth": false
+	},
+	{
+		"name": "Ring Mail",
+		"type": "heavy",
+		"strength": 0,
+		"metal": true,
+		"stealth": false
+	},
+	{
+		"name": "Chain Mail",
+		"type": "heavy",
+		"strength": 13,
+		"metal": true,
+		"stealth": false
+	},
+	{
+		"name": "Splint",
+		"type": "heavy",
+		"strength": 15,
+		"metal": true,
+		"stealth": false
+	},
+	{
+		"name": "Plate",
+		"type": "heavy",
+		"strength": 15,
+		"metal": true,
+		"stealth": false
+	}
+]

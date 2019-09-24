@@ -1,19 +1,9 @@
-/*
-hit die: d8
-primary skill: charisma
-saveing throws: dexterity & charisma
-
---Proficiences--
-Armor: Light
-Weapons: Simple, Hand Crossbows, Longswords, Rapiers, Shortswords
-Tools: 3 Musical Instruments
-*/
 const armor = "Light Armor";
 const weapon = "Simple, Hand Crossbows, Longswords, Rapiers, Shortswords";
 const tools = "3 Musical Instruments";
-module.exports = async (character) => {
-	character.class = "Bard";
+exports.run = async (character) => {
 
+	character.class = "Bard";
 	character.inventory.armor = armor;
 	character.inventory.weapon = weapon;
 	character.inventory.tools = tools;
@@ -23,4 +13,9 @@ module.exports = async (character) => {
 	}
 
 	return character;
+};
+
+exports.info = {
+	name: "bard",
+	aliases: ["musician", "cunt", "worst", "horrible", "shit", "trash", "annoying", "garbage"],
 };

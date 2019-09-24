@@ -1,18 +1,8 @@
-/*
-hit die: d10
-primary skill: Dexterity & Wisdom
-saveing throws: Strength & Dexterity
-
---Proficiences--
-Armor: Light, Medium & Shields
-Weapons: Simple & Martial
-Tools: None
-*/
 const armor = "Light & Medium Armor, Shields";
 const weapon = "Simple & Martial";
-module.exports = async (character) => {
-	character.class = "Ranger";
+exports.run = async (character) => {
 
+	character.class = "Ranger";
 	character.inventory.armor = armor;
 	character.inventory.weapon = weapon;
 
@@ -21,4 +11,9 @@ module.exports = async (character) => {
 	}
 
 	return character;
+};
+
+exports.info = {
+	name: "ranger",
+	aliases: ["archer"],
 };

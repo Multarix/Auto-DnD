@@ -1,18 +1,8 @@
-/*
-hit die: d8
-primary skill: wisdom
-saveing throws: wisdom & charisma
-
---Proficiences--
-Armor: Light, Medium & Shields
-Weapons: Simple
-Tools: None
-*/
 const armor = "Light & Medium Armor, Shields";
 const weapon = "Simple";
-module.exports = async (character) => {
-	character.class = "Cleric";
+exports.run = async (character) => {
 
+	character.class = "Cleric";
 	character.inventory.armor = armor;
 	character.inventory.weapon = weapon;
 
@@ -21,4 +11,9 @@ module.exports = async (character) => {
 	}
 
 	return character;
+};
+
+exports.info = {
+	name: "cleric",
+	aliases: ["healer", "priest"],
 };
