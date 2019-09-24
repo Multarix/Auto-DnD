@@ -9,7 +9,7 @@ const aTags = {
 	"metal": true,
 	"shield": false,
 };
-const tools = "1 Artisan Tool or Musical Instrument";
+const tools = "1 Artisan Tool/\n1 Instrument";
 exports.run = async (character) => {
 
 	character.class = "Monk";

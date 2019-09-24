@@ -1,6 +1,4 @@
 const Discord = require("discord.js");
-
-
 const nameGenerator = require("./npc/name/nameGen.js");
 exports.run = async (client, message, args) => {
 
@@ -23,9 +21,9 @@ exports.run = async (client, message, args) => {
 			charisma: 8,
 		},
 		inventory: {
-			armor: "none",
-			weapon: "none",
-			tools: "none",
+			armor: "No",
+			weapon: "None",
+			tools: "None",
 		},
 	};
 
@@ -52,7 +50,7 @@ exports.run = async (client, message, args) => {
 		.setFooter(client.user.username, client.user.displayAvatarURL)
 		.setTimestamp()
 		.setTitle(character.name)
-		.addField("🛡 **Armor**", `${character.inventory.armor} Armor`, true)
+		.addField("🛡 **Armor**", `${character.inventory.armor} Armor\n\u200b`, true)
 		.addField("⚔ Weapon", character.inventory.weapon, true)
 		.addField("🛠 **Tools**", character.inventory.tools, true)
 		.addField("**Stats**", `\u200b${str}`, true)
