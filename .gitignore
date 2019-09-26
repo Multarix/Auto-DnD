@@ -1,6 +1,5 @@
 config.json
 node_modules
-ecosystem.config.js
 shards.js
 commands/test.js
 objects/settings.sqlite
