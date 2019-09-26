@@ -85,5 +85,3 @@ const init = async () => {
 };
 
 init();
-
-setTimeout(restartBot, 172800000);
