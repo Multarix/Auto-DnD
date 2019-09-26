@@ -11,6 +11,9 @@ module.exports = (character, wTags, aTags) => {
 	}
 	let num = randomNumber(viableWeapons.length);
 	const weapon = viableWeapons[num];
+	console.log(weapon);
+	if(aTags.shield && weapon.allowShield && Math.random() >= 0.75) weapon.name += " & Shield";
+
 
 	const viableArmor = [];
 	for(let i = 0; i < armorList.length; i++){
