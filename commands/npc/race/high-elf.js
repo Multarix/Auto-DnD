@@ -12,5 +12,5 @@ exports.stats = async (character) => {
 
 exports.info = {
 	name: "high-elf",
-	aliases: ["highelf"],
+	aliases: ["highelf", "high"],
 };

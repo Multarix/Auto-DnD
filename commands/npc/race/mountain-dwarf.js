@@ -12,5 +12,5 @@ exports.stats = async (character) => {
 
 exports.info = {
 	name: "mountain-dwarf",
-	aliases: ["mountain"],
+	aliases: ["mountain", "mountaindwarf"],
 };
