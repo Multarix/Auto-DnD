@@ -67,6 +67,7 @@
 					"d20" : true,
 					"d100" : true,
 					"percentile" : true,
-					"randomNumber" : true
+					"randomNumber" : true,
+					"statGen" : true
     }
 }

@@ -118,7 +118,10 @@ module.exports = async (client) => {
 
 	// Generates a random number between 0 and the specified value
 	global.randomNumber = require("./misc/randomNumber.js");
+	// NPC Stat Generation
+	global.statGen = require("../modules/misc/randomStat.js");
 
+	// Dice
 	global.d4 = require("../modules/dice/d4.js");
 	global.d6 = require("../modules/dice/d6.js");
 	global.d8 = require("../modules/dice/d8.js");
