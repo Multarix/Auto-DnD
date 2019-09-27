@@ -1,5 +1,6 @@
 exports.run = async (character) => {
 	character.race = "Gnome";
+	character.small = true;
 	character.speed = 25;
 	return character;
 };
