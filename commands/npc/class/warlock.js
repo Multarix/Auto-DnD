@@ -9,18 +9,21 @@ const aTags = {
 	"metal": true,
 	"shield": false,
 };
+const skills = {
+	mainStat: "charisma",
+	secondStat: false,
+	saveThrow: "wisdom",
+	miscStats: ["strength", "dexterity", "constitution", "intelligence"],
+};
 exports.run = async (character) => {
 
 	character.class = "Warlock";
+	const npc = statGen(character, skills);
 
-	for(const [key] of Object.entries(character.stats)){
-		character.stats[key] += 2;
-	}
-
-	const gear = inventory(character, wTags, aTags);
-	character.inventory.armor = gear.armor.name;
-	character.inventory.weapon = gear.weapon.name;
-	return character;
+	const gear = inventory(npc, wTags, aTags);
+	npc.inventory.armor = gear.armor.name;
+	npc.inventory.weapon = gear.weapon.name;
+	return npc;
 };
 
 exports.info = {

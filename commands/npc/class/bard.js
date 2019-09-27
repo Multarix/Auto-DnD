@@ -9,6 +9,12 @@ const aTags = {
 	"metal": true,
 	"shield": false,
 };
+const skills = {
+	mainStat: "charisma",
+	secondStat: false,
+	saveThrow: "dexterity",
+	miscStats: ["strength", "constitution", "intelligence", "wisdom"],
+};
 const musical = require("../items/musicalInstruments.json");
 exports.run = async (character) => {
 
@@ -22,14 +28,12 @@ exports.run = async (character) => {
 	}
 	character.inventory.tools = items;
 
-	for(const [key] of Object.entries(character.stats)){
-		character.stats[key] += 2;
-	}
+	const npc = statGen(character, skills);
 
-	const gear = inventory(character, wTags, aTags);
-	character.inventory.armor = gear.armor.name;
-	character.inventory.weapon = gear.weapon.name;
-	return character;
+	const gear = inventory(npc, wTags, aTags);
+	npc.inventory.armor = gear.armor.name;
+	npc.inventory.weapon = gear.weapon.name;
+	return npc;
 };
 
 exports.info = {

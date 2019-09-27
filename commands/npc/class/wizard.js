@@ -9,17 +9,20 @@ const aTags = {
 	"metal": true,
 	"shield": false,
 };
+const skills = {
+	mainStat: "intelligence",
+	secondStat: false,
+	saveThrow: "wisdom",
+	miscStats: ["strength", "dexterity", "constitution", "charisma"],
+};
 exports.run = async (character) => {
 
 	character.class = "Wizard";
+	const npc = statGen(character, skills);
 
-	for(const [key] of Object.entries(character.stats)){
-		character.stats[key] += 2;
-	}
-
-	const gear = inventory(character, wTags, aTags);
-	character.inventory.weapon = gear.weapon.name;
-	return character;
+	const gear = inventory(npc, wTags, aTags);
+	npc.inventory.weapon = gear.weapon.name;
+	return npc;
 };
 
 exports.info = {

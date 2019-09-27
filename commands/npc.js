@@ -9,7 +9,6 @@ exports.run = async (client, message, args) => {
 		small: false,
 		speed: 0,
 		class: "\u200b",
-		job: "\u200b",
 		gender: "\u200b",
 		name: "\u200b",
 		stats: {

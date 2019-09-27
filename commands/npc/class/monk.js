@@ -9,6 +9,12 @@ const aTags = {
 	"metal": true,
 	"shield": false,
 };
+const skills = {
+	mainStat: "dexterity",
+	secondStat: "wisdom",
+	saveThrow: "strength",
+	miscStats: ["constitution", "intelligence", "charisma"],
+};
 const musical = require("../items/musicalInstruments.json");
 const artisan = require("../items/artisanTools.json");
 exports.run = async (character) => {
@@ -20,13 +26,11 @@ exports.run = async (character) => {
 	const item = (Math.random() > 0.5) ? `Instrument: ${musical[instrument]}` : artisan[tool];
 	character.inventory.tools = item;
 
-	for(const [key] of Object.entries(character.stats)){
-		character.stats[key] += 2;
-	}
+	const npc = statGen(character, skills);
 
-	const gear = inventory(character, wTags, aTags);
-	character.inventory.weapon = gear.weapon.name;
-	return character;
+	const gear = inventory(npc, wTags, aTags);
+	npc.inventory.weapon = gear.weapon.name;
+	return npc;
 };
 
 exports.info = {
