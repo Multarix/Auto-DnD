@@ -19,5 +19,5 @@ A bot for Dungeons and Dragons.
 - Moment-duration-format (2.2.2 or higher)
 
 ##### Disclaimers
-*May or may not contain errors
+*May or may not contain errors<br/>
 **Tweaks may or may not be made
