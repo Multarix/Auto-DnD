@@ -13,5 +13,5 @@ exports.stats = async (character) => {
 
 exports.info = {
 	name: "gnome",
-	aliases: ["dwarf"],
+	aliases: [],
 };
