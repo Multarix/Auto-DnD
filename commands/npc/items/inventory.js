@@ -1,7 +1,7 @@
 const weaponList = require("./weapons.json");
 const armorList = require("./armor.json");
 module.exports = (character, wTags, aTags) => {
-	if(character.small) weaponList.filter(x => !x.properties.includes("heavy"));
+	if(character.race.small) weaponList.filter(x => !x.properties.includes("heavy"));
 
 	const viableWeapons = [];
 	for(let i = 0; i < weaponList.length; i++){

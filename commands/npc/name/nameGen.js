@@ -3,7 +3,7 @@ module.exports = (character) => {
 	character.gender = gender.toProperCase();
 
 	const reggie = /\w+$/g;	// eslint-disable-line no-useless-escape
-	const str = character.race.toLowerCase().replace("-", "");
+	const str = character.race.name.toLowerCase().replace("-", "");
 	const race = reggie.exec(str)[0];
 
 	const first = require(`./${gender}/${race}.json`);
