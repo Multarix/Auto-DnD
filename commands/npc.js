@@ -23,7 +23,7 @@ exports.run = async (client, message, args) => {
 			charisma: 8,
 		},
 		inventory: {
-			armor: "No",
+			armor: "None",
 			weapon: "None",
 			tools: "None",
 		},
@@ -50,15 +50,14 @@ exports.run = async (client, message, args) => {
 	for(const [key, value] of Object.entries(character.stats)){
 		str += `**${key.toProperCase()}** - ${value}\n`;
 	}
-
 	const embed = new Discord.RichEmbed()
 		.setAuthor(message.member.displayName, message.author.displayAvatarURL)
 		.setFooter(client.user.username, client.user.displayAvatarURL)
 		.setTimestamp()
 		.setTitle(character.name)
 		.setDescription(`**Race** - [${character.race.name}](${character.race.link})\n**Base Speed** - ${character.race.speed}\n\u200b\n**Class** - ${character.class}\n**Gender** - ${character.gender}\n\u200b`)
-		.addField("⚔ Weapon", character.inventory.weapon, true)
-		.addField("🛡 **Armor**", `${character.inventory.armor} Armor\n\u200b`, true)
+		.addField("⚔ Weapon", character.inventory.weapon + "\n\u200b", true)
+		.addField("🛡 **Armor**", character.inventory.armor, true)
 		.addField("🛠 **Tools**", character.inventory.tools, true)
 		.addField("**Stats**", `${str}`, true)
 		.addBlankField(true);
