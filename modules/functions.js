@@ -8,10 +8,10 @@ module.exports = async (client) => {
 	client.aliases = new Discord.Collection();
 	client.events = new Discord.Collection();
 	// NPC Generation Collections
-	client.classType = new Discord.Collection();
-	client.classAlias = new Discord.Collection();
-	client.raceType = new Discord.Collection();
-	client.raceAlias = new Discord.Collection();
+	client.classType = new Map();
+	client.classAlias = new Map();
+	client.raceType = new Map();
+	client.raceAlias = new Map();
 
 	//	Permission level for commands.
 	client.permlevel = (message) => {
@@ -84,6 +84,9 @@ module.exports = async (client) => {
 
 	String.prototype.toProperCase = function() {
 		return this.replace(/([^\W_]+[^\s-]*) */g, function(txt) { return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase(); });
+	};
+	Map.prototype.random = function() {
+		return this.get([...this.keys()][Math.floor(Math.random() * this.size)]);
 	};
 
 	/* Custom Globals */
