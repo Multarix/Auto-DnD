@@ -29,12 +29,16 @@ exports.run = async (client, message, args) => {
 		},
 	};
 
+	const randArry = ["random", "rand", "r"];
+
 	const raceCheck = args.shift().toLowerCase();
-	const chosenRace = client.raceType.get(raceCheck) || client.raceType.get(client.raceAlias.get(raceCheck));
+	let chosenRace = client.raceType.get(raceCheck) || client.raceType.get(client.raceAlias.get(raceCheck));
+	if(!chosenRace && randArry.includes(raceCheck)) chosenRace = client.raceType.random();
 	if(!chosenRace) return message.channel.send("No Race/ Inavlid Race specified\nUsage: [npc](<..race> <..job/class>)", { code: "markdown" });
 
 	const classCheck = args.shift().toLowerCase();
-	const chosenClass = client.classType.get(classCheck) || client.classType.get(client.classAlias.get(classCheck));
+	let chosenClass = client.classType.get(classCheck) || client.classType.get(client.classAlias.get(classCheck));
+	if(!chosenClass && randArry.includes(classCheck)) chosenClass = client.classType.random();
 	if(!chosenClass) return message.channel.send("No Class/ Invalid Class specified\nUsage: [npc](<..race> <..job/class>)", { code: "markdown" });
 
 	character = await chosenRace.run(character);
