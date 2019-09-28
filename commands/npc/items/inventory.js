@@ -11,7 +11,8 @@ module.exports = (character, wTags, aTags) => {
 	}
 	let num = randomNumber(viableWeapons.length);
 	const weapon = viableWeapons[num];
-	if(aTags.shield && weapon.allowShield && Math.random() >= 0.75) weapon.name += " & Shield";
+	const shieldLink = "https://www.dndbeyond.com/equipment/shield";
+	weapon.name = (aTags.shield && weapon.allowShield && Math.random() >= 0.75) ? `[${weapon.name}](${weapon.link}) & [Shield](${shieldLink})` : `[${weapon.name}](${weapon.link})`;
 
 	const viableArmor = [];
 	for(let i = 0; i < armorList.length; i++){
@@ -20,7 +21,8 @@ module.exports = (character, wTags, aTags) => {
 		if(aTags.types.includes(armorList[i].type) && armorList[i].strength < character.stats.strength){ viableArmor.push(armorList[i]); continue; }
 	}
 	num = randomNumber(viableArmor.length);
-	const armor = viableArmor[num];
+	let armor = viableArmor[num];
+	if(!armor){ armor = { name: "None" }; } else { armor.name = `[${armor.name}](${armor.link})`; }
 
 	return { "weapon": weapon, "armor": armor };
 };
