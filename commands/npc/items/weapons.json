@@ -1,6 +1,7 @@
 [
 	{
 		"name": "Club",
+		"link": "https://www.dndbeyond.com/equipment/club",
 		"simple": true,
 		"ranged": false,
 		"allowShield": true,
@@ -8,6 +9,7 @@
 	},
 	{
 		"name": "Dagger",
+		"link": "https://www.dndbeyond.com/equipment/dagger",
 		"simple": true,
 		"ranged": false,
 		"allowShield": true,
@@ -15,6 +17,7 @@
 	},
 	{
 		"name": "Greatclub",
+		"link": "https://www.dndbeyond.com/equipment/greatclub",
 		"simple": true,
 		"ranged": false,
 		"allowShield": false,
@@ -22,6 +25,7 @@
 	},
 	{
 		"name": "Handaxe",
+		"link": "https://www.dndbeyond.com/equipment/handaxe",
 		"simple": true,
 		"ranged": false,
 		"allowShield": true,
@@ -29,6 +33,7 @@
 	},
 	{
 		"name": "Javelin",
+		"link": "https://www.dndbeyond.com/equipment/javelin",
 		"simple": true,
 		"ranged": false,
 		"allowShield": true,
@@ -36,6 +41,7 @@
 	},
 	{
 		"name": "Light Hammer",
+		"link": "https://www.dndbeyond.com/equipment/light-hammer",
 		"simple": true,
 		"ranged": false,
 		"allowShield": true,
@@ -43,6 +49,7 @@
 	},
 	{
 		"name": "Mace",
+		"link": "https://www.dndbeyond.com/equipment/mace",
 		"simple": true,
 		"ranged": false,
 		"allowShield": true,
@@ -50,6 +57,7 @@
 	},
 	{
 		"name": "Quarterstaff",
+		"link": "https://www.dndbeyond.com/equipment/quarterstaff",
 		"simple": true,
 		"ranged": false,
 		"allowShield": true,
@@ -57,6 +65,7 @@
 	},
 	{
 		"name": "Sickle",
+		"link": "https://www.dndbeyond.com/equipment/sickle",
 		"simple": true,
 		"ranged": false,
 		"allowShield": true,
@@ -64,6 +73,7 @@
 	},
 	{
 		"name": "Spear",
+		"link": "https://www.dndbeyond.com/equipment/spear",
 		"simple": true,
 		"ranged": false,
 		"allowShield": true,
@@ -71,6 +81,7 @@
 	},
 	{
 		"name": "Yklwa",
+		"link": "https://www.dndbeyond.com/equipment/yklwa",
 		"simple": true,
 		"ranged": false,
 		"allowShield": true,
@@ -78,6 +89,7 @@
 	},
 	{
 		"name": "Boomerang",
+		"link": "https://www.dndbeyond.com/equipment/boomerang",
 		"simple": true,
 		"ranged": true,
 		"allowShield": true,
@@ -85,6 +97,7 @@
 	},
 	{
 		"name": "Light Crossbow",
+		"link": "https://www.dndbeyond.com/equipment/crossbow-light",
 		"simple": true,
 		"ranged": true,
 		"allowShield": false,
@@ -92,6 +105,7 @@
 	},
 	{
 		"name": "Dart",
+		"link": "https://www.dndbeyond.com/equipment/dart",
 		"simple": true,
 		"ranged": true,
 		"allowShield": true,
@@ -99,6 +113,7 @@
 	},
 	{
 		"name": "Shortbow",
+		"link": "https://www.dndbeyond.com/equipment/shortbow",
 		"simple": true,
 		"ranged": true,
 		"allowShield": false,
@@ -106,6 +121,7 @@
 	},
 	{
 		"name": "Sling",
+		"link": "https://www.dndbeyond.com/equipment/sling",
 		"simple": true,
 		"ranged": true,
 		"allowShield": false,
@@ -113,6 +129,7 @@
 	},
 	{
 		"name": "Battleaxe",
+		"link": "https://www.dndbeyond.com/equipment/battleaxe",
 		"simple": false,
 		"ranged": false,
 		"allowShield": true,
@@ -120,6 +137,7 @@
 	},
 	{
 		"name": "Flail",
+		"link": "https://www.dndbeyond.com/equipment/flail",
 		"simple": false,
 		"ranged": false,
 		"allowShield": true,
@@ -127,6 +145,7 @@
 	},
 	{
 		"name": "Glaive",
+		"link": "https://www.dndbeyond.com/equipment/glaive",
 		"simple": false,
 		"ranged": false,
 		"allowShield": false,
@@ -134,6 +153,7 @@
 	},
 	{
 		"name": "Greataxe",
+		"link": "https://www.dndbeyond.com/equipment/greataxe",
 		"simple": false,
 		"ranged": false,
 		"allowShield": false,
@@ -141,6 +161,7 @@
 	},
 	{
 		"name": "Greatsword",
+		"link": "https://www.dndbeyond.com/equipment/greatsword",
 		"simple": false,
 		"ranged": false,
 		"allowShield": false,
@@ -148,6 +169,7 @@
 	},
 	{
 		"name": "Halberd",
+		"link": "https://www.dndbeyond.com/equipment/halberd",
 		"simple": false,
 		"ranged": false,
 		"allowShield": false,
@@ -155,6 +177,7 @@
 	},
 	{
 		"name": "Lance",
+		"link": "https://www.dndbeyond.com/equipment/lance",
 		"simple": false,
 		"ranged": false,
 		"allowShield": false,
@@ -162,6 +185,7 @@
 	},
 	{
 		"name": "Longsword",
+		"link": "https://www.dndbeyond.com/equipment/longsword",
 		"simple": false,
 		"ranged": false,
 		"allowShield": true,
@@ -169,6 +193,7 @@
 	},
 	{
 		"name": "Maul",
+		"link": "https://www.dndbeyond.com/equipment/maul",
 		"simple": false,
 		"ranged": false,
 		"allowShield": false,
@@ -176,6 +201,7 @@
 	},
 	{
 		"name": "Morningstar",
+		"link": "https://www.dndbeyond.com/equipment/morningstar",
 		"simple": false,
 		"ranged": false,
 		"allowShield": true,
@@ -183,6 +209,7 @@
 	},
 	{
 		"name": "Pike",
+		"link": "https://www.dndbeyond.com/equipment/pike",
 		"simple": false,
 		"ranged": false,
 		"allowShield": false,
@@ -190,6 +217,7 @@
 	},
 	{
 		"name": "Rapier",
+		"link": "https://www.dndbeyond.com/equipment/rapier",
 		"simple": false,
 		"ranged": false,
 		"allowShield": true,
@@ -197,6 +225,7 @@
 	},
 	{
 		"name": "Scimitar",
+		"link": "https://www.dndbeyond.com/equipment/scimitar",
 		"simple": false,
 		"ranged": false,
 		"allowShield": true,
@@ -204,6 +233,7 @@
 	},
 	{
 		"name": "Shortsword",
+		"link": "https://www.dndbeyond.com/equipment/shortsword",
 		"simple": false,
 		"ranged": false,
 		"allowShield": true,
@@ -211,6 +241,7 @@
 	},
 	{
 		"name": "Trident",
+		"link": "https://www.dndbeyond.com/equipment/trident",
 		"simple": false,
 		"ranged": false,
 		"allowShield": true,
@@ -218,6 +249,7 @@
 	},
 	{
 		"name": "War Pick",
+		"link": "https://www.dndbeyond.com/equipment/war-pick",
 		"simple": false,
 		"ranged": false,
 		"allowShield": true,
@@ -225,6 +257,7 @@
 	},
 	{
 		"name": "Warhammer",
+		"link": "https://www.dndbeyond.com/equipment/warhammer",
 		"simple": false,
 		"ranged": false,
 		"allowShield": true,
@@ -232,6 +265,7 @@
 	},
 	{
 		"name": "Whip",
+		"link": "https://www.dndbeyond.com/equipment/whip",
 		"simple": false,
 		"ranged": false,
 		"allowShield": true,
@@ -239,6 +273,7 @@
 	},
 	{
 		"name": "Blowgun",
+		"link": "https://www.dndbeyond.com/equipment/blowgun",
 		"simple": false,
 		"ranged": true,
 		"allowShield": false,
@@ -246,6 +281,7 @@
 	},
 	{
 		"name": "Hand Crossbow",
+		"link": "https://www.dndbeyond.com/equipment/crossbow-hand",
 		"simple": false,
 		"ranged": true,
 		"allowShield": false,
@@ -253,6 +289,7 @@
 	},
 	{
 		"name": "Heavy Crossbow",
+		"link": "https://www.dndbeyond.com/equipment/crossbow-heavy",
 		"simple": false,
 		"ranged": true,
 		"allowShield": false,
@@ -260,6 +297,7 @@
 	},
 	{
 		"name": "Longbow",
+		"link": "https://www.dndbeyond.com/equipment/longbow",
 		"simple": false,
 		"ranged": true,
 		"allowShield": false,
@@ -267,6 +305,7 @@
 	},
 	{
 		"name": "Net",
+		"link": "https://www.dndbeyond.com/equipment/net",
 		"simple": false,
 		"ranged": true,
 		"allowShield": true,

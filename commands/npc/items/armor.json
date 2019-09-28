@@ -1,84 +1,96 @@
 [
 	{
-		"name": "Padded",
+		"name": "Padded Armor",
 		"type": "light",
+		"link": "https://www.dndbeyond.com/equipment/padded",
 		"strength": 0,
 		"metal": false,
 		"stealth": false
 	},
 	{
-		"name": "Leather",
+		"name": "Leather Armor",
 		"type": "light",
+		"link": "https://www.dndbeyond.com/equipment/leather",
 		"strength": 0,
 		"metal": false,
 		"stealth": true
 	},
 	{
-		"name": "Studded Leather",
+		"name": "Studded Leather Armor",
 		"type": "light",
+		"link": "https://www.dndbeyond.com/equipment/studded-leather",
 		"strength": 0,
 		"metal": false,
 		"stealth": true
 	},
 	{
-		"name": "Hide",
+		"name": "Hide Armor",
 		"type": "medium",
+		"link": "https://www.dndbeyond.com/equipment/hide",
 		"strength": 0,
 		"metal": false,
 		"stealth": true
 	},
 	{
-		"name": "Chain Shirt",
+		"name": "Chain Shirt Armor",
 		"type": "medium",
+		"link": "https://www.dndbeyond.com/equipment/chain-shirt",
 		"strength": 0,
 		"metal": true,
 		"stealth": true
 	},
 	{
-		"name": "Scale Mail",
+		"name": "Scale Mail Armor",
 		"type": "medium",
+		"link": "https://www.dndbeyond.com/equipment/scale-mail",
 		"strength": 0,
 		"metal": true,
 		"stealth": false
 	},
 	{
-		"name": "Breastplate",
+		"name": "Breastplate Armor",
 		"type": "medium",
+		"link": "https://www.dndbeyond.com/equipment/breastplate",
 		"strength": 0,
 		"metal": true,
 		"stealth": true
 	},
 	{
-		"name": "Half Plate",
+		"name": "Half Plate Armor",
 		"type": "medium",
+		"link": "https://www.dndbeyond.com/equipment/half-plate",
 		"strength": 0,
 		"metal": true,
 		"stealth": false
 	},
 	{
-		"name": "Ring Mail",
+		"name": "Ring Mail Armor",
 		"type": "heavy",
+		"link": "https://www.dndbeyond.com/equipment/ring-mail",
 		"strength": 0,
 		"metal": true,
 		"stealth": false
 	},
 	{
-		"name": "Chain Mail",
+		"name": "Chain Mail Armor",
 		"type": "heavy",
+		"link": "https://www.dndbeyond.com/equipment/chain-mail",
 		"strength": 13,
 		"metal": true,
 		"stealth": false
 	},
 	{
-		"name": "Splint",
+		"name": "Splint Armor",
 		"type": "heavy",
+		"link": "https://www.dndbeyond.com/equipment/splint",
 		"strength": 15,
 		"metal": true,
 		"stealth": false
 	},
 	{
-		"name": "Plate",
+		"name": "Plate Armor",
 		"type": "heavy",
+		"link": "https://www.dndbeyond.com/equipment/plate",
 		"strength": 15,
 		"metal": true,
 		"stealth": false
