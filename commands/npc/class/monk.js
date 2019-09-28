@@ -23,7 +23,7 @@ exports.run = async (character) => {
 
 	const tool = randomNumber(artisan.length);
 	const instrument = randomNumber(musical.length);
-	const item = (Math.random() > 0.5) ? `Instrument: ${musical[instrument]}` : artisan[tool];
+	const item = (Math.random() > 0.5) ? `[${musical[instrument].name}](${musical[instrument].link})` : `[${artisan[tool].name}](${artisan[tool].link})`;
 	character.inventory.tools = item;
 
 	const npc = statGen(character, skills);

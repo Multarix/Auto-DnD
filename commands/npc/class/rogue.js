@@ -18,7 +18,7 @@ const skills = {
 exports.run = async (character) => {
 
 	character.class = "Rogue";
-	character.inventory.tools = "Thieves Tools";
+	character.inventory.tools = "[Thieves Tools][https://www.dndbeyond.com/equipment/thieves-tools)";
 	const npc = statGen(character, skills);
 
 	const gear = inventory(npc, wTags, aTags);

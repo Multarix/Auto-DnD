@@ -18,7 +18,7 @@ const skills = {
 exports.run = async (character) => {
 
 	character.class = "Druid";
-	character.inventory.tools = "Herbalism Kit";
+	character.inventory.tools = "[Herbalism Kit](https://www.dndbeyond.com/equipment/herbalism-kit)";
 	const npc = statGen(character, skills);
 
 	const gear = inventory(npc, wTags, aTags);

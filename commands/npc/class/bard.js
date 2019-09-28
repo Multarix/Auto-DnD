@@ -23,7 +23,7 @@ exports.run = async (character) => {
 	let items = "";
 	for(let i = 0; i < 3; i++){
 		const instrument = randomNumber(musical.length);
-		items += `Instrument: ${musical[instrument]}\n`;
+		items += `[${musical[instrument].name}](${musical[instrument.link]})\n`;
 		musical.splice(instrument, 1);
 	}
 	character.inventory.tools = items;
