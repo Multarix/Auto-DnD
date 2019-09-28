@@ -14,6 +14,6 @@ exports.stats = async (character) => {
 };
 
 exports.info = {
-	name: "kalshtar",
+	name: "kalashtar",
 	aliases: ["quori"],
 };
