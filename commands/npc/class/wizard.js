@@ -1,8 +1,8 @@
 const inventory = require("../items/inventory.js");
 const wTags = {
 	"names": ["Dagger", "Dart", "Sling", "Quarterstaff", "Light Crossbow"],
-	"simple": true,
-	"martial": true,
+	"simple": false,
+	"martial": false,
 };
 const aTags = {
 	"types": [],
