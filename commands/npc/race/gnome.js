@@ -1,7 +1,8 @@
 exports.run = async (character) => {
-	character.race = "Gnome";
-	character.small = true;
-	character.speed = 25;
+	character.race.name = "Gnome";
+	character.race.link = "https://www.dndbeyond.com/races/gnome#RockGnome";
+	character.race.small = true;
+	character.race.speed = 25;
 	return character;
 };
 

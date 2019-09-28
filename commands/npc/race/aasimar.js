@@ -1,6 +1,6 @@
 exports.run = async (character) => {
-	character.race = "Aasimar";
-	character.speed = 30;
+	character.race.name = "Aasimar";
+	character.race.speed = 30;
 	return character;
 };
 

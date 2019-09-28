@@ -1,6 +1,7 @@
 exports.run = async (character) => {
-	character.race = "Dragonborn";
-	character.speed = 30;
+	character.race.name = "Dragonborn";
+	character.race.link = "https://www.dndbeyond.com/races/dragonborn";
+	character.race.speed = 30;
 	return character;
 };
 
