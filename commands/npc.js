@@ -63,7 +63,7 @@ exports.conf = {
 	enabled: true,
 	allowDM: true,
 	aliases: ["n"],
-	permLevel: 10,
+	permLevel: 0,
 };
 
 exports.help = {
