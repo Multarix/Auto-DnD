@@ -8,15 +8,6 @@ const client = new Discord.Client({ disableEveryone: true });
 client.config = require("./config.json");
 require("./modules/functions.js")(client);
 
-client.commands = new Discord.Collection();
-client.aliases = new Discord.Collection();
-client.events = new Discord.Collection();
-
-client.classType = new Discord.Collection();
-client.classAlias = new Discord.Collection();
-client.raceType = new Discord.Collection();
-client.raceAlias = new Discord.Collection();
-
 const init = async () => {
 	const cmdFiles = await readdir("./commands/");
 	client.log(`Loading a total of ${cmdFiles.length} commands.`, "Commands");

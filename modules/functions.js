@@ -1,6 +1,17 @@
 const colors = require('colors');
 const fs = require('fs');
+const Discord = require("discord.js");
 module.exports = async (client) => {
+
+	// Command & Event Collections
+	client.commands = new Discord.Collection();
+	client.aliases = new Discord.Collection();
+	client.events = new Discord.Collection();
+	// NPC Generation Collections
+	client.classType = new Discord.Collection();
+	client.classAlias = new Discord.Collection();
+	client.raceType = new Discord.Collection();
+	client.raceAlias = new Discord.Collection();
 
 	//	Permission level for commands.
 	client.permlevel = (message) => {
