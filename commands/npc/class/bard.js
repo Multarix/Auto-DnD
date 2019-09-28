@@ -20,14 +20,14 @@ exports.run = async (character) => {
 
 	character.class = "Bard";
 
-	let items = "";
+	const items = [];
 	for(let i = 0; i < 3; i++){
 		const instrument = randomNumber(musical.length);
-		items += `[${musical[instrument].name}](${musical[instrument].link})\n`;
+		items.push(`[${musical[instrument].name}](${musical[instrument].link})`);
 		musical.splice(instrument, 1);
 	}
 	delete require.cache[require.resolve(`../items/musicalInstruments.json`)];
-	character.inventory.tools = items;
+	character.inventory.tools = items.join(", ");
 
 	const npc = statGen(character, skills);
 
