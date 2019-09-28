@@ -15,8 +15,8 @@ const skills = {
 	saveThrow: "dexterity",
 	miscStats: ["strength", "constitution", "intelligence", "wisdom"],
 };
-const musical = require("../items/musicalInstruments.json");
 exports.run = async (character) => {
+	const musical = require("../items/musicalInstruments.json");
 
 	character.class = "Bard";
 
@@ -26,6 +26,7 @@ exports.run = async (character) => {
 		items += `[${musical[instrument].name}](${musical[instrument].link})\n`;
 		musical.splice(instrument, 1);
 	}
+	delete require.cache[require.resolve(`../items/musicalInstruments.json`)];
 	character.inventory.tools = items;
 
 	const npc = statGen(character, skills);
