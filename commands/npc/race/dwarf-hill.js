@@ -1,6 +1,7 @@
 exports.run = async (character) => {
-	character.race = "Hill Dwarf";
-	character.speed = 25;
+	character.race.name = "Hill Dwarf";
+	character.race.link = "https://www.dndbeyond.com/races/dwarf#HillDwarf";
+	character.race.speed = 25;
 	return character;
 };
 
@@ -11,6 +12,6 @@ exports.stats = async (character) => {
 };
 
 exports.info = {
-	name: "hill-dwarf",
-	aliases: ["hilldwarf", "hill"],
+	name: "hill",
+	aliases: ["hilldwarf", "hill-dwarf"],
 };

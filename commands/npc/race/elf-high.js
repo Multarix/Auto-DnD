@@ -1,6 +1,7 @@
 exports.run = async (character) => {
-	character.race = "High Elf";
-	character.speed = 30;
+	character.race.name = "High Elf";
+	character.race.link = "https://www.dndbeyond.com/races/elf#HighElf";
+	character.race.speed = 30;
 	return character;
 };
 
@@ -11,6 +12,6 @@ exports.stats = async (character) => {
 };
 
 exports.info = {
-	name: "high-elf",
-	aliases: ["highelf", "high"],
+	name: "high",
+	aliases: ["highelf", "high-elf"],
 };

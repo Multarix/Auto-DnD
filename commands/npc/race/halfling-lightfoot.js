@@ -1,7 +1,8 @@
 exports.run = async (character) => {
-	character.race = "Light-Foot Halfling";
-	character.small = true;
-	character.speed = 25;
+	character.race.name = "Lightfoot Halfling";
+	character.race.link = "https://www.dndbeyond.com/races/halfling#LightfootHalfling";
+	character.race.small = true;
+	character.race.speed = 25;
 	return character;
 };
 

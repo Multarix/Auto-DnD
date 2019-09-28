@@ -1,6 +1,7 @@
 exports.run = async (character) => {
-	character.race = "Eladrin Elf";
-	character.speed = 30;
+	character.race.name = "Eladrin Elf";
+	character.race.link = "https://www.dndbeyond.com/races/elf#EladrinVariant";
+	character.race.speed = 30;
 	return character;
 };
 

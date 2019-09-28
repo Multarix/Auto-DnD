@@ -1,6 +1,7 @@
 exports.run = async (character) => {
-	character.race = "Wood Elf";
-	character.speed = 35;
+	character.race.name = "Wood Elf";
+	character.race.link = "https://www.dndbeyond.com/races/elf#WoodElf";
+	character.race.speed = 35;
 	return character;
 };
 
@@ -11,6 +12,6 @@ exports.stats = async (character) => {
 };
 
 exports.info = {
-	name: "wood-elf",
-	aliases: ["woodelf"],
+	name: "wood",
+	aliases: ["woodelf", "wood-elf"],
 };
