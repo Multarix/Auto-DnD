@@ -48,19 +48,29 @@ exports.run = async (client, message, args) => {
 
 	let str = "";
 	for(const [key, value] of Object.entries(character.stats)){
-		str += `**${key.toProperCase()}** - ${value}\n`;
+		str += `**${key.toProperCase()}** :: ${value}\n`;
 	}
 	const embed = new Discord.RichEmbed()
-		.setAuthor(message.member.displayName, message.author.displayAvatarURL)
+		.setAuthor(character.name)
 		.setFooter(client.user.username, client.user.displayAvatarURL)
 		.setTimestamp()
-		.setTitle(character.name)
-		.setDescription(`**Race** - [${character.race.name}](${character.race.link})\n**Base Speed** - ${character.race.speed}\n\u200b\n**Class** - ${character.class}\n**Gender** - ${character.gender}\n\u200b`)
-		.addField("⚔ Weapon", character.inventory.weapon + "\n\u200b", true)
-		.addField("🛡 **Armor**", character.inventory.armor, true)
-		.addField("🛠 **Tools**", character.inventory.tools, true)
-		.addField("**Stats**", `${str}`, true)
-		.addBlankField(true);
+		.addField("Misc Information", // eslint-disable-next-line
+`**Race/ Subrace:**
+[${character.race.name}](${character.race.link})
+**Class:**
+[${character.class}](https://www.dndbeyond.com/classes/${character.class})
+**Gender:**
+${character.gender}
+**Speed:**
+${character.race.speed}
+\u200b
+**Weapon:**
+${character.inventory.weapon}
+**Armor:**
+${character.inventory.armor}
+**Tools:**
+${character.inventory.tools}`, true)
+		.addField("**Stats**", `${str}`, true);
 
 	return message.channel.send(embed);
 };
