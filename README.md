@@ -4,12 +4,13 @@ A bot for Dungeons and Dragons.
 ## Current Features
 -	Loot Command*
 - Roll Dice w/ modifiers
+- Random NPC generation (Throw away characters, no backstory etc. created)**
 
 ## Currently Working On
-- Random NPC generation (Throw away characters, no backstory etc. created)
+- Nothing
 
 ## Planned Features
-- Nothing yet
+- Plans of plans (Aka still deciding)
 
 ### Packages required for the bot
 - Discord.js (11.5 or higher)
@@ -19,3 +20,4 @@ A bot for Dungeons and Dragons.
 
 ##### Disclaimers
 *May or may not contain errors
+**Tweaks may or may not be made
