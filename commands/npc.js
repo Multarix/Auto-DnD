@@ -5,9 +5,12 @@ exports.run = async (client, message, args) => {
 	if(!args[0] || !args[1]) return message.channel.send("Usage: [npc](<..race> <..job/class>)", { code: "markdown" });
 
 	let character = {
-		race: "\u200b",
-		small: false,
-		speed: 0,
+		race: {
+			name: "\u200b",
+			link: "https://www.dndbeyond.com/races/",
+			small: false,
+			speed: 0,
+		},
 		class: "\u200b",
 		gender: "\u200b",
 		name: "\u200b",
@@ -49,11 +52,11 @@ exports.run = async (client, message, args) => {
 		.setFooter(client.user.username, client.user.displayAvatarURL)
 		.setTimestamp()
 		.setTitle(character.name)
-		.addField("🛡 **Armor**", `${character.inventory.armor} Armor\n\u200b`, true)
+		.setDescription(`**Race** - [${character.race.name}](${character.race.link})\n**Base Speed** - ${character.race.speed}\n\u200b\n**Class** - ${character.class}\n**Gender** - ${character.gender}\n\u200b`)
 		.addField("⚔ Weapon", character.inventory.weapon, true)
+		.addField("🛡 **Armor**", `${character.inventory.armor} Armor\n\u200b`, true)
 		.addField("🛠 **Tools**", character.inventory.tools, true)
 		.addField("**Stats**", `${str}`, true)
-		.addField("**Misc Information**", `**Race** - ${character.race}\n**Speed** - ${character.speed}\n**Class** - ${character.class}\n**Gender** - ${character.gender}\n`, true)
 		.addBlankField(true);
 
 	return message.channel.send(embed);
