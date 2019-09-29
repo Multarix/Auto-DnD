@@ -81,11 +81,20 @@ module.exports = async (client) => {
 
 	/* Non-Critical Misc Functions */
 
-	String.prototype.toProperCase = function() {
+	/*
+	I'm aware that extending these is considered bad practice for a number of reasons
+	However, the usefulness of them when taken into consideration makes it worth doing.
+	(At least for these use cases anyway).
+	*/
+
+	String.prototype.toProperCase = function() {	// "this is a string" => "This Is A String";
 		return this.replace(/([^\W_]+[^\s-]*) */g, function(txt) { return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase(); });
 	};
-	Map.prototype.random = function() {
+	Map.prototype.random = function() {	// Gets a random element of a map;
 		return this.get([...this.keys()][Math.floor(Math.random() * this.size)]);
+	};
+	Array.prototype.random = function() {	// Gets a random element of an array;
+		return this[Math.floor(Math.random() * this.length)];
 	};
 
 	/* Custom Globals */
@@ -95,7 +104,7 @@ module.exports = async (client) => {
 	global.restartBot = async (restartInfo) => {
 		if(!restartInfo) restartInfo = "Automatic Restart";
 		client.log(`Perfmorming reboot.. Reason: ${restartInfo}`, "Log");
-		await wait(1000).then(w => {
+		await wait(1000).then(() => {
 			process.exit();
 		});
 	};
