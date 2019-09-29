@@ -2,7 +2,7 @@ module.exports = (character) => {
 	const gender = (Math.random() > 0.5) ? "male" : "female";
 	character.gender = gender.toProperCase();
 
-	const reggie = /\w+$/g;	// eslint-disable-line no-useless-escape
+	const reggie = /\w+$/g;
 	const str = character.race.name.toLowerCase().replace("-", "");
 	const race = reggie.exec(str)[0];
 
