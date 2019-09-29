@@ -8,7 +8,7 @@ exports.run = async (character) => {
 exports.stats = async (character) => {
 	character.stats.wisdom += 1;
 	const type = ["strength", "dexterity", "constitution", "intelligence", "charisma"];
-	const stat = type[randomNumber(type.length)];
+	const stat = type.random();
 	character.stats[stat] += 1;
 	return character;
 };

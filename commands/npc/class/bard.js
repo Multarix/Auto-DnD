@@ -22,9 +22,9 @@ exports.run = async (character) => {
 
 	const items = [];
 	for(let i = 0; i < 3; i++){
-		const instrument = randomNumber(musical.length);
-		items.push(`[${musical[instrument].name}](${musical[instrument].link})`);
-		musical.splice(instrument, 1);
+		const instrument = musical.random();
+		items.push(`[${instrument.name}](${instrument.link})`);
+		musical.splice(musical.indexOf(instrument), 1);
 	}
 	delete require.cache[require.resolve(`../items/musicalInstruments.json`)];
 	character.inventory.tools = items.join(", ");

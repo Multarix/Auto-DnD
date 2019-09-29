@@ -9,9 +9,7 @@ module.exports = (character) => {
 	const first = require(`./${gender}/${race}.json`);
 	const last = require(`./lastNames/${race}.json`);
 
-	const r1 = Math.floor(Math.random() * first.length);
-	const r2 = Math.floor(Math.random() * last.length);
-	character.name = `${first[r1]} ${last[r2]}`.toProperCase();
+	character.name = `${first.random()} ${last.random()}`.toProperCase();
 
 	return character;
 };

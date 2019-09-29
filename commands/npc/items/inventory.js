@@ -9,8 +9,7 @@ module.exports = (character, wTags, aTags) => {
 		if(wTags.simple && weaponList[i].simple){ viableWeapons.push(weaponList[i]); continue; }
 		if(wTags.martial && !weaponList[i].simple){ viableWeapons.push(weaponList[i]); continue; }
 	}
-	let num = randomNumber(viableWeapons.length);
-	const weapon = viableWeapons[num];
+	const weapon = viableWeapons.random();
 	const shieldLink = "https://www.dndbeyond.com/equipment/shield";
 	weapon.name = (aTags.shield && weapon.allowShield && Math.random() >= 0.75) ? `[${weapon.name}](${weapon.link}) & [Shield](${shieldLink})` : `[${weapon.name}](${weapon.link})`;
 
@@ -20,8 +19,7 @@ module.exports = (character, wTags, aTags) => {
 		if(!armorList[i].metal && !aTags.metal){ viableArmor.push(armorList[i]); continue; }
 		if(aTags.types.includes(armorList[i].type) && armorList[i].strength < character.stats.strength){ viableArmor.push(armorList[i]); continue; }
 	}
-	num = randomNumber(viableArmor.length);
-	let armor = viableArmor[num];
+	let armor = viableArmor.random();
 	if(!armor){ armor = { name: "None" }; } else { armor.name = `[${armor.name}](${armor.link})`; }
 
 	return { "weapon": weapon, "armor": armor };
