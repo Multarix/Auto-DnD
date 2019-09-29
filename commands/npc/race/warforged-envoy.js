@@ -7,7 +7,7 @@ exports.run = async (character) => {
 
 exports.stats = async (character) => {
 	character.stats.constitution += 1;
-	const a = ["strength", "dexterity", "intelligence", "wisdom", "chrisma"];
+	const a = ["strength", "dexterity", "intelligence", "wisdom", "charisma"];
 	let s = a.random();	// Grab a random stat from the array
 	character.stats[s] += 1;	// Apply +1 to that stat
 	a.splice(a.indexOf(s), 1);	// Remove the stat that was increased from the array
