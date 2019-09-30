@@ -142,7 +142,6 @@ module.exports = async (client) => {
 	global.randomNumber = require("./misc/randomNumber.js");
 	// NPC Stat Generation
 	global.statGen = require("../modules/misc/randomStat.js");
-
 	// Dice
 	global.d4 = require("../modules/dice/d4.js");
 	global.d6 = require("../modules/dice/d6.js");
@@ -160,11 +159,13 @@ module.exports = async (client) => {
 		const errorMsg = err.stack.replace(new RegExp(`${__dirname}/`, "g"), "./");
 		fs.appendFileSync("./logs.txt", `\n[${time.exactDate}] (${time.time}) ${"Uncaught Exception:" + errorMsg.toString().replace(/\[3[7&9]m/g, "")}`);	// eslint-disable-line no-control-regex
 		console.error("Uncaught Exception: ", errorMsg);
+		process.exit(1);
 	});
 
 	process.on("unhandledRejection", err => {
 		const time = require("../modules/misc/time.js")();
 		fs.appendFileSync("./logs.txt", `\n[${time.exactDate}] (${time.time}) ${err.toString().replace(/\[3[7&9]m/g, "")}`);	// eslint-disable-line no-control-regex
 		console.error("Uncaught Promise Error: ", err);
+		process.exit(1);
 	});
 };

@@ -5,6 +5,7 @@ module.exports = {
 		watch: ["events", "modules", "./dnd.js"],
 		ignore_watch: ["node_modules"],
 		cron_restart : "0 6 * * 7",
+		exp_backoff_restart_delay: 500,
 		max_restarts: 10,
 		env: {
 			NODE_ENV: 'development',
