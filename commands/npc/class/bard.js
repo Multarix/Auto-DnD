@@ -39,5 +39,5 @@ exports.run = async (character) => {
 
 exports.info = {
 	name: "bard",
-	aliases: ["musician", "cunt", "worst", "horrible", "shit", "trash", "annoying", "garbage"],
+	aliases: ["musician", "entertainer"],
 };
