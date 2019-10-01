@@ -1,12 +1,10 @@
-exports.run = (client, message, args) => {
+exports.run = async (client, message, args) => {
 
 	let good = client.emojis.get("340357918996299778");
 	if(!good) good = "👍";
 
-	message.react(good).then(m => {
-		restartBot("Manual Restart");
-	});
-
+	await message.react(good);
+	return restartBot("Manual Restart");
 };
 
 exports.conf = {
