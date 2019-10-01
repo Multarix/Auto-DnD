@@ -6,7 +6,7 @@ exports.run = (client, message, args) => {
 	const embed = new Discord.MessageEmbed()
 		.setAuthor(`System information`)
 		.setColor(13238272)
-		.setThumbnail(client.user.displayAvatarURL())
+		.setThumbnail(client.user.displayAvatarURL)
 		.addField("CPU", `${cpuType}`, false)
 		.addField("Architecture", `${os.arch()}`, true)
 		.addField("OS", `${os.platform}`, true)
