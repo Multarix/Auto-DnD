@@ -3,7 +3,7 @@ const os = require("os");
 exports.run = (client, message, args) => {
 
 	const cpuType = os.cpus()[0].model.split(/\s+/g).join(" ");
-	const embed = new Discord.MessageEmbed()
+	const embed = new Discord.RichEmbed()
 		.setAuthor(`System information`)
 		.setColor(13238272)
 		.setThumbnail(client.user.displayAvatarURL)
