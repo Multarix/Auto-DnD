@@ -72,7 +72,7 @@ ${character.inventory.armor}
 ${character.inventory.tools}`, true)
 		.addField("**Stats**", `${str}`, true);
 
-	return message.channel.send(embed);
+	return message.channel.send({ embed }).catch(e => errFunc(e));
 };
 
 exports.conf = {

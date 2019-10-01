@@ -47,7 +47,7 @@ exports.run = async (client, message, args) => {
 		}
 	}
 	embed.setColor(ecolor1);
-	return message.channel.send({ embed });
+	return message.channel.send({ embed }).catch(e => errFunc(e));
 };
 
 exports.conf = {

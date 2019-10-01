@@ -15,5 +15,5 @@ module.exports = (client, message, args) => {
 		.setTimestamp()
 		.addField("Roll", loot.rolls.split(", ").join("\n"), true)
 		.addField("Item", loot.items, true);
-	return message.channel.send({ embed });
+	return message.channel.send({ embed }).catch(e => errFunc(e));
 };

@@ -3,7 +3,7 @@ exports.run = (client, message, args) => {
 Donating to Discord bots is the dumbest idea I've seen UNLESS the bot is extremely popular;
 This bot is only in \`${client.guilds.size}\` server(s).
 
-Don't get me wrong, I'd love your money, but I'm not a "Please donate to me" bot at this point.`);
+Don't get me wrong, I'd love your money, but I'm not a "Please donate to me" bot at this point.`).catch(e => errFunc(e));
 };
 
 exports.conf = {

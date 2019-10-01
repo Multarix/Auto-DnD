@@ -13,7 +13,7 @@ exports.run = (client, message, args) => {
 
 	message.react(good);
 
-	return message.author.send({ embed });
+	return message.author.send({ embed }).catch(e => errFunc(e));
 };
 
 exports.conf = {

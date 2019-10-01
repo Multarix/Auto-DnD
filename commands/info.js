@@ -18,7 +18,7 @@ exports.run = (client, message, args) => {
 		.addField("Uptime", `${duration}`, true)
 		.setFooter(client.user.tag, client.user.displayAvatarURL)
 		.setTimestamp();
-	return message.channel.send({ embed });
+	return message.channel.send({ embed }).catch(e => errFunc(e));
 };
 
 exports.conf = {

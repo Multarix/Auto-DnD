@@ -5,12 +5,9 @@ exports.run = async (client, message, args) => {
 	let command;
 	if(client.commands.has(args[0])){
 		command = client.commands.get(args[0]);
-	} else if(client.aliases.has(args[0])){
-		command = client.commands.get(client.aliases.get(args[0]));
-	}
-	if(!command){
-		return message.reply(`The command '${args[0]}' doesn"t seem to exist, nor is it an alias. Try again!`);
-	}
+	} else if(client.aliases.has(args[0])){ command = client.commands.get(client.aliases.get(args[0])); }
+
+	if(!command) return message.reply(`The command '${args[0]}' doesn"t seem to exist, nor is it an alias. Try again!`);
 	command = command.help.name;
 
 	delete require.cache[require.resolve(`./${command}.js`)];
@@ -24,14 +21,13 @@ exports.run = async (client, message, args) => {
 		client.aliases.set(alias, cmd.help.name);
 	});
 	client.log(`The command '${command}' was reloaded`, "Log");
-	message.reply(`The command '${command}' has been reloaded`).then(msg => {
-		if(message.channel.type !== "dm"){
-			if(message.channel.memberPermissions(message.guild.me).has("MANAGE_MESSAGES")){
-				msg.delete(5000);
-				message.delete(5000);
-			}
+	const msg = await message.reply(`The command '${command}' has been reloaded`).catch(e => errFunc(e));
+	if(message.channel.type !== "dm"){
+		if(message.channel.memberPermissions(message.guild.me).has("MANAGE_MESSAGES")){
+			msg.delete(5000);
+			message.delete(5000);
 		}
-	});
+	}
 };
 
 exports.conf = {

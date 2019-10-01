@@ -39,11 +39,12 @@ exports.run = async (client, message, args, level) => {
 			embed.addField(catName, deeta.replace(`|${catName}|`, ""));
 		});
 
-		message.author.send({ embed });
+		message.author.send({ embed }).catch(e => errFunc(e));
 	} else {
 		const command = client.commands.get(args[0]) || client.commands.get(client.aliases.get(args[0]));
 		if(command){
-			message.channel.send(`< ${command.help.name.toProperCase()} > \n${command.help.description}\nUsage: [${client.config.prefix}${command.help.name}](<${command.help.usage.split(" ").join("> <")}>)`, { code:"markdown" });
+			const str = `< ${command.help.name.toProperCase()} > \n${command.help.description}\nUsage: [${client.config.prefix}${command.help.name}](<${command.help.usage.split(" ").join("> <")}>)`;
+			message.channel.send(str, { code:"markdown" }).catch(e => errFunc(e));
 		}
 	}
 };

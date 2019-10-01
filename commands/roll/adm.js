@@ -9,7 +9,7 @@ module.exports = (client, message, args) => {
 
 	const diceType = ["d4", "d6", "d8", "d10", "d12", "d100", "d20", "percentile", "percent", "p"];
 
-	if(!diceType.includes(die)) return message.channel.send("Usage: [roll](<..amount> <..dice> <..modifier>)", { code: "markdown" });
+	if(!diceType.includes(die)) return message.channel.send("Usage: [roll](<..amount> <..dice> <..modifier>)", { code: "markdown" }).catch(e => errFunc(e));
 
 	let a = parseInt(amount);
 	if(isNaN(a)) a = 1;
@@ -77,7 +77,6 @@ module.exports = (client, message, args) => {
 			str = `${totalRoll} (${roll} ${icon} ${Math.abs(mod)})`;
 			embed.addField(`Result 🎲`, str, true);
 		}
-		return message.channel.send({ embed });
 	}
 	// Percentile Dice (00 - 90) [00 technically means 100]
 	if(die === "percentile" || die === "percent" || die === "p"){
@@ -87,5 +86,5 @@ module.exports = (client, message, args) => {
 			embed.addField(`Dice #${i + 1} 🎲`, `${num}`, true);
 		}
 	}
-	return message.channel.send({ embed });
+	return message.channel.send({ embed }).catch(e => errFunc(e));
 };

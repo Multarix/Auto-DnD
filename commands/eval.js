@@ -16,7 +16,7 @@ exports.run = async (client, message, args) => {
 		const evalString = `**OUTPUT** ${good}\n\`\`\`javascript\n${clean}\n\`\`\``;
 		if(evalString.length >= 1000){
 			console.log(clean);
-			return message.channel.send(`**OUTPUT** ${good}\nThe output was too long, check the console.`);
+			return message.channel.send(`**OUTPUT** ${good}\nThe output was too long, check the console.`).catch(e => errFunc(e));
 		}
 
 		const embed = new Discord.RichEmbed()
@@ -30,7 +30,7 @@ exports.run = async (client, message, args) => {
 		const errString = `**ERROR** ${bad}\n\`\`\`javascript\n${errMsg}\n\`\`\``;
 		if(errString.length >= 1000){
 			console.log(errString);
-			return message.channel.send(`**ERROR** ${bad}\nThe error message was too long, check the console.`);
+			return message.channel.send(`**ERROR** ${bad}\nThe error message was too long, check the console.`).catch(e => errFunc(e));
 		}
 
 		const embed = new Discord.RichEmbed()
@@ -38,7 +38,7 @@ exports.run = async (client, message, args) => {
 			.addField(`Javascript Evaluated`, errString, false)
 			.setFooter(client.user.tag, client.user.displayAvatarURL)
 			.setTimestamp();
-		return message.channel.send({ embed });
+		return message.channel.send({ embed }).catch(e => errFunc(e));
 	}
 };
 

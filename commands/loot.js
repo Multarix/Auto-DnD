@@ -15,8 +15,8 @@ exports.run = (client, message, args) => {
 		.addField("D10:", ones, true)
 		.addField("Combined Roll:", roll, true);
 
-	if(!args[0]) return message.channel.send("Please specify the type of loot\nUsage: [/loot](<type> <challenge-level>)", { code: "markdown" });
-	if(!args[1]) return message.channel.send("Please specify the challenge level\nUsage: [/loot](<type> <challenge-level>)", { code: "markdown" });
+	if(!args[0]) return message.channel.send("Please specify the type of loot\nUsage: [/loot](<type> <challenge-level>)", { code: "markdown" }).catch(e => errFunc(e));
+	if(!args[1]) return message.channel.send("Please specify the challenge level\nUsage: [/loot](<type> <challenge-level>)", { code: "markdown" }).catch(e => errFunc(e));
 
 	const type = args[0].toLowerCase();
 
