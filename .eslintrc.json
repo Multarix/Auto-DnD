@@ -69,6 +69,7 @@
 					"d100" : true,
 					"percentile" : true,
 					"randomNumber" : true,
-					"statGen" : true
+					"statGen" : true,
+					"errFunc" :true
     }
 }

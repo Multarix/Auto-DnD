@@ -100,11 +100,17 @@ module.exports = async (client) => {
 	/* Custom Globals */
 	global.wait = require("util").promisify(setTimeout);
 
+	global.errFunc = (error) => {
+		if(error.code === 50007) return; // Ignore the error if it's can't send message to this user;
+		client.log(error.message, "Error");
+		return null; // In the event that async is being used, return null.
+	};
+
 	// Calls process exit, if using something like pm2, the bot should automatically restart.
 	global.restartBot = async (restartInfo) => {
 		if(!restartInfo) restartInfo = "Automatic Restart";
 		client.log(`Perfmorming reboot.. Reason: ${restartInfo}`, "Log");
-		await wait(1000).then(() => {
+		await wait(200).then(() => {
 			process.exit();
 		});
 	};
@@ -155,6 +161,7 @@ module.exports = async (client) => {
 	// I see your unhandled things, and present to you, handled things!
 
 	process.on("uncaughtException", (err) => {
+		if(err.code === 50007) return;
 		const time = require("../modules/misc/time.js")();
 		const errorMsg = err.stack.replace(new RegExp(`${__dirname}/`, "g"), "./");
 		fs.appendFileSync("./logs.txt", `\n[${time.exactDate}] (${time.time}) ${"Uncaught Exception:" + errorMsg.toString().replace(/\[3[7&9]m/g, "")}`);	// eslint-disable-line no-control-regex
@@ -162,7 +169,8 @@ module.exports = async (client) => {
 		restartBot("Uncaught Exception");
 	});
 
-	process.on("unhandledRejection", err => {
+	process.on("unhandledRejection", (err) => {
+		if(err.code === 50007) return;
 		const time = require("../modules/misc/time.js")();
 		fs.appendFileSync("./logs.txt", `\n[${time.exactDate}] (${time.time}) ${err.toString().replace(/\[3[7&9]m/g, "")}`);	// eslint-disable-line no-control-regex
 		console.error("Uncaught Promise Error: ", err);
