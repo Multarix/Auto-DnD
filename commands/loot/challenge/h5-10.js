@@ -19,340 +19,343 @@ module.exports = (roll, message, embed) => {
 	const moneyRolls = `${copper.rolls} (${copper.total})\n${silver.rolls} (${silver.total})\n${gold.rolls} (${gold.total})\n${platinum.rolls} (${platinum.total})`;
 	const moneyFinal = `${cpFinal} × **Copper Pieces**\n${spFinal} × **Silver Pieces**\n${gpFinal} × **Gold Pieces**\n${ppFinal} × **Platinum Pieces**`;
 
-	// 0-6
-	if(roll <= 4){
-		embed.addField("Loot Class:", `${moneyStatement}`, true)
-			.addField("Item Rolls:", `${moneyRolls}`, true)
-			.addField("Final Loot:", `${moneyFinal}`, false);
-		return message.channel.send({ embed });
+	loot:{
+		// 0-6
+		if(roll <= 4){
+			embed.addField("Loot Class:", `${moneyStatement}`, true)
+				.addField("Item Rolls:", `${moneyRolls}`, true)
+				.addField("Final Loot:", `${moneyFinal}`, false);
+			break loot;
+		}
+
+		// 5-10
+		if(roll <= 10){
+			const miscItems = vTrash("art", "25", "d4", 2);
+
+			embed.addField("Loot Class:", `${moneyStatement}\n${miscItems.statement}`, true)
+				.addField("Item Rolls:", `${moneyRolls}\n${miscItems.rolls} (${miscItems.total})`, true)
+				.addField("Final Loot:", `${moneyFinal}\n${miscItems.loot}`, false);
+			break loot;
+		}
+
+		// 11–16
+		if(roll <= 16){
+			const miscItems = vTrash("gems", "50", "d6", 3);
+
+			embed.addField("Loot Class:", `${moneyStatement}\n${miscItems.statement}`, true)
+				.addField("Item Rolls:", `${moneyRolls}\n${miscItems.rolls} (${miscItems.total})`, true)
+				.addField("Final Loot:", `${moneyFinal}\n${miscItems.loot}`, false);
+			break loot;
+		}
+
+		// 17–22
+		if(roll <= 22){
+			const miscItems = vTrash("gems", "100", "d6", 3);
+
+			embed.addField("Loot Class:", `${moneyStatement}\n${miscItems.statement}`, true)
+				.addField("Item Rolls:", `${moneyRolls}\n${miscItems.rolls} (${miscItems.total})`, true)
+				.addField("Final Loot:", `${moneyFinal}\n${miscItems.loot}`, false);
+			break loot;
+		}
+
+		// 23–28
+		if(roll <= 28){
+			const miscItems = vTrash("art", "25", "d6", 2);
+
+			embed.addField("Loot Class:", `${moneyStatement}\n${miscItems.statement}`, true)
+				.addField("Item Rolls:", `${moneyRolls}\n${miscItems.rolls} (${miscItems.total})`, true)
+				.addField("Final Loot:", `${moneyFinal}\n${miscItems.loot}`, false);
+			break loot;
+		}
+
+		// Magic Item Table A
+		// 29–32
+		if(roll <= 32){
+			const miscItems = vTrash("art", "25", "d6", 2);
+			const tableLoot = table("a", "d6");
+
+			embed.addField("Loot Class:", `${moneyStatement}\n${miscItems.statement}\n1 D6 Rolls - **Item Table A**`, true)
+				.addField("Item Rolls:", `${moneyRolls}\n${miscItems.rolls} (${miscItems.total})\n${tableLoot.rollAmount} (${tableLoot.rolls})`, true)
+				.addField("Final Loot:", `${moneyFinal}\n${miscItems.loot}\n${tableLoot.items}`, false);
+			break loot;
+		}
+
+		// 33–36
+		if(roll <= 36){
+			const miscItems = vTrash("gems", "50", "d6", 3);
+			const tableLoot = table("a", "d6");
+
+			embed.addField("Loot Class:", `${moneyStatement}\n${miscItems.statement}\n1 D6 Rolls - **Item Table A**`, true)
+				.addField("Item Rolls:", `${moneyRolls}\n${miscItems.rolls} (${miscItems.total})\n${tableLoot.rollAmount} (${tableLoot.rolls})`, true)
+				.addField("Final Loot:", `${moneyFinal}\n${miscItems.loot}\n${tableLoot.items}`, false);
+			break loot;
+		}
+
+		// 37–40
+		if(roll <= 40){
+			const miscItems = vTrash("gems", "100", "d6", 3);
+			const tableLoot = table("a", "d6");
+
+			embed.addField("Loot Class:", `${moneyStatement}\n${miscItems.statement}\n1 D6 Rolls - **Item Table A**`, true)
+				.addField("Item Rolls:", `${moneyRolls}\n${miscItems.rolls} (${miscItems.total})\n${tableLoot.rollAmount} (${tableLoot.rolls})`, true)
+				.addField("Final Loot:", `${moneyFinal}\n${miscItems.loot}\n${tableLoot.items}`, false);
+			break loot;
+		}
+
+		// 41–44
+		if(roll <= 44){
+			const miscItems = vTrash("art", "250", "d6", 2);
+			const tableLoot = table("a", "d6");
+
+			embed.addField("Loot Class:", `${moneyStatement}\n${miscItems.statement}\n1 D6 Rolls - **Item Table A**`, true)
+				.addField("Item Rolls:", `${moneyRolls}\n${miscItems.rolls} (${miscItems.total})\n${tableLoot.rollAmount} (${tableLoot.rolls})`, true)
+				.addField("Final Loot:", `${moneyFinal}\n${miscItems.loot}\n${tableLoot.items}`, false);
+			break loot;
+		}
+
+		// Magic Item Table B
+		// 45–49
+		if(roll <= 49){
+			const miscItems = vTrash("art", "25", "d6", 2);
+			const tableLoot = table("b", "d4");
+
+			embed.addField("Loot Class:", `${moneyStatement}\n${miscItems.statement}\n1 D4 Rolls - **Item Table B**`, true)
+				.addField("Item Rolls:", `${moneyRolls}\n${miscItems.rolls} (${miscItems.total})\n${tableLoot.rollAmount} (${tableLoot.rolls})`, true)
+				.addField("Final Loot:", `${moneyFinal}\n${miscItems.loot}\n${tableLoot.items}`, false);
+			break loot;
+		}
+
+		// 50–54
+		if(roll <= 54){
+			const miscItems = vTrash("gems", "50", "d6", 3);
+			const tableLoot = table("b", "d4");
+
+			embed.addField("Loot Class:", `${moneyStatement}\n${miscItems.statement}\n1 D4 Rolls - **Item Table B**`, true)
+				.addField("Item Rolls:", `${moneyRolls}\n${miscItems.rolls} (${miscItems.total})\n${tableLoot.rollAmount} (${tableLoot.rolls})`, true)
+				.addField("Final Loot:", `${moneyFinal}\n${miscItems.loot}\n${tableLoot.items}`, false);
+			break loot;
+		}
+
+		// 55–59
+		if(roll <= 59){
+			const miscItems = vTrash("gems", "100", "d6", 3);
+			const tableLoot = table("b", "d4");
+
+			embed.addField("Loot Class:", `${moneyStatement}\n${miscItems.statement}\n1 D4 Rolls - **Item Table B**`, true)
+				.addField("Item Rolls:", `${moneyRolls}\n${miscItems.rolls} (${miscItems.total})\n${tableLoot.rollAmount} (${tableLoot.rolls})`, true)
+				.addField("Final Loot:", `${moneyFinal}\n${miscItems.loot}\n${tableLoot.items}`, false);
+			break loot;
+		}
+
+		// 60–63
+		if(roll <= 63){
+			const miscItems = vTrash("art", "250", "d6", 2);
+			const tableLoot = table("b", "d4");
+
+			embed.addField("Loot Class:", `${moneyStatement}\n${miscItems.statement}\n1 D4 Rolls - **Item Table B**`, true)
+				.addField("Item Rolls:", `${moneyRolls}\n${miscItems.rolls} (${miscItems.total})\n${tableLoot.rollAmount} (${tableLoot.rolls})`, true)
+				.addField("Final Loot:", `${moneyFinal}\n${miscItems.loot}\n${tableLoot.items}`, false);
+			break loot;
+		}
+
+		// Magic Item Table C
+		// 64–66
+		if(roll <= 66){
+			const miscItems = vTrash("art", "25", "d6", 2);
+			const tableLoot = table("c", "d4");
+
+			embed.addField("Loot Class:", `${moneyStatement}\n${miscItems.statement}\n1 D4 Rolls - **Item Table C**`, true)
+				.addField("Item Rolls:", `${moneyRolls}\n${miscItems.rolls} (${miscItems.total})\n${tableLoot.rollAmount} (${tableLoot.rolls})`, true)
+				.addField("Final Loot:", `${moneyFinal}\n${miscItems.loot}\n${tableLoot.items}`, false);
+			break loot;
+		}
+
+		// 67–69
+		if(roll <= 69){
+			const miscItems = vTrash("gems", "50", "d6", 3);
+			const tableLoot = table("c", "d4");
+
+			embed.addField("Loot Class:", `${moneyStatement}\n${miscItems.statement}\n1 D4 Rolls - **Item Table C**`, true)
+				.addField("Item Rolls:", `${moneyRolls}\n${miscItems.rolls} (${miscItems.total})\n${tableLoot.rollAmount} (${tableLoot.rolls})`, true)
+				.addField("Final Loot:", `${moneyFinal}\n${miscItems.loot}\n${tableLoot.items}`, false);
+			break loot;
+		}
+
+		// 70–72
+		if(roll <= 72){
+			const miscItems = vTrash("gems", "100", "d6", 3);
+			const tableLoot = table("c", "d4");
+
+			embed.addField("Loot Class:", `${moneyStatement}\n${miscItems.statement}\n1 D4 Rolls - **Item Table C**`, true)
+				.addField("Item Rolls:", `${moneyRolls}\n${miscItems.rolls} (${miscItems.total})\n${tableLoot.rollAmount} (${tableLoot.rolls})`, true)
+				.addField("Final Loot:", `${moneyFinal}\n${miscItems.loot}\n${tableLoot.items}`, false);
+			break loot;
+		}
+
+		// 73–74
+		if(roll <= 74){
+			const miscItems = vTrash("art", "250", "d6", 2);
+			const tableLoot = table("c", "d4");
+
+			embed.addField("Loot Class:", `${moneyStatement}\n${miscItems.statement}\n1 D4 Rolls - **Item Table C**`, true)
+				.addField("Item Rolls:", `${moneyRolls}\n${miscItems.rolls} (${miscItems.total})\n${tableLoot.rollAmount} (${tableLoot.rolls})`, true)
+				.addField("Final Loot:", `${moneyFinal}\n${miscItems.loot}\n${tableLoot.items}`, false);
+			break loot;
+		}
+
+		// Magic Item Table D
+		// 75–76
+		if(roll <= 76){
+			const miscItems = vTrash("art", "25", "d6", 2);
+
+			const tableD = require("./itemTables/MagicItemTableD.js");
+			const tableRoll = randomNumber(100, 1);
+			const tableItem = tableD(tableRoll);
+
+			embed.addField("Loot Class:", `${moneyStatement}\n${miscItems.statement}\n1 Roll - **Item Table D**`, true)
+				.addField("Item Rolls:", `${moneyRolls}\n${miscItems.rolls} (${miscItems.total})\n${tableRoll}`, true)
+				.addField("Final Loot:", `${moneyFinal}\n${miscItems.loot}\n${tableItem}`, false);
+			break loot;
+		}
+
+		// 77–78
+		if(roll <= 78){
+			const miscItems = vTrash("gems", "50", "d6", 3);
+
+			const tableD = require("./itemTables/MagicItemTableD.js");
+			const tableRoll = randomNumber(100, 1);
+			const tableItem = tableD(tableRoll);
+
+			embed.addField("Loot Class:", `${moneyStatement}\n${miscItems.statement}\n1 Roll - **Item Table D**`, true)
+				.addField("Item Rolls:", `${moneyRolls}\n${miscItems.rolls} (${miscItems.total})\n${tableRoll}`, true)
+				.addField("Final Loot:", `${moneyFinal}\n${miscItems.loot}\n${tableItem}`, false);
+			break loot;
+		}
+
+		// 79
+		if(roll === 79){
+			const miscItems = vTrash("gems", "100", "d6", 3);
+
+			const tableD = require("./itemTables/MagicItemTableD.js");
+			const tableRoll = randomNumber(100, 1);
+			const tableItem = tableD(tableRoll);
+
+			embed.addField("Loot Class:", `${moneyStatement}\n${miscItems.statement}\n1 Roll - **Item Table D**`, true)
+				.addField("Item Rolls:", `${moneyRolls}\n${miscItems.rolls} (${miscItems.total})\n${tableRoll}`, true)
+				.addField("Final Loot:", `${moneyFinal}\n${miscItems.loot}\n${tableItem}`, false);
+			break loot;
+		}
+
+		// 80
+		if(roll === 80){
+			const miscItems = vTrash("art", "250", "d6", 2);
+
+			const tableD = require("./itemTables/MagicItemTableD.js");
+			const tableRoll = randomNumber(100, 1);
+			const tableItem = tableD(tableRoll);
+
+			embed.addField("Loot Class:", `${moneyStatement}\n${miscItems.statement}\n1 Roll - **Item Table D**`, true)
+				.addField("Item Rolls:", `${moneyRolls}\n${miscItems.rolls} (${miscItems.total})\n${tableRoll}`, true)
+				.addField("Final Loot:", `${moneyFinal}\n${miscItems.loot}\n${tableItem}`, false);
+			break loot;
+		}
+
+		// Magic Item Table F
+		// 81–84
+		if(roll <= 84){
+			const miscItems = vTrash("art", "25", "d6", 2);
+			const tableLoot = table("f", "d4");
+
+			embed.addField("Loot Class:", `${moneyStatement}\n${miscItems.statement}\n1 D4 Rolls - **Item Table F**`, true)
+				.addField("Item Rolls:", `${moneyRolls}\n${miscItems.rolls} (${miscItems.total})\n${tableLoot.rollAmount} (${tableLoot.rolls})`, true)
+				.addField("Final Loot:", `${moneyFinal}\n${miscItems.loot}\n${tableLoot.items}`, false);
+			break loot;
+		}
+
+		// 85–88
+		if(roll <= 88){
+			const miscItems = vTrash("gems", "50", "d6", 3);
+			const tableLoot = table("f", "d4");
+
+			embed.addField("Loot Class:", `${moneyStatement}\n${miscItems.statement}\n1 D4 Rolls - **Item Table F**`, true)
+				.addField("Item Rolls:", `${moneyRolls}\n${miscItems.rolls} (${miscItems.total})\n${tableLoot.rollAmount} (${tableLoot.rolls})`, true)
+				.addField("Final Loot:", `${moneyFinal}\n${miscItems.loot}\n${tableLoot.items}`, false);
+			break loot;
+		}
+
+		// 89–91
+		if(roll <= 91){
+			const miscItems = vTrash("gems", "100", "d6", 3);
+			const tableLoot = table("f", "d4");
+
+			embed.addField("Loot Class:", `${moneyStatement}\n${miscItems.statement}\n1 D4 Rolls - **Item Table F**`, true)
+				.addField("Item Rolls:", `${moneyRolls}\n${miscItems.rolls} (${miscItems.total})\n${tableLoot.rollAmount} (${tableLoot.rolls})`, true)
+				.addField("Final Loot:", `${moneyFinal}\n${miscItems.loot}\n${tableLoot.items}`, false);
+			break loot;
+		}
+
+		// 92–94
+		if(roll <= 94){
+			const miscItems = vTrash("art", "250", "d6", 2);
+			const tableLoot = table("f", "d4");
+
+			embed.addField("Loot Class:", `${moneyStatement}\n${miscItems.statement}\n1 D4 Rolls - **Item Table F**`, true)
+				.addField("Item Rolls:", `${moneyRolls}\n${miscItems.rolls} (${miscItems.total})\n${tableLoot.rollAmount} (${tableLoot.rolls})`, true)
+				.addField("Final Loot:", `${moneyFinal}\n${miscItems.loot}\n${tableLoot.items}`, false);
+			break loot;
+		}
+
+		// Magic Item Table G
+		//	95-96
+		if(roll <= 96){
+			const miscItems = vTrash("gems", "100", "d6", 3);
+			const tableLoot = table("g", "d4");
+
+			embed.addField("Loot Class:", `${moneyStatement}\n${miscItems.statement}\n1 D4 Rolls - **Item Table G**`, true)
+				.addField("Item Rolls:", `${moneyRolls}\n${miscItems.rolls} (${miscItems.total})\n${tableLoot.rollAmount} (${tableLoot.rolls})`, true)
+				.addField("Final Loot:", `${moneyFinal}\n${miscItems.loot}\n${tableLoot.items}`, false);
+			break loot;
+		}
+
+		// 97-98
+		if(roll <= 98){
+			const miscItems = vTrash("art", "250", "d6", 2);
+			const tableLoot = table("g", "d6");
+
+			embed.addField("Loot Class:", `${moneyStatement}\n${miscItems.statement}\n1 D6 Rolls - **Item Table G**`, true)
+				.addField("Item Rolls:", `${moneyRolls}\n${miscItems.rolls} (${miscItems.total})\n${tableLoot.rollAmount} (${tableLoot.rolls})`, true)
+				.addField("Final Loot:", `${moneyFinal}\n${miscItems.loot}\n${tableLoot.items}`, false);
+			break loot;
+		}
+
+		// Magic Item Table F
+		// 99
+		if(roll === 99){
+			const miscItems = vTrash("gems", "100", "d6", 3);
+
+			const tableH = require("./itemTables/MagicItemTableH.js");
+			const tableRoll = randomNumber(100, 1);
+			const tableItem = tableH(tableRoll);
+
+			embed.addField("Loot Class:", `${moneyStatement}\n${miscItems.statement}\n1 Roll - **Item Table H**`, true)
+				.addField("Item Rolls:", `${moneyRolls}\n${miscItems.rolls} (${miscItems.total})\n${tableRoll}`, true)
+				.addField("Final Loot:", `${moneyFinal}\n${miscItems.loot}\n${tableItem}`, false);
+			break loot;
+		}
+
+		// 100
+		if(roll === 100){
+			const miscItems = vTrash("art", "250", "d6", 2);
+
+			const tableH = require("./itemTables/MagicItemTableH.js");
+			const tableRoll = randomNumber(100, 1);
+			const tableItem = tableH(tableRoll);
+
+			embed.addField("Loot Class:", `${moneyStatement}\n${miscItems.statement}\n1 Roll - **Item Table H**`, true)
+				.addField("Item Rolls:", `${moneyRolls}\n${miscItems.rolls} (${miscItems.total})\n${tableRoll}`, true)
+				.addField("Final Loot:", `${moneyFinal}\n${miscItems.loot}\n${tableItem}`, false);
+			break loot;
+		}
 	}
-
-	// 5-10
-	if(roll <= 10){
-		const miscItems = vTrash("art", "25", "d4", 2);
-
-		embed.addField("Loot Class:", `${moneyStatement}\n${miscItems.statement}`, true)
-			.addField("Item Rolls:", `${moneyRolls}\n${miscItems.rolls} (${miscItems.total})`, true)
-			.addField("Final Loot:", `${moneyFinal}\n${miscItems.loot}`, false);
-		return message.channel.send({ embed });
-	}
-
-	// 11–16
-	if(roll <= 16){
-		const miscItems = vTrash("gems", "50", "d6", 3);
-
-		embed.addField("Loot Class:", `${moneyStatement}\n${miscItems.statement}`, true)
-			.addField("Item Rolls:", `${moneyRolls}\n${miscItems.rolls} (${miscItems.total})`, true)
-			.addField("Final Loot:", `${moneyFinal}\n${miscItems.loot}`, false);
-		return message.channel.send({ embed });
-	}
-
-	// 17–22
-	if(roll <= 22){
-		const miscItems = vTrash("gems", "100", "d6", 3);
-
-		embed.addField("Loot Class:", `${moneyStatement}\n${miscItems.statement}`, true)
-			.addField("Item Rolls:", `${moneyRolls}\n${miscItems.rolls} (${miscItems.total})`, true)
-			.addField("Final Loot:", `${moneyFinal}\n${miscItems.loot}`, false);
-		return message.channel.send({ embed });
-	}
-
-	// 23–28
-	if(roll <= 28){
-		const miscItems = vTrash("art", "25", "d6", 2);
-
-		embed.addField("Loot Class:", `${moneyStatement}\n${miscItems.statement}`, true)
-			.addField("Item Rolls:", `${moneyRolls}\n${miscItems.rolls} (${miscItems.total})`, true)
-			.addField("Final Loot:", `${moneyFinal}\n${miscItems.loot}`, false);
-		return message.channel.send({ embed });
-	}
-
-	// Magic Item Table A
-	// 29–32
-	if(roll <= 32){
-		const miscItems = vTrash("art", "25", "d6", 2);
-		const tableLoot = table("a", "d6");
-
-		embed.addField("Loot Class:", `${moneyStatement}\n${miscItems.statement}\n1 D6 Rolls - **Item Table A**`, true)
-			.addField("Item Rolls:", `${moneyRolls}\n${miscItems.rolls} (${miscItems.total})\n${tableLoot.rollAmount} (${tableLoot.rolls})`, true)
-			.addField("Final Loot:", `${moneyFinal}\n${miscItems.loot}\n${tableLoot.items}`, false);
-		return message.channel.send({ embed });
-	}
-
-	// 33–36
-	if(roll <= 36){
-		const miscItems = vTrash("gems", "50", "d6", 3);
-		const tableLoot = table("a", "d6");
-
-		embed.addField("Loot Class:", `${moneyStatement}\n${miscItems.statement}\n1 D6 Rolls - **Item Table A**`, true)
-			.addField("Item Rolls:", `${moneyRolls}\n${miscItems.rolls} (${miscItems.total})\n${tableLoot.rollAmount} (${tableLoot.rolls})`, true)
-			.addField("Final Loot:", `${moneyFinal}\n${miscItems.loot}\n${tableLoot.items}`, false);
-		return message.channel.send({ embed });
-	}
-
-	// 37–40
-	if(roll <= 40){
-		const miscItems = vTrash("gems", "100", "d6", 3);
-		const tableLoot = table("a", "d6");
-
-		embed.addField("Loot Class:", `${moneyStatement}\n${miscItems.statement}\n1 D6 Rolls - **Item Table A**`, true)
-			.addField("Item Rolls:", `${moneyRolls}\n${miscItems.rolls} (${miscItems.total})\n${tableLoot.rollAmount} (${tableLoot.rolls})`, true)
-			.addField("Final Loot:", `${moneyFinal}\n${miscItems.loot}\n${tableLoot.items}`, false);
-		return message.channel.send({ embed });
-	}
-
-	// 41–44
-	if(roll <= 44){
-		const miscItems = vTrash("art", "250", "d6", 2);
-		const tableLoot = table("a", "d6");
-
-		embed.addField("Loot Class:", `${moneyStatement}\n${miscItems.statement}\n1 D6 Rolls - **Item Table A**`, true)
-			.addField("Item Rolls:", `${moneyRolls}\n${miscItems.rolls} (${miscItems.total})\n${tableLoot.rollAmount} (${tableLoot.rolls})`, true)
-			.addField("Final Loot:", `${moneyFinal}\n${miscItems.loot}\n${tableLoot.items}`, false);
-		return message.channel.send({ embed });
-	}
-
-	// Magic Item Table B
-	// 45–49
-	if(roll <= 49){
-		const miscItems = vTrash("art", "25", "d6", 2);
-		const tableLoot = table("b", "d4");
-
-		embed.addField("Loot Class:", `${moneyStatement}\n${miscItems.statement}\n1 D4 Rolls - **Item Table B**`, true)
-			.addField("Item Rolls:", `${moneyRolls}\n${miscItems.rolls} (${miscItems.total})\n${tableLoot.rollAmount} (${tableLoot.rolls})`, true)
-			.addField("Final Loot:", `${moneyFinal}\n${miscItems.loot}\n${tableLoot.items}`, false);
-		return message.channel.send({ embed });
-	}
-
-	// 50–54
-	if(roll <= 54){
-		const miscItems = vTrash("gems", "50", "d6", 3);
-		const tableLoot = table("b", "d4");
-
-		embed.addField("Loot Class:", `${moneyStatement}\n${miscItems.statement}\n1 D4 Rolls - **Item Table B**`, true)
-			.addField("Item Rolls:", `${moneyRolls}\n${miscItems.rolls} (${miscItems.total})\n${tableLoot.rollAmount} (${tableLoot.rolls})`, true)
-			.addField("Final Loot:", `${moneyFinal}\n${miscItems.loot}\n${tableLoot.items}`, false);
-		return message.channel.send({ embed });
-	}
-
-	// 55–59
-	if(roll <= 59){
-		const miscItems = vTrash("gems", "100", "d6", 3);
-		const tableLoot = table("b", "d4");
-
-		embed.addField("Loot Class:", `${moneyStatement}\n${miscItems.statement}\n1 D4 Rolls - **Item Table B**`, true)
-			.addField("Item Rolls:", `${moneyRolls}\n${miscItems.rolls} (${miscItems.total})\n${tableLoot.rollAmount} (${tableLoot.rolls})`, true)
-			.addField("Final Loot:", `${moneyFinal}\n${miscItems.loot}\n${tableLoot.items}`, false);
-		return message.channel.send({ embed });
-	}
-
-	// 60–63
-	if(roll <= 63){
-		const miscItems = vTrash("art", "250", "d6", 2);
-		const tableLoot = table("b", "d4");
-
-		embed.addField("Loot Class:", `${moneyStatement}\n${miscItems.statement}\n1 D4 Rolls - **Item Table B**`, true)
-			.addField("Item Rolls:", `${moneyRolls}\n${miscItems.rolls} (${miscItems.total})\n${tableLoot.rollAmount} (${tableLoot.rolls})`, true)
-			.addField("Final Loot:", `${moneyFinal}\n${miscItems.loot}\n${tableLoot.items}`, false);
-		return message.channel.send({ embed });
-	}
-
-	// Magic Item Table C
-	// 64–66
-	if(roll <= 66){
-		const miscItems = vTrash("art", "25", "d6", 2);
-		const tableLoot = table("c", "d4");
-
-		embed.addField("Loot Class:", `${moneyStatement}\n${miscItems.statement}\n1 D4 Rolls - **Item Table C**`, true)
-			.addField("Item Rolls:", `${moneyRolls}\n${miscItems.rolls} (${miscItems.total})\n${tableLoot.rollAmount} (${tableLoot.rolls})`, true)
-			.addField("Final Loot:", `${moneyFinal}\n${miscItems.loot}\n${tableLoot.items}`, false);
-		return message.channel.send({ embed });
-	}
-
-	// 67–69
-	if(roll <= 69){
-		const miscItems = vTrash("gems", "50", "d6", 3);
-		const tableLoot = table("c", "d4");
-
-		embed.addField("Loot Class:", `${moneyStatement}\n${miscItems.statement}\n1 D4 Rolls - **Item Table C**`, true)
-			.addField("Item Rolls:", `${moneyRolls}\n${miscItems.rolls} (${miscItems.total})\n${tableLoot.rollAmount} (${tableLoot.rolls})`, true)
-			.addField("Final Loot:", `${moneyFinal}\n${miscItems.loot}\n${tableLoot.items}`, false);
-		return message.channel.send({ embed });
-	}
-
-	// 70–72
-	if(roll <= 72){
-		const miscItems = vTrash("gems", "100", "d6", 3);
-		const tableLoot = table("c", "d4");
-
-		embed.addField("Loot Class:", `${moneyStatement}\n${miscItems.statement}\n1 D4 Rolls - **Item Table C**`, true)
-			.addField("Item Rolls:", `${moneyRolls}\n${miscItems.rolls} (${miscItems.total})\n${tableLoot.rollAmount} (${tableLoot.rolls})`, true)
-			.addField("Final Loot:", `${moneyFinal}\n${miscItems.loot}\n${tableLoot.items}`, false);
-		return message.channel.send({ embed });
-	}
-
-	// 73–74
-	if(roll <= 74){
-		const miscItems = vTrash("art", "250", "d6", 2);
-		const tableLoot = table("c", "d4");
-
-		embed.addField("Loot Class:", `${moneyStatement}\n${miscItems.statement}\n1 D4 Rolls - **Item Table C**`, true)
-			.addField("Item Rolls:", `${moneyRolls}\n${miscItems.rolls} (${miscItems.total})\n${tableLoot.rollAmount} (${tableLoot.rolls})`, true)
-			.addField("Final Loot:", `${moneyFinal}\n${miscItems.loot}\n${tableLoot.items}`, false);
-		return message.channel.send({ embed });
-	}
-
-	// Magic Item Table D
-	// 75–76
-	if(roll <= 76){
-		const miscItems = vTrash("art", "25", "d6", 2);
-
-		const tableD = require("./itemTables/MagicItemTableD.js");
-		const tableRoll = Math.floor(Math.random() * 100 + 1);
-		const tableItem = tableD(tableRoll);
-
-		embed.addField("Loot Class:", `${moneyStatement}\n${miscItems.statement}\n1 Roll - **Item Table D**`, true)
-			.addField("Item Rolls:", `${moneyRolls}\n${miscItems.rolls} (${miscItems.total})\n${tableRoll}`, true)
-			.addField("Final Loot:", `${moneyFinal}\n${miscItems.loot}\n${tableItem}`, false);
-		return message.channel.send({ embed });
-	}
-
-	// 77–78
-	if(roll <= 78){
-		const miscItems = vTrash("gems", "50", "d6", 3);
-
-		const tableD = require("./itemTables/MagicItemTableD.js");
-		const tableRoll = Math.floor(Math.random() * 100 + 1);
-		const tableItem = tableD(tableRoll);
-
-		embed.addField("Loot Class:", `${moneyStatement}\n${miscItems.statement}\n1 Roll - **Item Table D**`, true)
-			.addField("Item Rolls:", `${moneyRolls}\n${miscItems.rolls} (${miscItems.total})\n${tableRoll}`, true)
-			.addField("Final Loot:", `${moneyFinal}\n${miscItems.loot}\n${tableItem}`, false);
-		return message.channel.send({ embed });
-	}
-
-	// 79
-	if(roll === 79){
-		const miscItems = vTrash("gems", "100", "d6", 3);
-
-		const tableD = require("./itemTables/MagicItemTableD.js");
-		const tableRoll = Math.floor(Math.random() * 100 + 1);
-		const tableItem = tableD(tableRoll);
-
-		embed.addField("Loot Class:", `${moneyStatement}\n${miscItems.statement}\n1 Roll - **Item Table D**`, true)
-			.addField("Item Rolls:", `${moneyRolls}\n${miscItems.rolls} (${miscItems.total})\n${tableRoll}`, true)
-			.addField("Final Loot:", `${moneyFinal}\n${miscItems.loot}\n${tableItem}`, false);
-		return message.channel.send({ embed });
-	}
-
-	// 80
-	if(roll === 80){
-		const miscItems = vTrash("art", "250", "d6", 2);
-
-		const tableD = require("./itemTables/MagicItemTableD.js");
-		const tableRoll = Math.floor(Math.random() * 100 + 1);
-		const tableItem = tableD(tableRoll);
-
-		embed.addField("Loot Class:", `${moneyStatement}\n${miscItems.statement}\n1 Roll - **Item Table D**`, true)
-			.addField("Item Rolls:", `${moneyRolls}\n${miscItems.rolls} (${miscItems.total})\n${tableRoll}`, true)
-			.addField("Final Loot:", `${moneyFinal}\n${miscItems.loot}\n${tableItem}`, false);
-		return message.channel.send({ embed });
-	}
-
-	// Magic Item Table F
-	// 81–84
-	if(roll <= 84){
-		const miscItems = vTrash("art", "25", "d6", 2);
-		const tableLoot = table("f", "d4");
-
-		embed.addField("Loot Class:", `${moneyStatement}\n${miscItems.statement}\n1 D4 Rolls - **Item Table F**`, true)
-			.addField("Item Rolls:", `${moneyRolls}\n${miscItems.rolls} (${miscItems.total})\n${tableLoot.rollAmount} (${tableLoot.rolls})`, true)
-			.addField("Final Loot:", `${moneyFinal}\n${miscItems.loot}\n${tableLoot.items}`, false);
-		return message.channel.send({ embed });
-	}
-
-	// 85–88
-	if(roll <= 88){
-		const miscItems = vTrash("gems", "50", "d6", 3);
-		const tableLoot = table("f", "d4");
-
-		embed.addField("Loot Class:", `${moneyStatement}\n${miscItems.statement}\n1 D4 Rolls - **Item Table F**`, true)
-			.addField("Item Rolls:", `${moneyRolls}\n${miscItems.rolls} (${miscItems.total})\n${tableLoot.rollAmount} (${tableLoot.rolls})`, true)
-			.addField("Final Loot:", `${moneyFinal}\n${miscItems.loot}\n${tableLoot.items}`, false);
-		return message.channel.send({ embed });
-	}
-
-	// 89–91
-	if(roll <= 91){
-		const miscItems = vTrash("gems", "100", "d6", 3);
-		const tableLoot = table("f", "d4");
-
-		embed.addField("Loot Class:", `${moneyStatement}\n${miscItems.statement}\n1 D4 Rolls - **Item Table F**`, true)
-			.addField("Item Rolls:", `${moneyRolls}\n${miscItems.rolls} (${miscItems.total})\n${tableLoot.rollAmount} (${tableLoot.rolls})`, true)
-			.addField("Final Loot:", `${moneyFinal}\n${miscItems.loot}\n${tableLoot.items}`, false);
-		return message.channel.send({ embed });
-	}
-
-	// 92–94
-	if(roll <= 94){
-		const miscItems = vTrash("art", "250", "d6", 2);
-		const tableLoot = table("f", "d4");
-
-		embed.addField("Loot Class:", `${moneyStatement}\n${miscItems.statement}\n1 D4 Rolls - **Item Table F**`, true)
-			.addField("Item Rolls:", `${moneyRolls}\n${miscItems.rolls} (${miscItems.total})\n${tableLoot.rollAmount} (${tableLoot.rolls})`, true)
-			.addField("Final Loot:", `${moneyFinal}\n${miscItems.loot}\n${tableLoot.items}`, false);
-		return message.channel.send({ embed });
-	}
-
-	// Magic Item Table G
-	//	95-96
-	if(roll <= 96){
-		const miscItems = vTrash("gems", "100", "d6", 3);
-		const tableLoot = table("g", "d4");
-
-		embed.addField("Loot Class:", `${moneyStatement}\n${miscItems.statement}\n1 D4 Rolls - **Item Table G**`, true)
-			.addField("Item Rolls:", `${moneyRolls}\n${miscItems.rolls} (${miscItems.total})\n${tableLoot.rollAmount} (${tableLoot.rolls})`, true)
-			.addField("Final Loot:", `${moneyFinal}\n${miscItems.loot}\n${tableLoot.items}`, false);
-		return message.channel.send({ embed });
-	}
-
-	// 97-98
-	if(roll <= 98){
-		const miscItems = vTrash("art", "250", "d6", 2);
-		const tableLoot = table("g", "d6");
-
-		embed.addField("Loot Class:", `${moneyStatement}\n${miscItems.statement}\n1 D6 Rolls - **Item Table G**`, true)
-			.addField("Item Rolls:", `${moneyRolls}\n${miscItems.rolls} (${miscItems.total})\n${tableLoot.rollAmount} (${tableLoot.rolls})`, true)
-			.addField("Final Loot:", `${moneyFinal}\n${miscItems.loot}\n${tableLoot.items}`, false);
-		return message.channel.send({ embed });
-	}
-
-	// Magic Item Table F
-	// 99
-	if(roll === 99){
-		const miscItems = vTrash("gems", "100", "d6", 3);
-
-		const tableH = require("./itemTables/MagicItemTableH.js");
-		const tableRoll = Math.floor(Math.random() * 100 + 1);
-		const tableItem = tableH(tableRoll);
-
-		embed.addField("Loot Class:", `${moneyStatement}\n${miscItems.statement}\n1 Roll - **Item Table H**`, true)
-			.addField("Item Rolls:", `${moneyRolls}\n${miscItems.rolls} (${miscItems.total})\n${tableRoll}`, true)
-			.addField("Final Loot:", `${moneyFinal}\n${miscItems.loot}\n${tableItem}`, false);
-		return message.channel.send({ embed });
-	}
-
-	// 100
-	if(roll === 100){
-		const miscItems = vTrash("art", "250", "d6", 2);
-
-		const tableH = require("./itemTables/MagicItemTableH.js");
-		const tableRoll = Math.floor(Math.random() * 100 + 1);
-		const tableItem = tableH(tableRoll);
-
-		embed.addField("Loot Class:", `${moneyStatement}\n${miscItems.statement}\n1 Roll - **Item Table H**`, true)
-			.addField("Item Rolls:", `${moneyRolls}\n${miscItems.rolls} (${miscItems.total})\n${tableRoll}`, true)
-			.addField("Final Loot:", `${moneyFinal}\n${miscItems.loot}\n${tableItem}`, false);
-		return message.channel.send({ embed });
-	}
+	return message.channel.send({ embed }).catch(e => errFunc(e));
 };
