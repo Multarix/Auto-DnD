@@ -7,7 +7,7 @@ module.exports = (client, message, args) => {
 	const table = require("./challenge/miscRolls/lootPicker.js");
 	const loot = table(args[1], false, rollTimes);
 	if(loot === undefined) return message.channel.send("Usage: [/loot](<table> <amount>)", { code: "markdown" });
-	const embed = new Discord.RichEmbed()
+	const embed = new Discord.MessageEmbed()
 		.setTitle(`Magic Item Table ${args[1].toUpperCase()}`)
 		.setDescription("The dice has been cast...")
 		.setAuthor(message.member.displayName, message.author.displayAvatarURL)

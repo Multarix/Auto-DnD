@@ -6,10 +6,10 @@ exports.run = (client, message, args) => {
 	const ones = d10();
 	const roll = tens + ones;
 
-	const embed = new Discord.RichEmbed()
-		.setAuthor(message.member.displayName, message.author.displayAvatarURL)
+	const embed = new Discord.MessageEmbed()
+		.setAuthor(message.member.displayName, message.author.displayAvatarURL())
 		.setDescription("The dice has been cast...")
-		.setFooter(client.user.username, client.user.displayAvatarURL)
+		.setFooter(client.user.username, client.user.displayAvatarURL())
 		.setTimestamp()
 		.addField("Percentile:", tens, true)
 		.addField("D10:", ones, true)

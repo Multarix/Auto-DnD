@@ -19,10 +19,10 @@ exports.run = async (client, message, args) => {
 			return message.channel.send(`**OUTPUT** ${good}\nThe output was too long, check the console.`).catch(e => errFunc(e));
 		}
 
-		const embed = new Discord.RichEmbed()
+		const embed = new Discord.MessageEmbed()
 			.setColor(2734377)
 			.addField('Javascript Evaluated', evalString, false)
-			.setFooter(client.user.tag, client.user.displayAvatarURL)
+			.setFooter(client.user.tag, client.user.displayAvatarURL())
 			.setTimestamp();
 		message.channel.send({ embed });
 	} catch (err){
@@ -33,10 +33,10 @@ exports.run = async (client, message, args) => {
 			return message.channel.send(`**ERROR** ${bad}\nThe error message was too long, check the console.`).catch(e => errFunc(e));
 		}
 
-		const embed = new Discord.RichEmbed()
+		const embed = new Discord.MessageEmbed()
 			.setColor(14487568)
 			.addField(`Javascript Evaluated`, errString, false)
-			.setFooter(client.user.tag, client.user.displayAvatarURL)
+			.setFooter(client.user.tag, client.user.displayAvatarURL())
 			.setTimestamp();
 		return message.channel.send({ embed }).catch(e => errFunc(e));
 	}

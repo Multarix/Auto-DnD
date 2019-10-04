@@ -9,7 +9,7 @@ module.exports = (client, message, args) => {
 
 	if(!diceType.includes(die)) return message.channel.send("Usage: [roll](<..dice> <..modifier>)", { code: "markdown" }).catch(e => errFunc(e));
 
-	const embed = new Discord.RichEmbed()
+	const embed = new Discord.MessageEmbed()
 		.setAuthor(message.member.displayName, message.author.displayAvatarURL)
 		.setDescription("The dice has been cast...")
 		.setFooter(client.user.username, client.user.displayAvatarURL)

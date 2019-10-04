@@ -3,7 +3,7 @@ const Discord = require("discord.js");
 const { promisify } = require("util");
 const readdir = promisify(require("fs").readdir);
 
-const client = new Discord.Client({ disableEveryone: true });
+const client = new Discord.Client({ disableEveryone: true, shardCount: "auto" });
 
 client.config = require("./config.json");
 require("./modules/functions.js")(client);

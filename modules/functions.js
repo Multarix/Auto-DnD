@@ -29,15 +29,25 @@ module.exports = async (client) => {
 	};
 
 	//	Client log, semi-useful for keeping track of what is what in the console
-	client.log = (msg, title) => {
+	client.log = (msg, title, shardID) => {
 		if(!title) title = "Log";
+		if(isNaN(shardID)) shardID = "null";
+
+		let str = "";
 		const time = require("../modules/misc/time.js")();
-		fs.appendFileSync("./logs.txt", `\n[${time.exactDate}] (${time.time}) ${msg.replace(/\[3[7&9]m/g, "")}`);		// eslint-disable-line no-control-regex
-		if(title.toLowerCase() === "error") return console.log(`[${colors.red(time.time)}](${colors.red(title)}) ${colors.red(msg)}`);
-		if(title.toLowerCase() === "warn") return console.log(`[${colors.yellow(time.time)}](${colors.yellow(title)}) ${colors.yellow(msg)}`);
-		if(title.toLowerCase() === "notify") return console.log(`[${colors.cyan(time.time)}](${colors.cyan(title)}) ${colors.cyan(msg)}`);
-		if(title.toLowerCase() === "sql") return console.log(`[${colors.magenta(time.time)}](${colors.magenta(title)}) ${colors.magenta(msg)}`);
-		console.log(`[${colors.gray(time.time)}](${colors.gray(title)}) ${colors.gray(msg)}`);
+		switch (title.toLowerCase()){
+		/* eslint-disable indent*/
+			case "error": str = `<${colors.red(time.time)}>[${colors.red(`Shard-${shardID}`)}](${colors.red(title)}) ${colors.red(msg)}`; break;
+			case "warn": str = `<${colors.yellow(time.time)}>[${colors.yellow(`Shard-${shardID}`)}](${colors.yellow(title)}) ${colors.yellow(msg)}`; break;
+			case "notify": str = `<${colors.cyan(time.time)}>[${colors.cyan(`Shard-${shardID}`)}](${colors.cyan(title)}) ${colors.cyan(msg)}`; break;
+			case "sql":	str = `<${colors.magenta(time.time)}>[${colors.magenta(`Shard-${shardID}`)}](${colors.magenta(title)}) ${colors.magenta(msg)}`; break;
+			default: str = `<${colors.gray(time.time)}>[${colors.gray(`Shard-${shardID}`)}](${colors.gray(title)}) ${colors.gray(msg)}`;	break;
+		/* eslint-enable indent */
+		}
+		fs.appendFileSync("./logs.txt", `\n[${time.exactDate}] (${time.time}) ${msg.replace(/\[\d+m/g, "")}`);		// eslint-disable-line no-control-regex
+		const reggie = /\[\[\d+mShard-null\[\d+m\]/;	// eslint-disable-line no-control-regex
+		str = str.replace(reggie, "");
+		console.log(str);
 	};
 
 	/*
@@ -101,7 +111,7 @@ module.exports = async (client) => {
 	global.wait = require("util").promisify(setTimeout);
 
 	global.errFunc = (error) => {
-		if(error.code === 50007) return; // Ignore the error if it's can't send message to this user;
+		if(error.code === 50007) return undefined; // Ignore the error if it's can't send message to this user;
 		client.log(error.message, "Error");
 		return null; // In the event that async is being used, return null.
 	};
@@ -110,7 +120,7 @@ module.exports = async (client) => {
 	global.restartBot = async (restartInfo) => {
 		if(!restartInfo) restartInfo = "Automatic Restart";
 		client.log(`Perfmorming reboot.. Reason: ${restartInfo}`, "Log");
-		await wait(200).then(() => {
+		await wait(500).then(() => {
 			process.exit();
 		});
 	};
@@ -120,7 +130,7 @@ module.exports = async (client) => {
 		if(!userID) return;
 		if(userID.startsWith("<@") && userID.endsWith(">")) userID = userID.slice(2, -1);
 		if(userID.startsWith("!")) userID = userID.slice(1);
-		await client.fetchUser(userID).catch(e => { return; });
+		await client.users.fetch(userID).catch(e => { return undefined; });
 		return client.users.get(userID);
 	};
 
@@ -128,7 +138,7 @@ module.exports = async (client) => {
 	global.grabChannel = (channelID) => {
 		if(!channelID) return;
 		if(channelID.startsWith("<#") && channelID.endsWith(">")) channelID = channelID.slice(2, -1);
-		if(!client.channels.get(channelID)) return null;
+		if(!client.channels.get(channelID)) return undefined;
 		return client.channels.get(channelID);
 	};
 
@@ -140,7 +150,7 @@ module.exports = async (client) => {
 		guild = client.guilds.get(guild);
 		if(!guild) return null;
 		if(roleID.startsWith("<@&") && roleID.endsWith(">")) roleID = roleID.slice(3, -1);
-		if(!guild.roles.get(roleID)) return null;
+		if(!guild.roles.get(roleID)) return undefined;
 		return guild.roles.get(roleID);
 	};
 

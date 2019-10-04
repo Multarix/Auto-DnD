@@ -11,20 +11,20 @@ exports.run = async (client, message, args) => {
 
 	if(tagged){
 		user = tagged;
-		member = await message.guild.fetchMember(tagged).catch(e => { return undefined; });
+		member = await message.guild.members.fetch(tagged).catch(e => { return undefined; });
 	}
 
 	const joinDate = moment.duration(Date.now() - user.createdTimestamp).format("Y [years], M [months], D [days], H [hours]");
 
 	let game = "nothing";
-	if(user.presence.game) game = user.presence.game.name;
+	if(user.presence.activity) game = user.presence.activity.name;
 
 	let displayName = user.username;
 	if(member) displayName = member.displayName;
 
-	const embed = new Discord.RichEmbed()
+	const embed = new Discord.MessageEmbed()
 		.setAuthor(displayName)
-		.setThumbnail(user.displayAvatarURL)
+		.setThumbnail(user.displayAvatarURL())
 		.addField("Username:", user.username, true)
 		.addField("Discrim:", user.discriminator, true)
 		.addField("Discord ID:", user.id, true)
@@ -33,15 +33,15 @@ exports.run = async (client, message, args) => {
 		.addField("Playing:", game, true)
 		.addField("Joined Discord:", `${joinDate} ago`, false)
 		.setTimestamp()
-		.setFooter(client.user.tag, client.user.displayAvatarURL);
+		.setFooter(client.user.tag, client.user.displayAvatarURL());
 
 	let ecolor1 = 14487568;
 	if(member){
 		const serverJoin = moment.duration(Date.now() - member.joinedTimestamp).format("Y [years], M [months], D [days], H [hours]");
 		embed.addField("Joined Server:", `${serverJoin} ago`, false);
-		if(member.highestRole.color) ecolor1 = member.highestRole.color;
+		if(member.roles.highest.color) ecolor1 = member.roles.highest.color;
 		if(member.roles){
-			const s = function(a, b) { return a.calculatedPosition - b.calculatedPosition; };
+			const s = function(a, b) { return a.position - b.position; };
 			const r = member.roles.array().sort(s).slice(1).join(", ");
 			embed.addField("Roles:", r);
 		}

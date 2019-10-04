@@ -50,9 +50,9 @@ exports.run = async (client, message, args) => {
 	for(const [key, value] of Object.entries(character.stats)){
 		str += `**${key.toProperCase()}** :: ${value}\n`;
 	}
-	const embed = new Discord.RichEmbed()
+	const embed = new Discord.MessageEmbed()
 		.setAuthor(character.name)
-		.setFooter(client.user.username, client.user.displayAvatarURL)
+		.setFooter(client.user.username, client.user.displayAvatarURL())
 		.setTimestamp()
 		.addField("Misc Information", // eslint-disable-next-line
 `**Race/ Subrace:**

@@ -8,7 +8,7 @@ exports.run = async (client, message, args) => {
 	if(toDelete >= 101) toDelete = 100;
 
 	if(!message.channel.permissionsFor(message.guild.me).has("MANAGE_MESSAGES")) return message.reply("I don't have permission to delete messages.");
-	const messages = await message.channel.fetchMessages({ limit: toDelete }).catch(e => { return undefined; });
+	const messages = await message.channel.messages.fetch({ limit: toDelete }).catch(e => { return undefined; });
 	if(!messages) return;
 	await message.channel.bulkDelete(messages).catch(e => {
 		return message.channel.send(`\`Error:\` ${e.message}`);

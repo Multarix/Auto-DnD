@@ -15,7 +15,7 @@ module.exports = (client, message, args) => {
 	if(isNaN(a)) a = 1;
 	if(a >= 25) a = 24;
 
-	const embed = new Discord.RichEmbed()
+	const embed = new Discord.MessageEmbed()
 		.setAuthor(message.member.displayName, message.author.displayAvatarURL)
 		.setDescription("The dice has been cast...")
 		.setFooter(client.user.username, client.user.displayAvatarURL)

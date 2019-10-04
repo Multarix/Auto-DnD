@@ -5,10 +5,10 @@ const Discord = require("discord.js");
 exports.run = (client, message, args) => {
 
 	const duration = moment.duration(client.uptime).format(" D [days], H [hrs], m [mins], s [secs]");
-	const embed = new Discord.RichEmbed()
+	const embed = new Discord.MessageEmbed()
 		.setAuthor(`Bot Stats`)
 		.setColor(13238272)
-		.setThumbnail(client.user.displayAvatarURL)
+		.setThumbnail(client.user.displayAvatarURL())
 		.addField("Memory Usage", `${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB`, true)
 		.addField("Users", `${client.users.size.toLocaleString()}`, true)
 		.addField("Node.js", `${process.version}`, true)
@@ -16,7 +16,7 @@ exports.run = (client, message, args) => {
 		.addField("Discord.js", `v${version}`, true)
 		.addField("Servers", `${client.guilds.size.toLocaleString()}`, true)
 		.addField("Uptime", `${duration}`, true)
-		.setFooter(client.user.tag, client.user.displayAvatarURL)
+		.setFooter(client.user.tag, client.user.displayAvatarURL())
 		.setTimestamp();
 	return message.channel.send({ embed }).catch(e => errFunc(e));
 };

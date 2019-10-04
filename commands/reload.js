@@ -24,8 +24,8 @@ exports.run = async (client, message, args) => {
 	const msg = await message.reply(`The command '${command}' has been reloaded`).catch(e => errFunc(e));
 	if(message.channel.type !== "dm"){
 		if(message.channel.memberPermissions(message.guild.me).has("MANAGE_MESSAGES")){
-			msg.delete(5000);
-			message.delete(5000);
+			msg.delete({ timeout: 5000 });
+			message.delete({ timeout: 5000 });
 		}
 	}
 };
