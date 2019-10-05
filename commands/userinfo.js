@@ -43,7 +43,7 @@ exports.run = async (client, message, args) => {
 		if(member.roles){
 			const s = function(a, b) { return a.position - b.position; };
 			const r = member.roles.array().sort(s).slice(1).join(", ");
-			embed.addField("Roles:", r);
+			embed.addField("Roles:", `\u200b${r}`);
 		}
 	}
 	embed.setColor(ecolor1);
