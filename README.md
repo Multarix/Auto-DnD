@@ -10,7 +10,8 @@ A bot for Dungeons and Dragons.
 - Nothing
 
 ## Planned Features
-- Plans of plans (Aka still deciding)
+- Attack Rolls
+- ?????
 
 ### Packages required for the bot
 - Discord.js (11.5 or higher)
