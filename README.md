@@ -7,10 +7,9 @@ A bot for Dungeons and Dragons.
 - Random NPC generation (Throw away characters, no backstory etc. created)**
 
 ## Currently Working On
-- Nothing
+- Attack Rolls
 
 ## Planned Features
-- Attack Rolls
 - ?????
 
 ### Packages required for the bot
