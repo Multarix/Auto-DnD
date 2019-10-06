@@ -127,7 +127,7 @@ module.exports = async (client) => {
 
 	// Checks for and fetches a user if it exists.
 	global.grabUser = async (userID) => {
-		if(!userID) return;
+		if(!userID) return undefined;
 		if(userID.startsWith("<@") && userID.endsWith(">")) userID = userID.slice(2, -1);
 		if(userID.startsWith("!")) userID = userID.slice(1);
 		await client.users.fetch(userID).catch(e => { return undefined; });
