@@ -13,12 +13,12 @@ const init = async () => {
 	client.log(`Loading a total of ${cmdFiles.length} commands.`, "Commands");
 	cmdFiles.forEach(f => {
 		try {
-			if(f.split(".").slice(-1)[0] !== "js") return;
-			const props = require(`./commands/${f}`);
-			client.log(`Loaded Command File: ${props.help.name}.js`, "Log");
-			client.commands.set(props.help.name, props);
-			props.conf.aliases.forEach(alias => {
-				client.aliases.set(alias, props.help.name);
+			if(!f.endsWith(".js")) return;
+			const command = require(`./commands/${f}`);
+			client.log(`Loaded Command File: ${command.help.name}.js`, "Log");
+			client.commands.set(command.help.name, command);
+			command.conf.aliases.forEach(alias => {
+				client.aliases.set(alias, command.help.name);
 			});
 		} catch (e){
 			client.log(`Unable to load command ${f}: ${e}`, "Warn");
@@ -27,52 +27,52 @@ const init = async () => {
 
 	const evtFiles = await readdir("./events/");
 	client.log(`Loading a total of ${evtFiles.length} events.`, "Events");
-	evtFiles.forEach(file => {
+	evtFiles.forEach(f => {
 		try {
-			if(file.split(".").slice(-1)[0] !== "js") return;
-			const event = require(`./events/${file}`);
-			const eventName = file.split(".")[0];
+			if(f.split(".").slice(-1)[0] !== "js") return;
+			const event = require(`./events/${f}`);
+			const eventName = f.split(".")[0];
 			client.on(eventName, event.bind(null, client));
 			client.events.set(event.help.name, event);
 
-			delete require.cache[require.resolve(`./events/${file}`)];
+			delete require.cache[require.resolve(`./events/${f}`)];
 
 		} catch (e){
-			client.log(`Unable to load event ${file}: ${e}`, "Error");
+			client.log(`Unable to load event ${f}: ${e}`, "Error");
 		}
 	});
 
 	const raceFiles = await readdir("./commands/npc/race/");
 	client.log(`Loading a total of ${raceFiles.length} races.`, "NPC Gen");
-	raceFiles.forEach(r => {
+	raceFiles.forEach(f => {
 		try {
-			if(r.split(".").slice(-1)[0] !== "js") return;
-			const f = require(`./commands/npc/race/${r}`);
-			client.raceType.set(f.info.name, f);
-			f.info.aliases.forEach(a => {
-				client.raceAlias.set(a, f.info.name);
+			if(!f.endsWith(".js")) return;
+			const r = require(`./commands/npc/race/${f}`);
+			client.raceType.set(r.info.name, r);
+			r.info.aliases.forEach(a => {
+				client.raceAlias.set(a, r.info.name);
 			});
 		} catch (e){
-			client.log(`Unable to load race ${r}: ${e}`, "Warn");
+			client.log(`Unable to load race ${f}: ${e}`, "Warn");
 		}
 	});
 
 	const classFiles = await readdir("./commands/npc/class/");
 	client.log(`Loading a total of ${classFiles.length} classes.`, "NPC Gen");
-	classFiles.forEach(c => {
+	classFiles.forEach(f => {
 		try {
-			if(c.split(".").slice(-1)[0] !== "js") return;
-			const f = require(`./commands/npc/class/${c}`);
-			client.classType.set(f.info.name, f);
-			f.info.aliases.forEach(a => {
-				client.classAlias.set(a, f.info.name);
+			if(!f.endsWith(".js")) return;
+			const c = require(`./commands/npc/class/${f}`);
+			client.classType.set(c.info.name, c);
+			c.info.aliases.forEach(a => {
+				client.classAlias.set(a, c.info.name);
 			});
 		} catch (e){
-			client.log(`Unable to load class ${c}: ${e}`, "Warn");
+			client.log(`Unable to load class ${f}: ${e}`, "Warn");
 		}
 	});
 
-	client.login(client.config.clientTokenBeta);
+	client.login(client.config.clientToken);
 };
 
 init();
