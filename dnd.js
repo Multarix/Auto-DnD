@@ -3,7 +3,11 @@ const Discord = require("discord.js");
 const { promisify } = require("util");
 const readdir = promisify(require("fs").readdir);
 
-const client = new Discord.Client({ disableEveryone: true, shardCount: "auto", disabledEvents: ["TYPING_START", "CHANNEL_PINS_UPDATE"] });
+const client = new Discord.Client({
+	disableEveryone: true,
+	shardCount: "auto",
+	disabledEvents: ["TYPING_START", "CHANNEL_PINS_UPDATE"],
+});
 
 client.config = require("./config.json");
 require("./modules/functions.js")(client);
