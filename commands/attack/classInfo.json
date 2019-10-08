@@ -1,0 +1,62 @@
+[
+	{
+		"name": "barbarian",
+		"aliases": [],
+		"hitDie": "1×d12()"
+	},
+	{
+		"name": "bard",
+		"aliases": [],
+		"hitDie": ""
+	},
+	{
+		"name": "cleric",
+		"aliases": [],
+		"hitDie": ""
+	},
+	{
+		"name": "druid",
+		"aliases": [],
+		"hitDie": ""
+	},
+	{
+		"name": "fighter",
+		"aliases": [],
+		"hitDie": ""
+	},
+	{
+		"name": "monk",
+		"aliases": [],
+		"hitDie": ""
+	},
+	{
+		"name": "paladin",
+		"aliases": [],
+		"hitDie": ""
+	},
+	{
+		"name": "ranger",
+		"aliases": [],
+		"hitDie": ""
+	},
+	{
+		"name": "rogue",
+		"aliases": [],
+		"hitDie": ""
+	},
+	{
+		"name": "sorcerer",
+		"aliases": [],
+		"hitDie": ""
+	},
+	{
+		"name": "warlock",
+		"aliases": [],
+		"hitDie": ""
+	},
+	{
+		"name": "wizard",
+		"aliases": [],
+		"hitDie": ""
+	}
+]
