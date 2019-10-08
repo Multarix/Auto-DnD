@@ -4,10 +4,14 @@ exports.run = (client, message, args) => {
 	let good = client.emojis.get("340357918996299778");
 	if(!good) good = "👍";
 
+	const invStr = `[Click Here](https://discordapp.com/oauth2/authorize?client_id=${client.user.id}&scope=bot&permissions=8 "Invite ${client.user.username.toProperCase()} to your server") to invite
+		${client.user.username} to your
+		own server.`;
+
 	const embed = new Discord.MessageEmbed()
 		.setThumbnail(client.user.displayAvatarURL())
 		.setColor(14487568)
-		.addField(`${client.user.username} Invite Link`, `[Click Here](https://discordapp.com/oauth2/authorize?client_id=${client.user.id}&scope=bot&permissions=8 "Invite ${client.user.username.toProperCase()} to your server") to invite\n${client.user.username} to your\nown server.`, false)
+		.addField(`${client.user.username} Invite Link`, invStr.replace(/\t/g, ""), false)
 		.setFooter(client.user.tag, client.user.displayAvatarURL())
 		.setTimestamp();
 

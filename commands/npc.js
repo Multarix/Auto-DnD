@@ -50,26 +50,28 @@ exports.run = async (client, message, args) => {
 	for(const [key, value] of Object.entries(character.stats)){
 		str += `**${key.toProperCase()}** :: ${value}\n`;
 	}
+
+	const charInfo = `**Race/ Subrace:**
+	[${character.race.name}](${character.race.link})
+	**Class:**
+	[${character.class}](https://www.dndbeyond.com/classes/${character.class})
+	**Gender:**
+	${character.gender}
+	**Speed:**
+	${character.race.speed}
+	\u200b
+	**Weapon:**
+	${character.inventory.weapon}
+	**Armor:**
+	${character.inventory.armor}
+	**Tools:**
+	${character.inventory.tools}`;
+
 	const embed = new Discord.MessageEmbed()
 		.setAuthor(character.name)
 		.setFooter(client.user.username, client.user.displayAvatarURL())
 		.setTimestamp()
-		.addField("Misc Information", // eslint-disable-next-line
-`**Race/ Subrace:**
-[${character.race.name}](${character.race.link})
-**Class:**
-[${character.class}](https://www.dndbeyond.com/classes/${character.class})
-**Gender:**
-${character.gender}
-**Speed:**
-${character.race.speed}
-\u200b
-**Weapon:**
-${character.inventory.weapon}
-**Armor:**
-${character.inventory.armor}
-**Tools:**
-${character.inventory.tools}`, true)
+		.addField("Misc Information", charInfo.replace(/\t/g, ""), true)
 		.addField("**Stats**", `${str}`, true);
 
 	return message.channel.send({ embed }).catch(e => errFunc(e));
