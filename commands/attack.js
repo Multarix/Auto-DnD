@@ -24,8 +24,7 @@ exports.run = async (client, message, args) => {
 		.setURL(weapon.link);
 
 	let embed = undefined;
-	if(weapon.properties.includes("versatile")) embed = await versatile(client, embedObject, weapon, modifier);
-	if(!weapon.properties.includes("versatile")) embed = await nonVersatile(client, embedObject, weapon, modifier);
+	embed = (weapon.properties.includes("versatile")) ? await versatile(client, embedObject, weapon, modifier) : await nonVersatile(client, embedObject, weapon, modifier);
 	if(!embed) return message.channel.send("Encountered an error, you should probably report this:\nhttps://github.com/Multarix/Auto-DnD/issues");
 
 	return message.channel.send({ embed });
