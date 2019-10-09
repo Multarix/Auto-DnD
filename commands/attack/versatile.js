@@ -11,7 +11,7 @@ module.exports = async (client, embed, weapon, modifier) => {
 		versatileTimes: parseInt(versatileAttack[0]),
 		versatileDie: versatileAttack[1],
 	};
-	const link = "https://roll20.net/compendium/dnd5e/Character%20Advancement#content";
+
 	let hit = d20();
 	if(hit === 1)	return await failure(embed);
 	if(hit === 20){
@@ -21,6 +21,7 @@ module.exports = async (client, embed, weapon, modifier) => {
 		embed.addField("Attack Roll (1×D20 + Modifiers)", `**Roll:** ${hit}
 		\u200b`.replace(/\n(\t+)/g, "\n"), false);
 	} else {
+		const link = "https://roll20.net/compendium/dnd5e/Character%20Advancement#content";
 		embed.addField("Attack Roll (1×D20 + Modifiers)", `[**Proficiency Bonus**](${link})
 		**Roll:** ${hit}
 		**Modifier:** ${modifier}
