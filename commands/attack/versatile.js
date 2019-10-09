@@ -2,7 +2,7 @@ const failure = require("./failure.js");
 module.exports = async (client, embed, weapon, modifier) => {
 
 	const singleAttack = weapon.damageAmount.split("×");
-	const	versatileAttack = weapon.versatile.split("×");
+	const	versatileAttack = weapon.vDamage.split("×");
 	const attack = {
 		sDieStr: "",
 		singleTimes: parseInt(singleAttack[0]),
@@ -11,15 +11,22 @@ module.exports = async (client, embed, weapon, modifier) => {
 		versatileTimes: parseInt(versatileAttack[0]),
 		versatileDie: versatileAttack[1],
 	};
-
+	const link = "https://roll20.net/compendium/dnd5e/Character%20Advancement#content";
 	let hit = d20();
 	if(hit === 1)	return await failure(embed);
 	if(hit === 20){
 		hit =	`${hit} - Critical Hit!`;
 		attack.singleTimes *= 2;
 		attack.versatileTimes *= 2;
+		embed.addField("Attack Roll (1×D20 + Modifiers)", `**Roll:** ${hit}
+		\u200b`.replace(/\n(\t+)/g, "\n"), false);
+	} else {
+		embed.addField("Attack Roll (1×D20 + Modifiers)", `[**Proficiency Bonus**](${link})
+		**Roll:** ${hit}
+		**Modifier:** ${modifier}
+		**Total:** ${hit + modifier}
+		\u200b`.replace(/\n(\t+)/g, "\n"), false);
 	}
-	embed.addField("Attack Roll (1×D20)", hit, false);
 
 	attack.sDieStr += `${attack.singleTimes}×${attack.singleDie}`.replace("()", "").toUpperCase();
 	attack.vDieStr += `${attack.versatileTimes}×${attack.versatileDie}`.replace("()", "").toUpperCase();
