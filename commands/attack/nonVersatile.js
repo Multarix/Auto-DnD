@@ -13,8 +13,16 @@ module.exports = async (client, embed, weapon, modifier) => {
 	if(hit === 20){
 		hit =	`${hit} - Critical Hit!`;
 		attack.singleTimes *= 2;
+		embed.addField("Attack Roll (1×D20 + Modifiers)", `**Roll:** ${hit}
+		\u200b`.replace(/\n(\t+)/g, "\n"), false);
+	} else {
+		const link = "https://roll20.net/compendium/dnd5e/Character%20Advancement#content";
+		embed.addField("Attack Roll (1×D20 + Modifiers)", `[**Proficiency Bonus**](${link})
+		**Roll:** ${hit}
+		**Modifier:** ${modifier}
+		**Total:** ${hit + modifier}
+		\u200b`.replace(/\n(\t+)/g, "\n"), false);
 	}
-	embed.addField("Attack Roll (1×D20)", hit, false);
 	if(weapon.name.toLowerCase() === "net") return embed;
 
 	attack.sDie += `${attack.singleTimes}×${attack.singleDie}`.replace("()", "").toUpperCase();
