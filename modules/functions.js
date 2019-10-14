@@ -82,13 +82,6 @@ module.exports = async (client) => {
 		return mNum;
 	};
 
-	// Guild only check for certain commands (finally)
-	client.allowDM = (m, c) => {
-		let channelCheck = false;
-		if(m.channel.type !== "dm" || c.conf.allowDM) channelCheck = true;
-		return channelCheck;
-	};
-
 	/* Non-Critical Misc Functions */
 
 	/*
@@ -99,6 +92,9 @@ module.exports = async (client) => {
 
 	String.prototype.toProperCase = function() {	// "this is a string" => "This Is A String";
 		return this.replace(/([^\W_]+[^\s-]*) */g, function(txt) { return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase(); });
+	};
+	String.prototype.removeIndents = function() {	// Removes indents from a string.
+		return this.replace(/\n(\t+)/g, "");
 	};
 	Map.prototype.random = function() {	// Gets a random element of a map;
 		return this.get([...this.keys()][Math.floor(Math.random() * this.size)]);
