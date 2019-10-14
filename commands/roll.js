@@ -18,7 +18,7 @@ exports.conf = {
 
 exports.help = {
 	name: "roll",
-	category: "Misc",
+	category: "Dungeons & Dragons",
 	description: "Rolls some dice.",
 	usage: "amount d4/d6/d8/d10/d20 modifier",
 };

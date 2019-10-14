@@ -54,7 +54,7 @@ exports.conf = {
 
 exports.help = {
 	name: "loot",
-	category: "Misc",
+	category: "Dungeons & Dragons",
 	description: "Automagically rolls for loot",
 	usage: "individual/hoard challenge-level",
 };

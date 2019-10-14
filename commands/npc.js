@@ -86,7 +86,7 @@ exports.conf = {
 
 exports.help = {
 	name: "npc",
-	category: "Misc",
+	category: "Dungeons & Dragons",
 	description: "Creates a semi-random NPC",
 	usage: "race job/class",
 };

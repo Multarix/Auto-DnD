@@ -39,7 +39,7 @@ exports.conf = {
 
 exports.help = {
 	name: "attack",
-	category: "Misc",
+	category: "Dungeons & Dragons",
 	description: "Automagically calculates damage",
 	usage: "weapon strength/dexterity",
 };
