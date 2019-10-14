@@ -29,18 +29,15 @@ module.exports = async (client, message) => {
 	}
 	const cmd = client.commands.get(command) || client.commands.get(client.aliases.get(command));
 	if(cmd && level >= cmd.conf.permLevel){
-		const allowDM = client.allowDM(message, cmd);
+		let allowDM = false;
+		if(message.channel.type !== "dm" || cmd.conf.allowDM) allowDM = true;
 		if(cmd.conf.enabled && allowDM){
-			if(!message.channel.type === "dm"){
+			if(message.channel.type !== "dm"){
 				if(!message.channel.memberPermissions(message.guild.me).has("EMBED_LINKS")) return message.channel.send(string);
 			}
 			cmd.run(client, message, args, level);
-		} else {
-			if(!allowDM) return message.channel.send("That command is disabled in DM's.");
-			return client.log(`"${message.author.tag}" tried to use the disabled command "${cmd.help.name}"`, "Log");
 		}
-	} else if(cmd && level < cmd.conf.permLevel){
-		return client.log(`"${message.author.tag}" tried to use command: "${cmd.help.name}"`, "Log");
+		if(!allowDM) return message.channel.send("That command is disabled in DM's.");
 	}
 };
 
