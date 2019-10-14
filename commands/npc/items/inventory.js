@@ -11,7 +11,7 @@ module.exports = (character, wTags, aTags) => {
 	}
 	const weapon = viableWeapons.random();
 	const shieldLink = "https://www.dndbeyond.com/equipment/shield";
-	weapon.name = (aTags.shield && weapon.allowShield && Math.random() >= 0.75) ? `[${weapon.name}](${weapon.link}) & [Shield](${shieldLink})` : `[${weapon.name}](${weapon.link})`;
+	weapon.name = (aTags.shield && weapon.allowShield && Math.random() >= 0.5) ? `[${weapon.name}](${weapon.link}) & [Shield](${shieldLink})` : `[${weapon.name}](${weapon.link})`;
 
 	const viableArmor = [];
 	for(let i = 0; i < armorList.length; i++){
