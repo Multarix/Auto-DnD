@@ -3,4 +3,5 @@
 	"ownerID": "owner ID",
 	"dmRole": "dungeon master",
 	"prefix": "/",
+	"logging" : true
 }
