@@ -19,7 +19,7 @@
 		"simple": true,
 		"ranged": false,
 		"allowShield": true,
-		"properties": ["Finesse", "light", "thrown"]
+		"properties": ["finesse", "light", "thrown"]
 	},
 	{
 		"name": "Greatclub",
