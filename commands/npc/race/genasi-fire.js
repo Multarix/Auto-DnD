@@ -1,6 +1,6 @@
 exports.run = async (character) => {
 	character.race.name = "Fire Genasi";
-	character.race.link = "https://www.dndbeyond.com/races/genasi#FireGenasi30";
+	character.race.link = "https://www.dndbeyond.com/races/genasi#FireGenasi";
 	character.race.speed = 30;
 	return character;
 };

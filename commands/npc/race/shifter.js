@@ -1,5 +1,5 @@
 exports.run = async (character) => {
-	const types = ["beathide", "longtooth", "swiftstride", "wildhunt"];
+	const types = ["beasthide", "longtooth", "swiftstride", "wildhunt"];
 	const subrace = types.random();
 
 	const file = require(`./shifter-${subrace}.js`);
