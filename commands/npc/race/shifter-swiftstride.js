@@ -6,7 +6,7 @@ exports.run = async (character) => {
 };
 
 exports.stats = async (character) => {
-	character.stats.chrisma += 1;
+	character.stats.charisma += 1;
 	character.stats.dexterity += 2;
 	return character;
 };
