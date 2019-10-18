@@ -1,5 +1,5 @@
 const Discord = require("discord.js");
-const weaponArray = require("./npc/items/weapons.json");
+const weaponArray = require("./attack/weapons.json");
 const versatile = require("./attack/versatile.js");
 const nonVersatile = require("./attack/nonVersatile.js");
 exports.run = async (client, message, args) => {
