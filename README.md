@@ -5,9 +5,10 @@ A bot for Dungeons and Dragons.
 -	Loot Command*
 - Roll Dice w/ modifiers
 - Random NPC generation (Throw away characters, no backstory etc. created)**
+- Attack Rolls*
 
 ## Currently Working On
-- Attack Rolls
+- ?????
 
 ## Planned Features
 - ?????
@@ -17,7 +18,7 @@ A bot for Dungeons and Dragons.
 - Colors (1.3.3 or higher)
 - Moment (2.22.2 or higher)
 - Moment-duration-format (2.2.2 or higher)
+- D&D-NPC [Found Here](https://github.com/Multarix/DnD-NPC)
 
 ##### Disclaimers
 *May or may not contain errors<br/>
-**Tweaks may or may not be made
