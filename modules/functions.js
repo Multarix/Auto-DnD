@@ -96,7 +96,7 @@ module.exports = async (client) => {
 		return this.replace(/([^\W_]+[^\s-]*) */g, function(txt) { return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase(); });
 	};
 	String.prototype.removeIndents = function() {	// Removes indents from a string.
-		return this.replace(/\n(\t+)/g, "");
+		return this.replace(/\n(\t+)/g, "\n");
 	};
 	Map.prototype.random = function() {	// Gets a random element of a map;
 		return this.get([...this.keys()][Math.floor(Math.random() * this.size)]);
