@@ -1,18 +1,29 @@
 {
+	"author": "Multarix",
 	"name": "Auto-DnD",
+	"version": "1.0.0",
 	"description": "Auto DnD is a bot for D&D",
 	"repository": "https://github.com/Multarix/Auto-DnD.git",
 	"license": "MIT",
+	"main": "dnd.js",
+	"keywords": [
+		"D&D",
+		"Discord",
+		"Bot"
+	],
 	"dependencies": {
 		"colors": "^1.3.3",
 		"discord.js": "github:discordjs/discord.js",
+		"dnd-npc": "git+https://github.com/Multarix/DnD-NPC.git",
 		"moment": "^2.23.0",
 		"moment-duration-format": "^2.2.2"
 	},
-	"private": true,
 	"optionalDependencies": {
 		"bufferutil": "^4.0.1",
-		"eslint": "^6.3.0",
 		"erlpack": "github:hammerandchisel/erlpack"
-	}
+	},
+	"devDependencies": {
+		"eslint": "^6.3.0"
+	},
+	"private": true
 }

@@ -1,78 +1,53 @@
 const Discord = require("discord.js");
-const nameGenerator = require("./npc/name/nameGen.js");
+const character = require("dnd-npc");
+const roles = require("./npc/roles.json");
+const races = require("./npc/races.json");
 exports.run = async (client, message, args) => {
 
-	if(!args[0] || !args[1]) return message.channel.send("Usage: [npc](<..race> <..job/class>)", { code: "markdown" });
+	if(!args[0] || !args[1]) return await message.channel.send("Usage: [npc](<..race> <..role/class>)", { code: "markdown" });
 
-	let character = {
-		race: {
-			name: "\u200b",
-			link: "https://www.dndbeyond.com/races/",
-			small: false,
-			speed: 0,
-		},
-		class: "\u200b",
-		gender: "\u200b",
-		name: "\u200b",
-		stats: {
-			strength: 8,
-			dexterity: 8,
-			constitution: 8,
-			intelligence: 8,
-			wisdom: 8,
-			charisma: 8,
-		},
-		inventory: {
-			armor: "None",
-			weapon: "None",
-			tools: "None",
-		},
-	};
+	const npcRace = (races.includes(args[0])) ? args[0] : undefined;
+	const npcRole = (roles.includes(args[1])) ? args[1] : undefined;
+	if(!npcRace || !npcRole) return await message.channel.send("Usage: [npc](<..race> <..role/class>)", { code: "markdown" });
 
-	const randArry = ["random", "rand", "r"];
+	const npc = new character({ raceType: npcRace, role: npcRole }).generate();
 
-	const raceCheck = args.shift().toLowerCase();
-	let chosenRace = client.raceType.get(raceCheck) || client.raceType.get(client.raceAlias.get(raceCheck));
-	if(!chosenRace && randArry.includes(raceCheck)) chosenRace = client.raceType.random();
-	if(!chosenRace) return message.channel.send("No Race/ Inavlid Race specified\nUsage: [npc](<..race> <..job/class>)", { code: "markdown" });
+	let stats = "";
+	for(const [key, value] of Object.entries(npc.class.stats)){
+		stats += `**${key.toProperCase()}** :: ${value}\n`;
+	}
 
-	const classCheck = args.shift().toLowerCase();
-	let chosenClass = client.classType.get(classCheck) || client.classType.get(client.classAlias.get(classCheck));
-	if(!chosenClass && randArry.includes(classCheck)) chosenClass = client.classType.random();
-	if(!chosenClass) return message.channel.send("No Class/ Invalid Class specified\nUsage: [npc](<..race> <..job/class>)", { code: "markdown" });
-
-	character = await chosenRace.run(character);
-	character = await chosenClass.run(character);
-	character = await chosenRace.stats(character);
-	character = await nameGenerator(character);
-
-	let str = "";
-	for(const [key, value] of Object.entries(character.stats)){
-		str += `**${key.toProperCase()}** :: ${value}\n`;
+	let tools = "None";
+	if(npc.inventory.tools){
+		tools = [];
+		npc.inventory.tools.forEach(t => {
+			tools.push(`[${t.name}](${t.link})`);
+		});
+		tools = tools.join(", ");
 	}
 
 	const charInfo = `**Race/ Subrace:**
-	[${character.race.name}](${character.race.link})
-	**Class:**
-	[${character.class}](https://www.dndbeyond.com/classes/${character.class})
-	**Gender:**
-	${character.gender}
-	**Speed:**
-	${character.race.speed}
-	\u200b
-	**Weapon:**
-	${character.inventory.weapon}
-	**Armor:**
-	${character.inventory.armor}
-	**Tools:**
-	${character.inventory.tools}`;
+		[${npc.race.name}](${npc.race.link})
+		**Class:**
+		[${npc.class.name}](https://www.dndbeyond.com/classes/${npc.class.link})
+		**Gender:**
+		${npc.character.gender}
+		**Speed:**
+		${npc.race.speed}
+		\u200b
+		**Weapon:**
+		[${npc.inventory.weapon.name}](${npc.inventory.weapon.link})
+		**Armor:**
+		[${npc.inventory.armor.name}](${npc.inventory.armor.link})
+		**Tools:**
+		${tools}`;
 
 	const embed = new Discord.MessageEmbed()
-		.setAuthor(character.name)
+		.setAuthor(npc.character.name)
 		.setFooter(client.user.username, client.user.displayAvatarURL())
 		.setTimestamp()
-		.addField("Misc Information", charInfo.replace(/\t/g, ""), true)
-		.addField("**Stats**", `${str}`, true);
+		.addField("Misc Information", charInfo.removeIndents(), true)
+		.addField("**Stats**", `${stats}`, true);
 
 	return message.channel.send({ embed }).catch(e => errFunc(e));
 };

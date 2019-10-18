@@ -1,0 +1,20 @@
+[
+	"aarakocra",
+	"aasimar",
+	"changeling",
+	"dragonborn",
+	"dwarf", "hill", "mountain",
+	"elf", "eladrin", "high", "wood",
+	"genasi", "air", "earth", "fire", "water",
+	"gnome",
+	"goliath",
+	"halfelf", "half-elf",
+	"halfling", "lightfoot", "stout",
+	"halforc", "half-orc",
+	"human",
+	"kalashtar", "quori",
+	"shifter", "beasthide", "longtooth", "swiftstride", "wildhunt",
+	"tiefling",
+	"warforged", "envoy", "juggernaut", "skirmisher",
+	"random", "rand", "r"
+]
