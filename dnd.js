@@ -46,36 +46,6 @@ const init = async () => {
 		}
 	});
 
-	const raceFiles = await readdir("./commands/npc/race/");
-	client.log(`Loading a total of ${raceFiles.length} races.`, "NPC Gen");
-	raceFiles.forEach(f => {
-		try {
-			if(!f.endsWith(".js")) return;
-			const r = require(`./commands/npc/race/${f}`);
-			client.raceType.set(r.info.name, r);
-			r.info.aliases.forEach(a => {
-				client.raceAlias.set(a, r.info.name);
-			});
-		} catch (e){
-			client.log(`Unable to load race ${f}: ${e}`, "Warn");
-		}
-	});
-
-	const classFiles = await readdir("./commands/npc/class/");
-	client.log(`Loading a total of ${classFiles.length} classes.`, "NPC Gen");
-	classFiles.forEach(f => {
-		try {
-			if(!f.endsWith(".js")) return;
-			const c = require(`./commands/npc/class/${f}`);
-			client.classType.set(c.info.name, c);
-			c.info.aliases.forEach(a => {
-				client.classAlias.set(a, c.info.name);
-			});
-		} catch (e){
-			client.log(`Unable to load class ${f}: ${e}`, "Warn");
-		}
-	});
-
 	client.login(client.config.clientToken);
 };
 
