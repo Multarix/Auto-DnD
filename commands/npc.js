@@ -10,7 +10,7 @@ exports.run = async (client, message, args) => {
 	const npcRole = (roles.includes(args[1].toLowerCase())) ? args[1].toLowerCase() : undefined;
 	if(!npcRace || !npcRole) return await message.channel.send("Usage: [npc](<..race> <..role/class>)", { code: "markdown" });
 
-	const npc = new character({ raceType: npcRace, role: npcRole }).generate();
+	const npc = new character({ raceType: npcRace, roleType: npcRole }).generate();
 
 	let stats = "";
 	for(const [key, value] of Object.entries(npc.class.stats)){
