@@ -17,6 +17,9 @@ exports.run = async (client, message, args) => {
 		stats += `**${key.toProperCase()}** :: ${value}\n`;
 	}
 
+	const weapon = (npc.inventory.shield) ? `[${npc.inventory.weapon.name}](${npc.inventory.weapon.link}) & [Shield](${npc.inventory.shield})` : `[${npc.inventory.weapon.name}](${npc.inventory.weapon.link})`;
+	const armor = (npc.inventory.armor) ? `[${npc.inventory.armor.name}](${npc.inventory.armor.link})` : "None";
+
 	let tools = "None";
 	if(npc.inventory.tools){
 		tools = [];
@@ -36,9 +39,9 @@ exports.run = async (client, message, args) => {
 		${npc.race.speed}
 		\u200b
 		**Weapon:**
-		[${npc.inventory.weapon.name}](${npc.inventory.weapon.link})
+		${weapon}
 		**Armor:**
-		[${npc.inventory.armor.name}](${npc.inventory.armor.link})
+		${armor}
 		**Tools:**
 		${tools}`;
 
