@@ -21,7 +21,7 @@ exports.run = async (client, message, args) => {
 	const armor = (npc.inventory.armor) ? `[${npc.inventory.armor.name}](${npc.inventory.armor.link})` : "None";
 
 	let tools = "None";
-	if(npc.inventory.tools){
+	if(npc.inventory.tools.length > 0){
 		tools = [];
 		npc.inventory.tools.forEach(t => {
 			tools.push(`[${t.name}](${t.link})`);
