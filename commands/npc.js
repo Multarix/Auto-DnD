@@ -7,8 +7,9 @@ exports.run = async (client, message, args) => {
 	if(!args[0] || !args[1]) return await message.channel.send("Usage: [npc](<..race> <..role/class>)", { code: "markdown" });
 
 	const npcRace = (races.includes(args[0].toLowerCase())) ? args[0].toLowerCase() : undefined;
+	if(!npcRace) return await message.channel.send("Invalid race\nUsage: [npc](<..race> <..role/class>)", { code: "markdown" });
 	const npcRole = (roles.includes(args[1].toLowerCase())) ? args[1].toLowerCase() : undefined;
-	if(!npcRace || !npcRole) return await message.channel.send("Usage: [npc](<..race> <..role/class>)", { code: "markdown" });
+	if(!npcRole) return await message.channel.send("Invalid class\nUsage: [npc](<..race> <..role/class>)", { code: "markdown" });
 
 	const npc = new dnd.npc({ raceType: npcRace, roleType: npcRole }).generate();
 
