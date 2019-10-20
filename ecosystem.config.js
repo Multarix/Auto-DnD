@@ -17,7 +17,7 @@ module.exports = {
 	deploy : {
 		production : {
 			user: 'node',
-			host: '212.83.163.1',
+			host: '192.168.0.1',
 			ref: 'origin/master',
 			repo: 'https://github.com/Multarix/Auto-DnD.git',
 			path: '/var/www/production',
