@@ -36,7 +36,7 @@ exports.run = async (client, message, args) => {
 		.setFooter(client.user.username, client.user.displayAvatarURL())
 		.setTimestamp()
 		.addField("Race/ Subrace", `[${npc.race.name}](${npc.race.link})`, true)
-		.addField("Class", `[${npc.class.name}](https://www.dndbeyond.com/classes/${npc.class.link})`, true)
+		.addField("Class", `[${npc.class.name}](${npc.class.link})`, true)
 		.addField("Alignment", npc.character.alignment, true)
 		.addField("Size", npc.race.size, true)
 		.addField("Speed", npc.race.speed, true)
