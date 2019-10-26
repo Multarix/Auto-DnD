@@ -36,7 +36,7 @@ exports.run = async (client, message, args) => {
 		.setFooter(client.user.username, client.user.displayAvatarURL())
 		.setTimestamp()
 		.addField("Race/ Subrace", `[${npc.race.name}](${npc.race.link})`, true)
-		.addField("Class", `[${npc.class.name}](${npc.class.link})`, true)
+		.addField("Class", `[${npc.role.name}](${npc.role.link})`, true)
 		.addField("Alignment", npc.character.alignment, true)
 		.addField("Size", npc.race.size, true)
 		.addField("Speed", npc.race.speed, true)
@@ -44,12 +44,12 @@ exports.run = async (client, message, args) => {
 		.addField("Tools", tools, true)
 		.addField("Weapon", weapon, true)
 		.addField("Armor", armor, true)
-		.addField("Strength", npc.class.stats.strength, true)
-		.addField("Dexterity", npc.class.stats.dexterity, true)
-		.addField("Constitution", npc.class.stats.constitution, true)
-		.addField("Intelligence", npc.class.stats.intelligence, true)
-		.addField("Wisdom", npc.class.stats.wisdom, true)
-		.addField("Charisma", npc.class.stats.charisma, true);
+		.addField("Strength", npc.role.stats.strength, true)
+		.addField("Dexterity", npc.role.stats.dexterity, true)
+		.addField("Constitution", npc.role.stats.constitution, true)
+		.addField("Intelligence", npc.role.stats.intelligence, true)
+		.addField("Wisdom", npc.role.stats.wisdom, true)
+		.addField("Charisma", npc.role.stats.charisma, true);
 
 	return message.channel.send({ embed }).catch(e => errFunc(e));
 };
