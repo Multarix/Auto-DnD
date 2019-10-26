@@ -14,7 +14,7 @@ exports.run = async (client, message, args) => {
 	const npc = new dnd.npc({ raceType: npcRace, roleType: npcRole }).generate();
 
 	let stats = "";
-	for(const [key, value] of Object.entries(npc.class.stats)){
+	for(const [key, value] of Object.entries(npc.role.stats)){
 		stats += `**${key.toProperCase()}** :: ${value}\n`;
 	}
 
