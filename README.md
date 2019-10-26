@@ -1,3 +1,5 @@
+[![NPM](https://nodei.co/npm/dnd-npc.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/dnd-npc/)
+
 # Auto D&D
 A bot for Dungeons and Dragons.
 
