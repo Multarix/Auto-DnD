@@ -7,11 +7,6 @@ module.exports = async (client) => {
 	client.commands = new Discord.Collection();
 	client.aliases = new Discord.Collection();
 	client.events = new Discord.Collection();
-	// NPC Generation Collections
-	client.classType = new Map();
-	client.classAlias = new Map();
-	client.raceType = new Map();
-	client.raceAlias = new Map();
 
 	//	Permission level for commands.
 	client.permlevel = (message) => {
