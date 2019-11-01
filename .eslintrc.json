@@ -36,7 +36,7 @@
 		"spaced-comment": "error",
 		"no-lonely-if": "error",
 		"no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
-		"space-before-blocks": ["error", { "functions": "always", "keywords": "never", "classes": "never" }],
+		"space-before-blocks": ["error", { "functions": "never", "keywords": "never", "classes": "always" }],
 		"space-before-function-paren": ["error", { "anonymous": "never","named": "never", "asyncArrow": "always" }],
 		"keyword-spacing": ["error", {
 			"before": true,
@@ -44,7 +44,8 @@
 			"overrides": {
 				"if": { "after": false },
 				"for": { "after": false },
-				"while": { "after": false }
+				"while": { "after": false },
+				"switch": { "after": false }
 			}
 		}],
 		"yoda": "error"
