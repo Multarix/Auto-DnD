@@ -49,12 +49,12 @@ exports.conf = {
 	enabled: true,
 	allowDM: true,
 	aliases: [],
-	permLevel: 0,
+	permLevel: 0
 };
 
 exports.help = {
 	name: "loot",
 	category: "Dungeons & Dragons",
 	description: "Automagically rolls for loot",
-	usage: "individual/hoard challenge-level",
+	usage: "individual/hoard challenge-level"
 };

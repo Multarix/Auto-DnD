@@ -34,6 +34,6 @@ module.exports = () => {
 		{ "roll": 97, "name": "**Rope of Climbing**", "link": "https://www.dndbeyond.com/magic-items/rope-of-climbing" },
 		{ "roll": 98, "name": "**Saddle of the Cavalier**", "link": "https://aversten.obsidianportal.com/wikis/saddle-of-the-cavalier" },
 		{ "roll": 99, "name": "**Wand of Magic Detection**", "link": "https://www.dndbeyond.com/magic-items/wand-of-magic-detection" },
-		{ "roll": 100, "name": "**Wand of Secrets**", "link": "https://www.dndbeyond.com/magic-items/wand-of-secrets" },
+		{ "roll": 100, "name": "**Wand of Secrets**", "link": "https://www.dndbeyond.com/magic-items/wand-of-secrets" }
 	];
 };

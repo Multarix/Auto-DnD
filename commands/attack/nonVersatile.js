@@ -5,7 +5,7 @@ module.exports = async (client, embed, weapon, modifier) => {
 	const attack = {
 		sDie: "",
 		singleTimes: parseInt(singleAttack[0]),
-		singleDie: singleAttack[1],
+		singleDie: singleAttack[1]
 	};
 
 	let hit = d20();

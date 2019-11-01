@@ -12,12 +12,12 @@ exports.conf = {
 	enabled: true,
 	allowDM: true,
 	aliases: [],
-	permLevel: 0,
+	permLevel: 0
 };
 
 exports.help = {
 	name: "donate",
 	category: "Misc",
 	description: "Donate me Plox",
-	usage: "..",
+	usage: ".."
 };

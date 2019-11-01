@@ -7,11 +7,11 @@ module.exports = {
 		cron_restart : "0 6 * * 7",
 		exp_backoff_restart_delay: 1000,
 		env: {
-			NODE_ENV: 'development',
+			NODE_ENV: 'development'
 		},
 		env_production : {
-			NODE_ENV: 'production',
-		},
+			NODE_ENV: 'production'
+		}
 	}],
 
 	deploy : {
@@ -21,9 +21,9 @@ module.exports = {
 			ref: 'origin/master',
 			repo: 'https://github.com/Multarix/Auto-DnD.git',
 			path: '/var/www/production',
-			'post-deploy' : 'npm install && pm2 reload ecosystem.config.js --env production',
-		},
-	},
+			'post-deploy' : 'npm install && pm2 reload ecosystem.config.js --env production'
+		}
+	}
 };
 
 // git branch -D <branchName>

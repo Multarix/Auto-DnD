@@ -34,12 +34,12 @@ exports.conf = {
 	enabled: true,
 	allowDM: true,
 	aliases: ["a"],
-	permLevel: 0,
+	permLevel: 0
 };
 
 exports.help = {
 	name: "attack",
 	category: "Dungeons & Dragons",
 	description: "Automagically calculates damage",
-	usage: "weapon strength/dexterity",
+	usage: "weapon strength/dexterity"
 };

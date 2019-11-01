@@ -11,5 +11,5 @@ module.exports = async (client, messageReaction, user) => {
 
 module.exports.help = {
 	name: "messageReactionAdd",
-	description: "Emitted when a user adds a reaction",
+	description: "Emitted when a user adds a reaction"
 };

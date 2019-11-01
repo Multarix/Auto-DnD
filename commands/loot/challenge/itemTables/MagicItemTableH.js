@@ -67,6 +67,6 @@ module.exports = () => {
 		{ "roll": 97, "name": "**Armor of Resistance (Studded Leather)**", "link":"https://www.dndbeyond.com/magic-items/armor-of-resistance" },
 		{ "roll": 98, "name": "**Tome of Clear Thought**", "link":"https://www.dndbeyond.com/magic-items/tome-of-clear-thought" },
 		{ "roll": 99, "name": "**Tome of Leadership and Influence**", "link":"https://www.dndbeyond.com/magic-items/tome-of-leadership-and-influence" },
-		{ "roll": 100, "name": "**Tome of Understanding**", "link":"https://www.dndbeyond.com/magic-items/tome-of-understanding" },
+		{ "roll": 100, "name": "**Tome of Understanding**", "link":"https://www.dndbeyond.com/magic-items/tome-of-understanding" }
 	];
 };

@@ -9,7 +9,7 @@ module.exports = async (client, embed, weapon, modifier) => {
 		singleDie: singleAttack[1],
 		vDieStr: "",
 		versatileTimes: parseInt(versatileAttack[0]),
-		versatileDie: versatileAttack[1],
+		versatileDie: versatileAttack[1]
 	};
 
 	let hit = d20();

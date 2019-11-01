@@ -58,12 +58,12 @@ exports.conf = {
 	enabled: true,
 	allowDM: true,
 	aliases: ["n"],
-	permLevel: 0,
+	permLevel: 0
 };
 
 exports.help = {
 	name: "npc",
 	category: "Dungeons & Dragons",
 	description: "Creates a semi-random NPC",
-	usage: "race job/class",
+	usage: "race job/class"
 };

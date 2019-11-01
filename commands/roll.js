@@ -13,12 +13,12 @@ exports.conf = {
 	enabled: true,
 	allowDM: true,
 	aliases: ["dice"],
-	permLevel: 0,
+	permLevel: 0
 };
 
 exports.help = {
 	name: "roll",
 	category: "Dungeons & Dragons",
 	description: "Rolls some dice.",
-	usage: "amount d4/d6/d8/d10/d20 modifier",
+	usage: "amount d4/d6/d8/d10/d20 modifier"
 };

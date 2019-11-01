@@ -59,6 +59,6 @@ module.exports = () => {
 		{ "roll": 97, "name": "**Quiver of Ehlonna**", "link":"https://aversten.obsidianportal.com/wiki_pages/quiver-of-ehlonna" },
 		{ "roll": 98, "name": "**Stone of Good Luck**", "link":"https://www.dndbeyond.com/magic-items/stone-of-good-luck-luckstone" },
 		{ "roll": 99, "name": "**Wind Fan**", "link":"https://www.dndbeyond.com/magic-items/wind-fan" },
-		{ "roll": 100, "name": "**Winged Boots**", "link":"https://www.dndbeyond.com/magic-items/winged-boots" },
+		{ "roll": 100, "name": "**Winged Boots**", "link":"https://www.dndbeyond.com/magic-items/winged-boots" }
 	];
 };

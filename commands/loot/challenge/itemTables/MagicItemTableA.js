@@ -7,6 +7,6 @@ module.exports = () => {
 		{ "roll": 94, "name": "**Spell Scroll (2nd level)**", "link": "https://www.dndbeyond.com/magic-items/spell-scroll" },
 		{ "roll": 98, "name": "**Potion of Greater Healing**", "link": "https://www.dndbeyond.com/magic-items/potion-of-healing" },
 		{ "roll": 99, "name": "**Bag of Holding**", "link": "https://www.dndbeyond.com/magic-items/bag-of-holding" },
-		{ "roll": 100, "name": "**Driftglobe**", "link": "https://aversten.obsidianportal.com/wikis/driftglobe" },
+		{ "roll": 100, "name": "**Driftglobe**", "link": "https://aversten.obsidianportal.com/wikis/driftglobe" }
 	];
 };

@@ -27,6 +27,6 @@ module.exports = () => {
 		{ "roll": 97, "name": "**Horseshoes of speed**", "link":"https://www.dndbeyond.com/magic-items/horseshoes-of-speed" },
 		{ "roll": 98, "name": "**Necklace of Fireballs**", "link":"https://www.dndbeyond.com/magic-items/necklace-of-fireballs" },
 		{ "roll": 99, "name": "**Periapt of Health**", "link":"https://www.dndbeyond.com/magic-items/periapt-of-health" },
-		{ "roll": 100, "name": "**Sending Stones**", "link":"https://aversten.obsidianportal.com/wiki_pages/sending-stones" },
+		{ "roll": 100, "name": "**Sending Stones**", "link":"https://aversten.obsidianportal.com/wiki_pages/sending-stones" }
 	];
 };

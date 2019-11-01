@@ -96,6 +96,6 @@ module.exports = (roll) => {
 		{ "roll": 97, "name": "**Wand of Paralysis**", "link":"https://www.dndbeyond.com/magic-items/wand-of-paralysis" },
 		{ "roll": 98, "name": "**+2 Wand of the War Mage**", "link":"https://www.dndbeyond.com/magic-items/wand-of-the-war-mage" },
 		{ "roll": 99, "name": "**Wand of Wonder**", "link":"https://www.dndbeyond.com/magic-items/wand-of-wonder" },
-		{ "roll": 100, "name": "**Wings of Flying**", "link":"https://www.dndbeyond.com/magic-items/wings-of-flying" },
+		{ "roll": 100, "name": "**Wings of Flying**", "link":"https://www.dndbeyond.com/magic-items/wings-of-flying" }
 	];
 };

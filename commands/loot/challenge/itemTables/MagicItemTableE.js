@@ -6,6 +6,6 @@ module.exports = () => {
 		{ "roll": 85, "name": "**Spell Scroll (9th level)**", "link":"https://www.dndbeyond.com/magic-items/spell-scroll" },
 		{ "roll": 93, "name": "**Universal Solvent**", "link":"https://www.dndbeyond.com/magic-items/universal-solvent" },
 		{ "roll": 98, "name": "**Arrow of Slaying**", "link":"https://www.dndbeyond.com/magic-items/arrow-of-slaying" },
-		{ "roll": 100, "name": "**Sovereign Glue**", "link":"https://www.dndbeyond.com/magic-items/sovereign-glue" },
+		{ "roll": 100, "name": "**Sovereign Glue**", "link":"https://www.dndbeyond.com/magic-items/sovereign-glue" }
 	];
 };

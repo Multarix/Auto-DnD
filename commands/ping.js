@@ -9,12 +9,12 @@ exports.conf = {
 	enabled: true,
 	allowDM: true,
 	aliases: [],
-	permLevel: 10,
+	permLevel: 10
 };
 
 exports.help = {
 	name: "ping",
 	category: "Misc",
 	description: "Gets the bot's ping",
-	usage: "..",
+	usage: ".."
 };

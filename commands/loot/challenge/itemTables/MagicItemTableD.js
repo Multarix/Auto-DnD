@@ -15,6 +15,6 @@ module.exports = () => {
 		{ "roll": 95, "name": "**Horseshoes of a Zephyr**", "link":"https://www.dndbeyond.com/magic-items/horseshoes-of-a-zephyr" },
 		{ "roll": 98, "name": "**Nolzur's Marvelous Pigments**", "link":"https://aversten.obsidianportal.com/wiki_pages/nolzurs-marvelous-pigments" },
 		{ "roll": 99, "name": "**Bag of Devouring**", "link":"https://www.dndbeyond.com/magic-items/bag-of-devouring" },
-		{ "roll": 100, "name": "**Portable Hole**", "link":"https://www.dndbeyond.com/magic-items/portable-hole" },
+		{ "roll": 100, "name": "**Portable Hole**", "link":"https://www.dndbeyond.com/magic-items/portable-hole" }
 	];
 };

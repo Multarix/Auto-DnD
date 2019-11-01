@@ -26,7 +26,7 @@ module.exports = (roll) => {
 			{ "roll": 69, "name": "**Scarab of Protection**", "link":"https://www.dndbeyond.com/magic-items/scarab-of-protection" },
 			{ "roll": 71, "name": "**Armor, +2 Splint**", "link":"https://www.dndbeyond.com/magic-items/armor-2" },
 			{ "roll": 73, "name": "**Armor, +2 Studded Leather**", "link":"https://www.dndbeyond.com/magic-items/armor-2" },
-			{ "roll": 75, "name": "**Well of Many Worlds**", "link":"https://www.dndbeyond.com/magic-items/well-of-many-worlds" },
+			{ "roll": 75, "name": "**Well of Many Worlds**", "link":"https://www.dndbeyond.com/magic-items/well-of-many-worlds" }
 		];
 	}
 	if(roll === 76){
@@ -63,6 +63,6 @@ module.exports = (roll) => {
 		{ "roll": 97, "name": "**Talisman of Pure Good**", "link":"https://www.dndbeyond.com/magic-items/talisman-of-pure-good" },
 		{ "roll": 98, "name": "**Talisman of the Sphere**", "link":"https://www.dndbeyond.com/magic-items/talisman-of-the-sphere" },
 		{ "roll": 99, "name": "**Talisman of Ultimate Evil**", "link":"https://www.dndbeyond.com/magic-items/talisman-of-ultimate-evil" },
-		{ "roll": 100, "name": "**Tome of the Stilled Tongue**", "link":"https://aversten.obsidianportal.com/wiki_pages/tome-of-the-stilled-tongue" },
+		{ "roll": 100, "name": "**Tome of the Stilled Tongue**", "link":"https://aversten.obsidianportal.com/wiki_pages/tome-of-the-stilled-tongue" }
 	];
 };

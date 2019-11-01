@@ -25,12 +25,12 @@ exports.conf = {
 	enabled: true,
 	allowDM: true,
 	aliases: ["stats"],
-	permLevel: 10,
+	permLevel: 10
 };
 
 exports.help = {
 	name: "info",
 	category: "Misc",
 	description: "Gives some useful bot statistics",
-	usage: "..",
+	usage: ".."
 };
