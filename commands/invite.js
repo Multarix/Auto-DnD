@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 exports.run = (client, message, args) => {
 
-	let good = client.emojis.get("340357918996299778");
+	let good = client.emojis.cache.get("340357918996299778");
 	if(!good) good = "👍";
 
 	const invStr = `[Click Here](https://discordapp.com/oauth2/authorize?client_id=${client.user.id}&scope=bot&permissions=8 "Invite ${client.user.username.toProperCase()} to your server") to invite

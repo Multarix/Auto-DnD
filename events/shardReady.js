@@ -4,7 +4,7 @@ module.exports = async (client, shardID) => {
 	await wait(1000);
 
 	const time = new Date();
-	client.log(`Accessing a total of '${client.guilds.size}' server(s) With a total of '${client.users.size}' users`, "Ready", shardID);
+	client.log(`Accessing a total of '${client.guilds.cache.size}' server(s) With a total of '${client.users.cache.size}' users`, "Ready", shardID);
 
 	let game = "with Guildbot";
 	if(client.user.id === "304230184494563329") game = "with Dice";

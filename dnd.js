@@ -5,7 +5,7 @@ const readdir = promisify(require("fs").readdir);
 
 const client = new Discord.Client({
 	disableEveryone: true,
-	shardCount: "auto",
+	shardCount: 1,
 	disabledEvents: ["TYPING_START", "CHANNEL_PINS_UPDATE"]
 });
 
