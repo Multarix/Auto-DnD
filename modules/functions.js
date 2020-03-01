@@ -124,15 +124,15 @@ module.exports = async (client) => {
 		if(userID.startsWith("<@") && userID.endsWith(">")) userID = userID.slice(2, -1);
 		if(userID.startsWith("!")) userID = userID.slice(1);
 		await client.users.fetch(userID).catch(e => { return undefined; });
-		return client.users.get(userID);
+		return client.users.cache.get(userID);
 	};
 
 	// Checks for and fetches a channel if it exists.
 	global.grabChannel = (channelID) => {
 		if(!channelID) return;
 		if(channelID.startsWith("<#") && channelID.endsWith(">")) channelID = channelID.slice(2, -1);
-		if(!client.channels.get(channelID)) return undefined;
-		return client.channels.get(channelID);
+		if(!client.channels.cache.get(channelID)) return undefined;
+		return client.channels.cache.get(channelID);
 	};
 
 	// Checks for a role and returns it if it exists.
@@ -140,7 +140,7 @@ module.exports = async (client) => {
 		if(!roleID) return;
 		if(!guild) return;
 		if(guild.id) guild = guild.id;
-		guild = client.guilds.get(guild);
+		guild = client.guilds.cache.get(guild);
 		if(!guild) return null;
 		if(roleID.startsWith("<@&") && roleID.endsWith(">")) roleID = roleID.slice(3, -1);
 		if(!guild.roles.get(roleID)) return undefined;
@@ -149,17 +149,15 @@ module.exports = async (client) => {
 
 	// Generates a random number between 0 and the specified value
 	global.randomNumber = require("./misc/randomNumber.js");
-	// NPC Stat Generation
-	global.statGen = require("../modules/misc/randomStat.js");
 	// Dice
-	global.d4 = require("../modules/dice/d4.js");
-	global.d6 = require("../modules/dice/d6.js");
-	global.d8 = require("../modules/dice/d8.js");
-	global.d10 = require("../modules/dice/d10.js");
-	global.d12 = require("../modules/dice/d12.js");
-	global.d20 = require("../modules/dice/d20.js");
-	global.d100 = require("../modules/dice/d100.js");
-	global.percentile = require("../modules/dice/percentile.js");
+	global.d4 = require("./dice/d4.js");
+	global.d6 = require("./dice/d6.js");
+	global.d8 = require("./dice/d8.js");
+	global.d10 = require("./dice/d10.js");
+	global.d12 = require("./dice/d12.js");
+	global.d20 = require("./dice/d20.js");
+	global.d100 = require("./dice/d100.js");
+	global.percentile = require("./dice/percentile.js");
 
 	// I see your unhandled things, and present to you, handled things!
 
