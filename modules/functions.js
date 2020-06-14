@@ -15,9 +15,9 @@ module.exports = async (client) => {
 		if(message.author.id === client.config.ownerID) return permlvl = 10;
 		if(!message.guild || !message.member) return permlvl = 0;
 
-		const dm = message.guild.roles.find(r => r.name === client.config.dmRole);
+		const dm = message.guild.roles.cache.find(r => r.name === client.config.dmRole);
 
-		if(message.member.roles.has(dm)) return permlvl = 1;
+		if(message.member.roles.cache.has(dm)) return permlvl = 1;
 		if(message.author.id === message.guild.owner.id) return permlvl = 1;
 
 		return permlvl;
