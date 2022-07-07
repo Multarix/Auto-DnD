@@ -15,7 +15,7 @@
 		"colors": "^1.3.3",
 		"discord.js": "^12.2.0",
 		"dnd-npc": "^1.1.5",
-		"moment": "^2.23.0",
+		"moment": "^2.29.4",
 		"moment-duration-format": "^2.2.2"
 	},
 	"devDependencies": {
